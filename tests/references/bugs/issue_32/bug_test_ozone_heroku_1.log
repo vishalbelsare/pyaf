@@ -1,0 +1,142 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['Ozone'], 'Horizons': {'Ozone': 12}}
+REQUEST_DETAILS [('CSVFile', 'https://raw.githubusercontent.com/antoinecarme/TimeSeriesData/master/ozone-la.csv'), ('DateFormat', '%Y-%m'), ('Horizon', 12), ('Name', 'model1'), ('Present', '1968-08'), ('SignalVar', 'Ozone'), ('TimeVar', 'Month')]
+None
+DATASET_DETECTED_COLUMNS Index(['Month', 'Ozone'], dtype='object')
+DATASET_FINAL_COLUMNS Index(['Month', 'Ozone'], dtype='object')
+TRAIN_PARAMS (164, 2) Index(['Month', 'Ozone'], dtype='object') Month Ozone 12
+INFO:pyaf.std:TRAINING_ENGINE_END 17.3
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['Ozone'], 'Horizons': {'Ozone': 12}}
+INFO:pyaf.std:FORECASTING_ENGINE_END 0.691
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['Ozone'], 'Horizons': {'Ozone': 12}}
+INFO:pyaf.std:FORECASTING_ENGINE_END 0.329
+Forecast Columns  Index(['Month', 'Ozone', 'Ozone_scaled', '_Ozone', 'row_number',
+       'Month_Normalized', '_Ozone_ConstantTrend',
+       '_Ozone_ConstantTrend_residue', 'cycle_internal',
+       '_Ozone_ConstantTrend_residue_Cycle_12',
+       '_Ozone_ConstantTrend_residue_Cycle_12_residue',
+       '_Ozone_ConstantTrend_residue_Cycle_12_residue_NoAR',
+       '_Ozone_ConstantTrend_residue_Cycle_12_residue_NoAR_residue',
+       'Ozone_Transformed', '_Ozone_Trend', '_Ozone_Trend_residue',
+       '_Ozone_Cycle', '_Ozone_Cycle_residue', '_Ozone_AR',
+       '_Ozone_AR_residue', '_Ozone_TransformedForecast', '_Ozone_Detrended',
+       '_Ozone_Deseasonalized', 'Ozone_TransformedForecast_inverted',
+       'Ozone_Forecast', '_Ozone_TransformedResidue', 'Ozone_Residue',
+       'Ozone_Forecast_Lower_Bound', 'Ozone_Forecast_Upper_Bound',
+       'Ozone_Forecast_Quantile_10', 'Ozone_Forecast_Quantile_30',
+       'Ozone_Forecast_Quantile_50', 'Ozone_Forecast_Quantile_70',
+       'Ozone_Forecast_Quantile_90'],
+      dtype='object')
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 176 entries, 0 to 175
+Data columns (total 3 columns):
+ #   Column          Non-Null Count  Dtype         
+---  ------          --------------  -----         
+ 0   Month           176 non-null    datetime64[ns]
+ 1   Ozone           164 non-null    float64       
+ 2   Ozone_Forecast  176 non-null    float64       
+dtypes: datetime64[ns](1), float64(2)
+memory usage: 4.3 KB
+None
+Forecasts
+          Month  Ozone  Ozone_Forecast
+164 1968-09-01    NaN            5.20
+165 1968-10-01    NaN            4.90
+166 1968-11-01    NaN            3.60
+167 1968-12-01    NaN            2.80
+168 1969-01-01    NaN            2.40
+169 1969-02-01    NaN            2.45
+170 1969-03-01    NaN            3.05
+171 1969-04-01    NaN            4.00
+172 1969-05-01    NaN            4.00
+173 1969-06-01    NaN            4.80
+174 1969-07-01    NaN            5.60
+175 1969-08-01    NaN            5.00
+
+
+<ModelInfo>
+{
+    "Ozone": {
+        "Complexity": {
+            "AR": "S",
+            "Cycle": "S",
+            "Decomposition": "S",
+            "Transformation": "S",
+            "Trend": "S"
+        },
+        "Dataset": {
+            "Signal": "Ozone",
+            "Time": {
+                "Horizon": 12,
+                "TimeDelta": "<DateOffset: months=1>",
+                "TimeMax": "1968-08-01 00:00:00",
+                "TimeMin": "1955-01-01 00:00:00",
+                "TimeVariable": "Month"
+            },
+            "Training_Signal_Length": 164
+        },
+        "Model": {
+            "AR_Model": "NoAR",
+            "Best_Decomposition": "_Ozone_ConstantTrend_residue_Cycle_12_residue_NoAR",
+            "Cycle": "Cycle_12",
+            "Signal_Decomposition_Type": "T+S+R",
+            "Signal_Transoformation": "NoTransf",
+            "Trend": "ConstantTrend"
+        },
+        "Model_Performance": {
+            "1": {
+                "AUC": 0.4501,
+                "DiffSMAPE": 0.1746,
+                "ErrorMean": 0.2548,
+                "ErrorStdDev": 0.7097,
+                "KS": 0.1935,
+                "KendallTau": 0.6903,
+                "Length": 31,
+                "LnQ": 1.9466,
+                "MAE": 0.5935,
+                "MAPE": 0.2121,
+                "MASE": 0.6644,
+                "MannWhitneyU": 432.5,
+                "MedAE": 0.55,
+                "Pearson": 0.8585,
+                "R2": 0.6962,
+                "RMSE": 0.754,
+                "RMSSE": 0.6571,
+                "SMAPE": 0.1776,
+                "Signal": "Ozone_Forecast_1"
+            },
+            "12": {
+                "AUC": 0.4501,
+                "DiffSMAPE": 0.1746,
+                "ErrorMean": 0.2548,
+                "ErrorStdDev": 0.7097,
+                "KS": 0.1935,
+                "KendallTau": 0.6903,
+                "Length": 31,
+                "LnQ": 1.9466,
+                "MAE": 0.5935,
+                "MAPE": 0.2121,
+                "MASE": 0.6644,
+                "MannWhitneyU": 432.5,
+                "MedAE": 0.55,
+                "Pearson": 0.8585,
+                "R2": 0.6962,
+                "RMSE": 0.754,
+                "RMSSE": 0.6571,
+                "SMAPE": 0.1776,
+                "Signal": "Ozone_Forecast_12"
+            }
+        },
+        "Model_Selection_Criterion": "MASE"
+    },
+    "Training_Time": 17.3
+}
+</ModelInfo>
+
+
+
+
+<Forecast>
+{"Month":{"152":"1967-09-01T00:00:00.000","153":"1967-10-01T00:00:00.000","154":"1967-11-01T00:00:00.000","155":"1967-12-01T00:00:00.000","156":"1968-01-01T00:00:00.000","157":"1968-02-01T00:00:00.000","158":"1968-03-01T00:00:00.000","159":"1968-04-01T00:00:00.000","160":"1968-05-01T00:00:00.000","161":"1968-06-01T00:00:00.000","162":"1968-07-01T00:00:00.000","163":"1968-08-01T00:00:00.000","164":"1968-09-01T00:00:00.000","165":"1968-10-01T00:00:00.000","166":"1968-11-01T00:00:00.000","167":"1968-12-01T00:00:00.000","168":"1969-01-01T00:00:00.000","169":"1969-02-01T00:00:00.000","170":"1969-03-01T00:00:00.000","171":"1969-04-01T00:00:00.000","172":"1969-05-01T00:00:00.000","173":"1969-06-01T00:00:00.000","174":"1969-07-01T00:00:00.000","175":"1969-08-01T00:00:00.000"},"Ozone":{"152":3.7,"153":5.4,"154":3.0,"155":1.8,"156":2.1,"157":2.6,"158":2.8,"159":3.2,"160":3.5,"161":3.5,"162":4.9,"163":4.2,"164":null,"165":null,"166":null,"167":null,"168":null,"169":null,"170":null,"171":null,"172":null,"173":null,"174":null,"175":null},"Ozone_Forecast":{"152":5.2,"153":4.9,"154":3.6,"155":2.8,"156":2.4,"157":2.45,"158":3.05,"159":4.0,"160":4.0,"161":4.8,"162":5.6,"163":5.0,"164":5.2,"165":4.9,"166":3.6,"167":2.8,"168":2.4,"169":2.45,"170":3.05,"171":4.0,"172":4.0,"173":4.8,"174":5.6,"175":5.0}}
+</Forecast>
+
+

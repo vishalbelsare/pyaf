@@ -1,0 +1,54 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['Signal'], 'Horizons': {'Signal': 7}}
+INFO:pyaf.std:TRAINING_ENGINE_END 28.615
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=2016-01-25T00:00:00.000000 TimeMax=2023-12-07T00:00:00.000000 TimeDelta=<DateOffset: days=1> Horizon=7
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='Signal' Length=3600  Min=0.0 Max=1.115445  Mean=0.328331 StdDev=0.385779
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_Signal' Min=0.0 Max=1.0  Mean=0.29435 StdDev=0.345852
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_Signal_LinearTrend_residue_Cycle_None_residue_AR(64)' [LinearTrend + Cycle_None + AR]
+INFO:pyaf.std:TREND_DETAIL '_Signal_LinearTrend' [LinearTrend]
+INFO:pyaf.std:CYCLE_DETAIL '_Signal_LinearTrend_residue_Cycle_None' [Cycle_None]
+INFO:pyaf.std:AUTOREG_DETAIL '_Signal_LinearTrend_residue_Cycle_None_residue_AR(64)' [AR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(18179.5765), 'RMSE': np.float64(0.0196), 'MAE': np.float64(0.014), 'MASE': np.float64(0.7242)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(554.6824), 'RMSE': np.float64(0.0206), 'MAE': np.float64(0.0145), 'MASE': np.float64(0.7332)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(100.8845), 'RMSE': np.float64(0.0321), 'MAE': np.float64(0.029), 'MASE': np.float64(0.965)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=7 {'MAPE': np.float64(224753.7956), 'RMSE': np.float64(0.0955), 'MAE': np.float64(0.0705), 'MASE': np.float64(3.6436)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=7 {'MAPE': np.float64(1810.3005), 'RMSE': np.float64(0.0974), 'MAE': np.float64(0.0701), 'MASE': np.float64(3.5444)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=7 {'MAPE': np.float64(175.8954), 'RMSE': np.float64(0.0812), 'MAE': np.float64(0.0744), 'MASE': np.float64(2.478)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'S', 'Cycle': 'S', 'AR': 'L'} [LSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:LINEAR_RIDGE_TREND LinearTrend (np.float64(0.319325), array([-0.048852]))
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:BEST_CYCLE_LENGTH_VALUES _Signal_LinearTrend_residue_Cycle_None None -0.243951 {}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_COEFF 1 _Signal_LinearTrend_residue_Cycle_None_residue_Lag1 0.641234
+INFO:pyaf.std:AR_MODEL_COEFF 2 _Signal_LinearTrend_residue_Cycle_None_residue_Lag2 0.415431
+INFO:pyaf.std:AR_MODEL_COEFF 3 _Signal_LinearTrend_residue_Cycle_None_residue_Lag3 0.170523
+INFO:pyaf.std:AR_MODEL_COEFF 4 _Signal_LinearTrend_residue_Cycle_None_residue_Lag7 -0.100889
+INFO:pyaf.std:AR_MODEL_COEFF 5 _Signal_LinearTrend_residue_Cycle_None_residue_Lag6 -0.073975
+INFO:pyaf.std:AR_MODEL_COEFF 6 _Signal_LinearTrend_residue_Cycle_None_residue_Lag64 -0.061583
+INFO:pyaf.std:AR_MODEL_COEFF 7 _Signal_LinearTrend_residue_Cycle_None_residue_Lag4 0.048026
+INFO:pyaf.std:AR_MODEL_COEFF 8 _Signal_LinearTrend_residue_Cycle_None_residue_Lag20 -0.044807
+INFO:pyaf.std:AR_MODEL_COEFF 9 _Signal_LinearTrend_residue_Cycle_None_residue_Lag18 0.044547
+INFO:pyaf.std:AR_MODEL_COEFF 10 _Signal_LinearTrend_residue_Cycle_None_residue_Lag62 0.044296
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'Signal'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Signal' 0 {'Transformation': '_Signal', 'DecompositionType': 'T+S+R', 'Model': '_Signal_LinearTrend_residue_Cycle_None_residue_AR(64)', 'Voting': 108.0, 'Complexity': 'LSSSS', 'Forecast_MASE_1': 0.7332, 'Forecast_MASE_2': 0.9213, 'Forecast_MASE_3': 1.2139, 'Forecast_MASE_4': 1.6099, 'Forecast_MASE_5': 2.0905, 'Forecast_MASE_6': 2.7067, 'Forecast_MASE_7': 3.5444}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Signal' 1 {'Transformation': '_Signal', 'DecompositionType': 'T+S+R', 'Model': '_Signal_LinearTrend_residue_zeroCycle[0.0]_residue_AR(64)', 'Voting': 108.0, 'Complexity': 'LSSSS', 'Forecast_MASE_1': 0.7332, 'Forecast_MASE_2': 0.9213, 'Forecast_MASE_3': 1.2139, 'Forecast_MASE_4': 1.6099, 'Forecast_MASE_5': 2.0905, 'Forecast_MASE_6': 2.7067, 'Forecast_MASE_7': 3.5444}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'Signal'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/issue_69_Signal_with_rectifier_Signal_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/issue_69_Signal_with_rectifier_Signal_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/issue_69_Signal_with_rectifier_Signal_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/issue_69_Signal_with_rectifier_Signal_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/issue_69_Signal_with_rectifier_Signal_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/issue_69_Signal_with_rectifier_Signal_prediction_intervals_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/issue_69_Signal_with_rectifier_Signal_quantiles_output.png')
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['Signal'], 'Horizons': {'Signal': 7}}
+INFO:pyaf.std:FORECASTING_ENGINE_END 0.81
+MIN__FORECAST 0.0
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/bugs/issue_69/issue_69_example_1_with_rectifier.py', 'ElapsedTimeSecs':(61.02, 0.44, 10.27), 'MAX_MEM_KB':227760, 'CPU_PRCNT':'17%', 'FILES_IN':8, 'FILES_OUT':1800, 'EXIT_STATUS':0}

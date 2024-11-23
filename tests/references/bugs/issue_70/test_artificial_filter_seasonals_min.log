@@ -1,0 +1,402 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['Signal'], 'Horizons': {'Signal': 12}}
+TRYING_TO_LOAD_RANDOM_DATASET Signal_40000_min_0_constant_24_None_0.1_0 data/ARTIFICIAL_DATA/40000/Signal_40000_min_0_constant_24_None_0.1_0
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+INFO:pyaf.std:PERF_DUMP_START
+INFO:pyaf.std:[
+    {
+        "Category": "NoTransf_LinearTrend_Cycle_24_NoAR",
+        "Complexity": "SSSSS",
+        "DetailedFormula": [
+            "_Signal",
+            "T+S+R",
+            null,
+            "_Signal_LinearTrend_residue_Cycle_24_residue_NoAR"
+        ],
+        "Forecast_MASE_1": 0.2326,
+        "Forecast_MASE_10": 0.2326,
+        "Forecast_MASE_11": 0.2326,
+        "Forecast_MASE_12": 0.2326,
+        "Forecast_MASE_2": 0.2326,
+        "Forecast_MASE_3": 0.2326,
+        "Forecast_MASE_4": 0.2326,
+        "Forecast_MASE_5": 0.2326,
+        "Forecast_MASE_6": 0.2326,
+        "Forecast_MASE_7": 0.2326,
+        "Forecast_MASE_8": 0.2326,
+        "Forecast_MASE_9": 0.2326,
+        "Model": "_Signal_LinearTrend_residue_Cycle_24_residue_NoAR",
+        "Voting": 617.5
+    },
+    {
+        "Category": "NoTransf_PolyTrend_Cycle_24_NoAR",
+        "Complexity": "MSSSS",
+        "DetailedFormula": [
+            "_Signal",
+            "T+S+R",
+            null,
+            "_Signal_PolyTrend_residue_Cycle_24_residue_NoAR"
+        ],
+        "Forecast_MASE_1": 0.234,
+        "Forecast_MASE_10": 0.234,
+        "Forecast_MASE_11": 0.234,
+        "Forecast_MASE_12": 0.234,
+        "Forecast_MASE_2": 0.234,
+        "Forecast_MASE_3": 0.234,
+        "Forecast_MASE_4": 0.234,
+        "Forecast_MASE_5": 0.234,
+        "Forecast_MASE_6": 0.234,
+        "Forecast_MASE_7": 0.234,
+        "Forecast_MASE_8": 0.234,
+        "Forecast_MASE_9": 0.234,
+        "Model": "_Signal_PolyTrend_residue_Cycle_24_residue_NoAR",
+        "Voting": 617.5
+    },
+    {
+        "Category": "NoTransf_LinearTrend_Cycle_24_AR",
+        "Complexity": "LSSSS",
+        "DetailedFormula": [
+            "_Signal",
+            "T+S+R",
+            null,
+            "_Signal_LinearTrend_residue_Cycle_24_residue_AR(64)"
+        ],
+        "Forecast_MASE_1": 0.2341,
+        "Forecast_MASE_10": 0.2327,
+        "Forecast_MASE_11": 0.2327,
+        "Forecast_MASE_12": 0.2327,
+        "Forecast_MASE_2": 0.2327,
+        "Forecast_MASE_3": 0.2327,
+        "Forecast_MASE_4": 0.2327,
+        "Forecast_MASE_5": 0.2327,
+        "Forecast_MASE_6": 0.2327,
+        "Forecast_MASE_7": 0.2327,
+        "Forecast_MASE_8": 0.2327,
+        "Forecast_MASE_9": 0.2327,
+        "Model": "_Signal_LinearTrend_residue_Cycle_24_residue_AR(64)",
+        "Voting": 617.5
+    },
+    {
+        "Category": "NoTransf_PolyTrend_Cycle_24_AR",
+        "Complexity": "LMSSS",
+        "DetailedFormula": [
+            "_Signal",
+            "T+S+R",
+            null,
+            "_Signal_PolyTrend_residue_Cycle_24_residue_AR(64)"
+        ],
+        "Forecast_MASE_1": 0.2357,
+        "Forecast_MASE_10": 0.2343,
+        "Forecast_MASE_11": 0.2343,
+        "Forecast_MASE_12": 0.2343,
+        "Forecast_MASE_2": 0.2343,
+        "Forecast_MASE_3": 0.2343,
+        "Forecast_MASE_4": 0.2343,
+        "Forecast_MASE_5": 0.2343,
+        "Forecast_MASE_6": 0.2343,
+        "Forecast_MASE_7": 0.2343,
+        "Forecast_MASE_8": 0.2343,
+        "Forecast_MASE_9": 0.2343,
+        "Model": "_Signal_PolyTrend_residue_Cycle_24_residue_AR(64)",
+        "Voting": 617.5
+    },
+    {
+        "Category": "NoTransf_Lag1Trend_Cycle_24_AR",
+        "Complexity": "LSSSS",
+        "DetailedFormula": [
+            "_Signal",
+            "T+S+R",
+            null,
+            "_Signal_Lag1Trend_residue_Cycle_24_residue_AR(64)"
+        ],
+        "Forecast_MASE_1": 0.2505,
+        "Forecast_MASE_10": 0.2515,
+        "Forecast_MASE_11": 0.2512,
+        "Forecast_MASE_12": 0.2502,
+        "Forecast_MASE_2": 0.2458,
+        "Forecast_MASE_3": 0.2462,
+        "Forecast_MASE_4": 0.2468,
+        "Forecast_MASE_5": 0.2463,
+        "Forecast_MASE_6": 0.2459,
+        "Forecast_MASE_7": 0.2465,
+        "Forecast_MASE_8": 0.2475,
+        "Forecast_MASE_9": 0.2501,
+        "Model": "_Signal_Lag1Trend_residue_Cycle_24_residue_AR(64)",
+        "Voting": 591.5
+    },
+    {
+        "Category": "NoTransf_ConstantTrend_Seasonal_Minute_AR",
+        "Complexity": "LLSSS",
+        "DetailedFormula": [
+            "_Signal",
+            "T+S+R",
+            null,
+            "_Signal_ConstantTrend_residue_Seasonal_Minute_residue_AR(64)"
+        ],
+        "Forecast_MASE_1": 0.2737,
+        "Forecast_MASE_10": 0.323,
+        "Forecast_MASE_11": 0.3315,
+        "Forecast_MASE_12": 0.3397,
+        "Forecast_MASE_2": 0.2711,
+        "Forecast_MASE_3": 0.2692,
+        "Forecast_MASE_4": 0.2754,
+        "Forecast_MASE_5": 0.2842,
+        "Forecast_MASE_6": 0.2929,
+        "Forecast_MASE_7": 0.3006,
+        "Forecast_MASE_8": 0.3077,
+        "Forecast_MASE_9": 0.3151,
+        "Model": "_Signal_ConstantTrend_residue_Seasonal_Minute_residue_AR(64)",
+        "Voting": 585.0
+    },
+    {
+        "Category": "NoTransf_ConstantTrend_Cycle_None_AR",
+        "Complexity": "LSSSS",
+        "DetailedFormula": [
+            "_Signal",
+            "T+S+R",
+            null,
+            "_Signal_ConstantTrend_residue_Cycle_None_residue_AR(64)"
+        ],
+        "Forecast_MASE_1": 0.276,
+        "Forecast_MASE_10": 0.3554,
+        "Forecast_MASE_11": 0.3656,
+        "Forecast_MASE_12": 0.3736,
+        "Forecast_MASE_2": 0.2742,
+        "Forecast_MASE_3": 0.2785,
+        "Forecast_MASE_4": 0.2886,
+        "Forecast_MASE_5": 0.3012,
+        "Forecast_MASE_6": 0.313,
+        "Forecast_MASE_7": 0.3231,
+        "Forecast_MASE_8": 0.3332,
+        "Forecast_MASE_9": 0.3443,
+        "Model": "_Signal_ConstantTrend_residue_Cycle_None_residue_AR(64)",
+        "Voting": 575.5
+    },
+    {
+        "Category": "NoTransf_ConstantTrend_NoCycle_AR",
+        "Complexity": "LSSSS",
+        "DetailedFormula": [
+            "_Signal",
+            "T+S+R",
+            null,
+            "_Signal_ConstantTrend_residue_zeroCycle[0.0]_residue_AR(64)"
+        ],
+        "Forecast_MASE_1": 0.276,
+        "Forecast_MASE_10": 0.3554,
+        "Forecast_MASE_11": 0.3656,
+        "Forecast_MASE_12": 0.3736,
+        "Forecast_MASE_2": 0.2742,
+        "Forecast_MASE_3": 0.2785,
+        "Forecast_MASE_4": 0.2886,
+        "Forecast_MASE_5": 0.3012,
+        "Forecast_MASE_6": 0.313,
+        "Forecast_MASE_7": 0.3231,
+        "Forecast_MASE_8": 0.3332,
+        "Forecast_MASE_9": 0.3443,
+        "Model": "_Signal_ConstantTrend_residue_zeroCycle[0.0]_residue_AR(64)",
+        "Voting": 575.5
+    },
+    {
+        "Category": "NoTransf_Lag1Trend_NoCycle_AR",
+        "Complexity": "LSSSS",
+        "DetailedFormula": [
+            "_Signal",
+            "T+S+R",
+            null,
+            "_Signal_Lag1Trend_residue_zeroCycle[0.0]_residue_AR(64)"
+        ],
+        "Forecast_MASE_1": 0.2764,
+        "Forecast_MASE_10": 0.3514,
+        "Forecast_MASE_11": 0.3615,
+        "Forecast_MASE_12": 0.3697,
+        "Forecast_MASE_2": 0.2737,
+        "Forecast_MASE_3": 0.2778,
+        "Forecast_MASE_4": 0.2873,
+        "Forecast_MASE_5": 0.2997,
+        "Forecast_MASE_6": 0.3106,
+        "Forecast_MASE_7": 0.3202,
+        "Forecast_MASE_8": 0.3301,
+        "Forecast_MASE_9": 0.3404,
+        "Model": "_Signal_Lag1Trend_residue_zeroCycle[0.0]_residue_AR(64)",
+        "Voting": 575.5
+    },
+    {
+        "Category": "NoTransf_LinearTrend_NoCycle_AR",
+        "Complexity": "LSSSS",
+        "DetailedFormula": [
+            "_Signal",
+            "T+S+R",
+            null,
+            "_Signal_LinearTrend_residue_zeroCycle[0.0]_residue_AR(64)"
+        ],
+        "Forecast_MASE_1": 0.2732,
+        "Forecast_MASE_10": 0.3503,
+        "Forecast_MASE_11": 0.3598,
+        "Forecast_MASE_12": 0.3676,
+        "Forecast_MASE_2": 0.2708,
+        "Forecast_MASE_3": 0.2757,
+        "Forecast_MASE_4": 0.2856,
+        "Forecast_MASE_5": 0.2978,
+        "Forecast_MASE_6": 0.3086,
+        "Forecast_MASE_7": 0.3192,
+        "Forecast_MASE_8": 0.3301,
+        "Forecast_MASE_9": 0.3402,
+        "Model": "_Signal_LinearTrend_residue_zeroCycle[0.0]_residue_AR(64)",
+        "Voting": 575.5
+    }
+]
+INFO:pyaf.std:PERF_DUMP_END
+INFO:pyaf.std:TRAINING_ENGINE_END 33.704
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=2000-01-23T01:56:00.000000 TimeMax=2000-01-27T14:59:00.000000 TimeDelta=<DateOffset: minutes=1> Horizon=12
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='Signal' Length=8192  Min=178.140756 Max=236.768208  Mean=206.580273 StdDev=12.835377
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_Signal' Min=0.0 Max=1.0  Mean=0.485089 StdDev=0.218931
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_Signal_LinearTrend_residue_Cycle_24_residue_NoAR' [LinearTrend + Cycle_24 + NoAR]
+INFO:pyaf.std:TREND_DETAIL '_Signal_LinearTrend' [LinearTrend]
+INFO:pyaf.std:CYCLE_DETAIL '_Signal_LinearTrend_residue_Cycle_24' [Cycle_24]
+INFO:pyaf.std:AUTOREG_DETAIL '_Signal_LinearTrend_residue_Cycle_24_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.0059), 'RMSE': np.float64(1.4836), 'MAE': np.float64(1.1822), 'MASE': np.float64(0.2385)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.0053), 'RMSE': np.float64(1.4918), 'MAE': np.float64(1.1765), 'MASE': np.float64(0.2326)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.0042), 'RMSE': np.float64(1.1542), 'MAE': np.float64(0.95), 'MASE': np.float64(0.2658)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=12 {'MAPE': np.float64(0.0059), 'RMSE': np.float64(1.4836), 'MAE': np.float64(1.1822), 'MASE': np.float64(0.2385)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=12 {'MAPE': np.float64(0.0053), 'RMSE': np.float64(1.4918), 'MAE': np.float64(1.1765), 'MASE': np.float64(0.2326)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=12 {'MAPE': np.float64(0.0042), 'RMSE': np.float64(1.1542), 'MAE': np.float64(0.95), 'MASE': np.float64(0.2658)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'S', 'Cycle': 'S', 'AR': 'S'} [SSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:LINEAR_RIDGE_TREND LinearTrend (np.float64(0.1286), array([0.569994]))
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:BEST_CYCLE_LENGTH_VALUES _Signal_LinearTrend_residue_Cycle_24 24 -0.001883 {0: np.float64(0.082448), 1: np.float64(0.066249), 2: np.float64(0.034393), 3: np.float64(0.067772), 4: np.float64(-0.104586), 5: np.float64(-0.056944), 6: np.float64(-0.03625), 7: np.float64(0.069043), 8: np.float64(0.093011), 9: np.float64(0.057116), 10: np.float64(-0.090091), 11: np.float64(0.113961), 12: np.float64(-0.067616), 13: np.float64(-0.004419), 14: np.float64(-0.119197), 15: np.float64(-0.069445), 16: np.float64(-0.057856), 17: np.float64(0.108751), 18: np.float64(0.022061), 19: np.float64(0.047254), 20: np.float64(-0.0793), 21: np.float64(0.002833), 22: np.float64(-0.049543), 23: np.float64(-0.038238)}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'Signal'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Signal' 0 {'Transformation': '_Signal', 'DecompositionType': 'T+S+R', 'Model': '_Signal_LinearTrend_residue_Cycle_24_residue_NoAR', 'Voting': 617.5, 'Complexity': 'SSSSS', 'Forecast_MASE_1': 0.2326, 'Forecast_MASE_2': 0.2326, 'Forecast_MASE_3': 0.2326, 'Forecast_MASE_4': 0.2326, 'Forecast_MASE_5': 0.2326, 'Forecast_MASE_6': 0.2326, 'Forecast_MASE_7': 0.2326, 'Forecast_MASE_8': 0.2326, 'Forecast_MASE_9': 0.2326, 'Forecast_MASE_10': 0.2326, 'Forecast_MASE_11': 0.2326, 'Forecast_MASE_12': 0.2326}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Signal' 1 {'Transformation': '_Signal', 'DecompositionType': 'T+S+R', 'Model': '_Signal_PolyTrend_residue_Cycle_24_residue_NoAR', 'Voting': 617.5, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.234, 'Forecast_MASE_2': 0.234, 'Forecast_MASE_3': 0.234, 'Forecast_MASE_4': 0.234, 'Forecast_MASE_5': 0.234, 'Forecast_MASE_6': 0.234, 'Forecast_MASE_7': 0.234, 'Forecast_MASE_8': 0.234, 'Forecast_MASE_9': 0.234, 'Forecast_MASE_10': 0.234, 'Forecast_MASE_11': 0.234, 'Forecast_MASE_12': 0.234}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Signal' 2 {'Transformation': '_Signal', 'DecompositionType': 'T+S+R', 'Model': '_Signal_LinearTrend_residue_Cycle_24_residue_AR(64)', 'Voting': 617.5, 'Complexity': 'LSSSS', 'Forecast_MASE_1': 0.2341, 'Forecast_MASE_2': 0.2327, 'Forecast_MASE_3': 0.2327, 'Forecast_MASE_4': 0.2327, 'Forecast_MASE_5': 0.2327, 'Forecast_MASE_6': 0.2327, 'Forecast_MASE_7': 0.2327, 'Forecast_MASE_8': 0.2327, 'Forecast_MASE_9': 0.2327, 'Forecast_MASE_10': 0.2327, 'Forecast_MASE_11': 0.2327, 'Forecast_MASE_12': 0.2327}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Signal' 3 {'Transformation': '_Signal', 'DecompositionType': 'T+S+R', 'Model': '_Signal_PolyTrend_residue_Cycle_24_residue_AR(64)', 'Voting': 617.5, 'Complexity': 'LMSSS', 'Forecast_MASE_1': 0.2357, 'Forecast_MASE_2': 0.2343, 'Forecast_MASE_3': 0.2343, 'Forecast_MASE_4': 0.2343, 'Forecast_MASE_5': 0.2343, 'Forecast_MASE_6': 0.2343, 'Forecast_MASE_7': 0.2343, 'Forecast_MASE_8': 0.2343, 'Forecast_MASE_9': 0.2343, 'Forecast_MASE_10': 0.2343, 'Forecast_MASE_11': 0.2343, 'Forecast_MASE_12': 0.2343}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'Signal'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/artificial_ds_filter_seasonals_min_Signal_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/artificial_ds_filter_seasonals_min_Signal_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/artificial_ds_filter_seasonals_min_Signal_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/artificial_ds_filter_seasonals_min_Signal_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/artificial_ds_filter_seasonals_min_Signal_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/artificial_ds_filter_seasonals_min_Signal_prediction_intervals_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/artificial_ds_filter_seasonals_min_Signal_quantiles_output.png')
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/bugs/issue_70/test_artificial_filter_seasonals_min.py', 'ElapsedTimeSecs':(63.41, 1.06, 29.63), 'MAX_MEM_KB':270464, 'CPU_PRCNT':'48%', 'FILES_IN':8, 'FILES_OUT':2672, 'EXIT_STATUS':0}

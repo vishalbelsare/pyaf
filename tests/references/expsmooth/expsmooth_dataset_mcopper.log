@@ -1,0 +1,163 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['mcopper'], 'Horizons': {'mcopper': 2}}
+INFO:pyaf.std:TRAINING_ENGINE_END 2.586
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=1960.0 TimeMax=1997.33333333333 TimeDelta=0.08333333333332606 Horizon=2
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='mcopper' Length=564  Min=216.6 Max=4306.0  Mean=997.810461 StdDev=606.066125
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_mcopper' Min=0.0 Max=1.0  Mean=0.191033 StdDev=0.148204
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_mcopper_Lag1Trend_residue_Cycle_5_residue_NoAR' [Lag1Trend + Cycle_5 + NoAR]
+INFO:pyaf.std:TREND_DETAIL '_mcopper_Lag1Trend' [Lag1Trend]
+INFO:pyaf.std:CYCLE_DETAIL '_mcopper_Lag1Trend_residue_Cycle_5' [Cycle_5]
+INFO:pyaf.std:AUTOREG_DETAIL '_mcopper_Lag1Trend_residue_Cycle_5_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.0483), 'RMSE': np.float64(63.542), 'MAE': np.float64(42.4913), 'MASE': np.float64(0.992)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.0399), 'RMSE': np.float64(120.4684), 'MAE': np.float64(66.3177), 'MASE': np.float64(0.9961)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.0788), 'RMSE': np.float64(284.4568), 'MAE': np.float64(281.45), 'MASE': np.float64(1.1722)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=2 {'MAPE': np.float64(0.079), 'RMSE': np.float64(103.0063), 'MAE': np.float64(69.055), 'MASE': np.float64(1.6122)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=2 {'MAPE': np.float64(0.0646), 'RMSE': np.float64(185.2332), 'MAE': np.float64(104.9102), 'MASE': np.float64(1.5758)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=2 {'MAPE': np.float64(0.1315), 'RMSE': np.float64(474.2115), 'MAE': np.float64(463.725), 'MASE': np.float64(1.9314)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'S', 'Cycle': 'S', 'AR': 'S'} [SSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:LAG1_TREND Lag1Trend 0.009439
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:BEST_CYCLE_LENGTH_VALUES _mcopper_Lag1Trend_residue_Cycle_5 5 0.000391 {0: np.float64(0.001944), 1: np.float64(0.001846), 2: np.float64(0.0), 3: np.float64(2.4e-05), 4: np.float64(0.0)}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'mcopper'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'mcopper' 0 {'Transformation': '_mcopper', 'DecompositionType': 'T+S+R', 'Model': '_mcopper_Lag1Trend_residue_Cycle_5_residue_NoAR', 'Voting': 94.5, 'Complexity': 'SSSSS', 'Forecast_MASE_1': 0.9961, 'Forecast_MASE_2': 1.5758}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'mcopper'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/expsmooth_mcopper.csv_2_mcopper_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/expsmooth_mcopper.csv_2_mcopper_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/expsmooth_mcopper.csv_2_mcopper_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/expsmooth_mcopper.csv_2_mcopper_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/expsmooth_mcopper.csv_2_mcopper_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/expsmooth_mcopper.csv_2_mcopper_prediction_intervals_output.png')
+/home/runner/work/pyaf/pyaf/pyaf/TS/Plots.py:35: UserWarning: Tight layout not applied. The bottom and top margins cannot be made large enough to accommodate all Axes decorations.
+  fig.tight_layout()
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/expsmooth_mcopper.csv_2_mcopper_quantiles_output.png')
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['mcopper'], 'Horizons': {'mcopper': 4}}
+PERFORMANCE MAPE_FORECAST mcopper 0.0646
+INFO:pyaf.std:TRAINING_ENGINE_END 2.984
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=1960.0 TimeMax=1997.25 TimeDelta=0.08333333333333333 Horizon=4
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='mcopper' Length=564  Min=216.6 Max=4306.0  Mean=997.810461 StdDev=606.066125
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_mcopper' Min=0.0 Max=1.0  Mean=0.191033 StdDev=0.148204
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_mcopper_Lag1Trend_residue_Cycle_5_residue_NoAR' [Lag1Trend + Cycle_5 + NoAR]
+INFO:pyaf.std:TREND_DETAIL '_mcopper_Lag1Trend' [Lag1Trend]
+INFO:pyaf.std:CYCLE_DETAIL '_mcopper_Lag1Trend_residue_Cycle_5' [Cycle_5]
+INFO:pyaf.std:AUTOREG_DETAIL '_mcopper_Lag1Trend_residue_Cycle_5_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.0483), 'RMSE': np.float64(63.5187), 'MAE': np.float64(42.4228), 'MASE': np.float64(0.992)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.0405), 'RMSE': np.float64(121.097), 'MAE': np.float64(66.8839), 'MASE': np.float64(0.9974)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.0442), 'RMSE': np.float64(202.9466), 'MAE': np.float64(159.875), 'MASE': np.float64(0.8033)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=4 {'MAPE': np.float64(0.1204), 'RMSE': np.float64(145.9152), 'MAE': np.float64(102.2856), 'MASE': np.float64(2.3918)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=4 {'MAPE': np.float64(0.1062), 'RMSE': np.float64(297.0488), 'MAE': np.float64(176.3388), 'MASE': np.float64(2.6297)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=4 {'MAPE': np.float64(0.104), 'RMSE': np.float64(434.5816), 'MAE': np.float64(379.0125), 'MASE': np.float64(1.9043)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'S', 'Cycle': 'S', 'AR': 'S'} [SSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:LAG1_TREND Lag1Trend 0.009439
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:BEST_CYCLE_LENGTH_VALUES _mcopper_Lag1Trend_residue_Cycle_5 5 0.000391 {0: np.float64(0.001944), 1: np.float64(0.001846), 2: np.float64(0.0), 3: np.float64(0.0), 4: np.float64(0.0)}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'mcopper'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'mcopper' 0 {'Transformation': '_mcopper', 'DecompositionType': 'T+S+R', 'Model': '_mcopper_Lag1Trend_residue_Cycle_5_residue_NoAR', 'Voting': 157.5, 'Complexity': 'SSSSS', 'Forecast_MASE_1': 0.9974, 'Forecast_MASE_2': 1.5534, 'Forecast_MASE_3': 2.1311, 'Forecast_MASE_4': 2.6297}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'mcopper'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/expsmooth_mcopper.csv_4_mcopper_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/expsmooth_mcopper.csv_4_mcopper_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/expsmooth_mcopper.csv_4_mcopper_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/expsmooth_mcopper.csv_4_mcopper_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/expsmooth_mcopper.csv_4_mcopper_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/expsmooth_mcopper.csv_4_mcopper_prediction_intervals_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/expsmooth_mcopper.csv_4_mcopper_quantiles_output.png')
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['mcopper'], 'Horizons': {'mcopper': 8}}
+PERFORMANCE MAPE_FORECAST mcopper 0.1062
+INFO:pyaf.std:TRAINING_ENGINE_END 7.423
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=1960.0 TimeMax=1996.91666666667 TimeDelta=0.08333333333334068 Horizon=8
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='mcopper' Length=564  Min=216.6 Max=4306.0  Mean=997.810461 StdDev=606.066125
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_mcopper' Min=0.0 Max=1.0  Mean=0.191033 StdDev=0.148204
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_mcopper_Lag1Trend_residue_Cycle_5_residue_NoAR' [Lag1Trend + Cycle_5 + NoAR]
+INFO:pyaf.std:TREND_DETAIL '_mcopper_Lag1Trend' [Lag1Trend]
+INFO:pyaf.std:CYCLE_DETAIL '_mcopper_Lag1Trend_residue_Cycle_5' [Cycle_5]
+INFO:pyaf.std:AUTOREG_DETAIL '_mcopper_Lag1Trend_residue_Cycle_5_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.0484), 'RMSE': np.float64(63.5901), 'MAE': np.float64(42.4347), 'MASE': np.float64(0.9927)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.0383), 'RMSE': np.float64(91.0855), 'MAE': np.float64(55.1616), 'MASE': np.float64(1.0027)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.0667), 'RMSE': np.float64(333.8831), 'MAE': np.float64(264.85), 'MASE': np.float64(1.3095)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=8 {'MAPE': np.float64(0.1786), 'RMSE': np.float64(201.1533), 'MAE': np.float64(146.3441), 'MASE': np.float64(3.4234)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=8 {'MAPE': np.float64(0.1585), 'RMSE': np.float64(316.4719), 'MAE': np.float64(225.3188), 'MASE': np.float64(4.0957)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=8 {'MAPE': np.float64(0.3147), 'RMSE': np.float64(1392.1202), 'MAE': np.float64(1273.4125), 'MASE': np.float64(6.296)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'S', 'Cycle': 'S', 'AR': 'S'} [SSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:LAG1_TREND Lag1Trend 0.009439
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:BEST_CYCLE_LENGTH_VALUES _mcopper_Lag1Trend_residue_Cycle_5 5 0.000391 {0: np.float64(0.001932), 1: np.float64(0.001663), 2: np.float64(0.0), 3: np.float64(0.0), 4: np.float64(0.0)}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'mcopper'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'mcopper' 0 {'Transformation': '_mcopper', 'DecompositionType': 'T+S+R', 'Model': '_mcopper_Lag1Trend_residue_Cycle_5_residue_NoAR', 'Voting': 283.5, 'Complexity': 'SSSSS', 'Forecast_MASE_1': 1.0027, 'Forecast_MASE_2': 1.623, 'Forecast_MASE_3': 2.1621, 'Forecast_MASE_4': 2.6191, 'Forecast_MASE_5': 3.054, 'Forecast_MASE_6': 3.4434, 'Forecast_MASE_7': 3.7914, 'Forecast_MASE_8': 4.0957}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'mcopper'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/expsmooth_mcopper.csv_8_mcopper_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/expsmooth_mcopper.csv_8_mcopper_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/expsmooth_mcopper.csv_8_mcopper_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/expsmooth_mcopper.csv_8_mcopper_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/expsmooth_mcopper.csv_8_mcopper_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/expsmooth_mcopper.csv_8_mcopper_prediction_intervals_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/expsmooth_mcopper.csv_8_mcopper_quantiles_output.png')
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['mcopper'], 'Horizons': {'mcopper': 12}}
+PERFORMANCE MAPE_FORECAST mcopper 0.1585
+INFO:pyaf.std:TRAINING_ENGINE_END 11.741
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=1960.0 TimeMax=1996.66666666667 TimeDelta=0.08333333333334074 Horizon=12
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='mcopper' Length=564  Min=216.6 Max=4306.0  Mean=997.810461 StdDev=606.066125
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_mcopper' Min=0.0 Max=1.0  Mean=0.191033 StdDev=0.148204
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_mcopper_Lag1Trend_residue_Cycle_5_residue_NoAR' [Lag1Trend + Cycle_5 + NoAR]
+INFO:pyaf.std:TREND_DETAIL '_mcopper_Lag1Trend' [Lag1Trend]
+INFO:pyaf.std:CYCLE_DETAIL '_mcopper_Lag1Trend_residue_Cycle_5' [Cycle_5]
+INFO:pyaf.std:AUTOREG_DETAIL '_mcopper_Lag1Trend_residue_Cycle_5_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.0485), 'RMSE': np.float64(63.5826), 'MAE': np.float64(42.3932), 'MASE': np.float64(0.9923)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.037), 'RMSE': np.float64(63.3476), 'MAE': np.float64(48.1095), 'MASE': np.float64(0.9891)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.0691), 'RMSE': np.float64(339.9181), 'MAE': np.float64(258.3417), 'MASE': np.float64(0.9335)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=12 {'MAPE': np.float64(0.2166), 'RMSE': np.float64(229.7738), 'MAE': np.float64(174.07), 'MASE': np.float64(4.0743)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=12 {'MAPE': np.float64(0.1973), 'RMSE': np.float64(314.4869), 'MAE': np.float64(252.9833), 'MASE': np.float64(5.2012)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=12 {'MAPE': np.float64(0.4236), 'RMSE': np.float64(1650.2819), 'MAE': np.float64(1570.2458), 'MASE': np.float64(5.6742)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'S', 'Cycle': 'S', 'AR': 'S'} [SSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:LAG1_TREND Lag1Trend 0.009439
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:BEST_CYCLE_LENGTH_VALUES _mcopper_Lag1Trend_residue_Cycle_5 5 0.000391 {0: np.float64(0.001932), 1: np.float64(0.001846), 2: np.float64(0.0), 3: np.float64(0.0), 4: np.float64(0.0)}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'mcopper'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'mcopper' 0 {'Transformation': '_mcopper', 'DecompositionType': 'T+S+R', 'Model': '_mcopper_Lag1Trend_residue_Cycle_5_residue_NoAR', 'Voting': 409.5, 'Complexity': 'SSSSS', 'Forecast_MASE_1': 0.9891, 'Forecast_MASE_2': 1.6406, 'Forecast_MASE_3': 2.1388, 'Forecast_MASE_4': 2.5774, 'Forecast_MASE_5': 3.0563, 'Forecast_MASE_6': 3.4827, 'Forecast_MASE_7': 3.8656, 'Forecast_MASE_8': 4.1267, 'Forecast_MASE_9': 4.4326, 'Forecast_MASE_10': 4.6984, 'Forecast_MASE_11': 4.9895, 'Forecast_MASE_12': 5.2012}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'mcopper'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/expsmooth_mcopper.csv_12_mcopper_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/expsmooth_mcopper.csv_12_mcopper_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/expsmooth_mcopper.csv_12_mcopper_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/expsmooth_mcopper.csv_12_mcopper_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/expsmooth_mcopper.csv_12_mcopper_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/expsmooth_mcopper.csv_12_mcopper_prediction_intervals_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/expsmooth_mcopper.csv_12_mcopper_quantiles_output.png')
+PERFORMANCE MAPE_FORECAST mcopper 0.1973
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/expsmooth/expsmooth_dataset_mcopper.py', 'ElapsedTimeSecs':(63.49, 1.22, 33.05), 'MAX_MEM_KB':251292, 'CPU_PRCNT':'53%', 'FILES_IN':8, 'FILES_OUT':5992, 'EXIT_STATUS':0}

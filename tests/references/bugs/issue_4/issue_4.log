@@ -1,0 +1,119 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['Close'], 'Horizons': {'Close': 7}}
+<class 'pandas.core.frame.DataFrame'>
+Index: 1258 entries, 1257 to 0
+Data columns (total 9 columns):
+ #   Column      Non-Null Count  Dtype        
+---  ------      --------------  -----        
+ 0   Unnamed: 0  1258 non-null   int64        
+ 1   Symbol      1258 non-null   object       
+ 2   Adj_Close   1258 non-null   float64      
+ 3   High        1258 non-null   float64      
+ 4   Low         1258 non-null   float64      
+ 5   Volume      1258 non-null   int64        
+ 6   Open        1258 non-null   float64      
+ 7   Date        1258 non-null   datetime64[s]
+ 8   Close       1258 non-null   float64      
+dtypes: datetime64[s](1), float64(5), int64(2), object(1)
+memory usage: 98.3+ KB
+      Unnamed: 0 Symbol  Adj_Close  ...        Open       Date       Close
+1257        1257   AAPL  51.523488  ...  391.619991 2011-07-28  391.819996
+1256        1256   AAPL  51.347280  ...  387.640007 2011-07-29  390.479992
+1255        1255   AAPL  52.171771  ...  397.779999 2011-08-01  396.749989
+1254        1254   AAPL  51.140829  ...  397.650009 2011-08-02  388.909996
+1253        1253   AAPL  51.622111  ...  390.980003 2011-08-03  392.570000
+
+[5 rows x 9 columns]
+DEBUG:pyaf.detailed:DETAIL_MESSAGE('KEPT_DISCARDED_MODELS', 168, 146, 22)
+INFO:pyaf.std:TRAINING_ENGINE_END 36.651
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=2011-07-28T00:00:00.000000 TimeMax=2015-07-20T00:00:00.000000 TimeDelta=<DateOffset: days=1> Horizon=7
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='Close' Length=1258  Min=90.279999 Max=702.100021  Mean=337.341653 StdDev=207.088144
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_Close' Min=0.0 Max=1.0  Mean=0.403814 StdDev=0.338479
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_Close_Lag1Trend_residue_zeroCycle[0.0]_residue_NoAR' [Lag1Trend + NoCycle + NoAR]
+INFO:pyaf.std:TREND_DETAIL '_Close_Lag1Trend' [Lag1Trend]
+INFO:pyaf.std:CYCLE_DETAIL '_Close_Lag1Trend_residue_zeroCycle[0.0]' [NoCycle]
+INFO:pyaf.std:AUTOREG_DETAIL '_Close_Lag1Trend_residue_zeroCycle[0.0]_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.018), 'RMSE': np.float64(19.1098), 'MAE': np.float64(5.5126), 'MASE': np.float64(0.999)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.0129), 'RMSE': np.float64(1.8972), 'MAE': np.float64(1.3764), 'MASE': np.float64(0.9998)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.0137), 'RMSE': np.float64(2.4644), 'MAE': np.float64(1.3857), 'MASE': np.float64(0.8607)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=7 {'MAPE': np.float64(0.0764), 'RMSE': np.float64(50.227), 'MAE': np.float64(18.6467), 'MASE': np.float64(3.3792)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=7 {'MAPE': np.float64(0.0344), 'RMSE': np.float64(4.7224), 'MAE': np.float64(3.6422), 'MASE': np.float64(2.6457)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=7 {'MAPE': np.float64(0.0239), 'RMSE': np.float64(2.4666), 'MAE': np.float64(2.3786), 'MASE': np.float64(1.4774)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'S', 'Cycle': 'S', 'AR': 'S'} [SSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:LAG1_TREND Lag1Trend 0.492857
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:ZERO_CYCLE_MODEL_VALUES _Close_Lag1Trend_residue_zeroCycle[0.0] 0.0 {}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'Close'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Close' 0 {'Transformation': '_Close', 'DecompositionType': 'T+S+R', 'Model': '_Close_Lag1Trend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 580.0, 'Complexity': 'SSSSS', 'Forecast_MASE_1': 0.9998, 'Forecast_MASE_2': 1.4499, 'Forecast_MASE_3': 1.8043, 'Forecast_MASE_4': 2.0854, 'Forecast_MASE_5': 2.2841, 'Forecast_MASE_6': 2.4885, 'Forecast_MASE_7': 2.6457}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Close' 1 {'Transformation': 'CumSum_Close', 'DecompositionType': 'T+S+R', 'Model': 'CumSum_Close_Lag1Trend_residue_Cycle_None_residue_NoAR', 'Voting': 580.0, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.9998, 'Forecast_MASE_2': 1.4499, 'Forecast_MASE_3': 1.8043, 'Forecast_MASE_4': 2.0854, 'Forecast_MASE_5': 2.2841, 'Forecast_MASE_6': 2.4885, 'Forecast_MASE_7': 2.6457}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Close' 2 {'Transformation': 'CumSum_Close', 'DecompositionType': 'T+S+R', 'Model': 'CumSum_Close_Lag1Trend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 580.0, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.9998, 'Forecast_MASE_2': 1.4499, 'Forecast_MASE_3': 1.8043, 'Forecast_MASE_4': 2.0854, 'Forecast_MASE_5': 2.2841, 'Forecast_MASE_6': 2.4885, 'Forecast_MASE_7': 2.6457}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Close' 3 {'Transformation': 'Diff_Close', 'DecompositionType': 'T+S+R', 'Model': 'Diff_Close_Lag1Trend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 580.0, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.9998, 'Forecast_MASE_2': 1.4499, 'Forecast_MASE_3': 1.8043, 'Forecast_MASE_4': 2.0854, 'Forecast_MASE_5': 2.2841, 'Forecast_MASE_6': 2.4885, 'Forecast_MASE_7': 2.6457}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Close' 4 {'Transformation': 'RelDiff_Close', 'DecompositionType': 'T+S+R', 'Model': 'RelDiff_Close_Lag1Trend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 580.0, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.9998, 'Forecast_MASE_2': 1.4499, 'Forecast_MASE_3': 1.8043, 'Forecast_MASE_4': 2.0854, 'Forecast_MASE_5': 2.2841, 'Forecast_MASE_6': 2.4885, 'Forecast_MASE_7': 2.6457}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'Close'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/yahoo_nasdaq_AAPL_Close_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/yahoo_nasdaq_AAPL_Close_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/yahoo_nasdaq_AAPL_Close_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/yahoo_nasdaq_AAPL_Close_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/yahoo_nasdaq_AAPL_Close_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/yahoo_nasdaq_AAPL_Close_prediction_intervals_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/yahoo_nasdaq_AAPL_Close_quantiles_output.png')
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['Close'], 'Horizons': {'Close': 7}}
+INFO:pyaf.std:FORECASTING_ENGINE_END 0.29
+Forecast Columns  Index(['Date', 'Close', 'Close_scaled', '_Close', 'row_number',
+       'Date_Normalized', '_Close_Lag1Trend', '_Close_Lag1Trend_residue',
+       '_Close_Lag1Trend_residue_zeroCycle[0.0]',
+       '_Close_Lag1Trend_residue_zeroCycle[0.0]_residue',
+       '_Close_Lag1Trend_residue_zeroCycle[0.0]_residue_NoAR',
+       '_Close_Lag1Trend_residue_zeroCycle[0.0]_residue_NoAR_residue',
+       'Close_Transformed', '_Close_Trend', '_Close_Trend_residue',
+       '_Close_Cycle', '_Close_Cycle_residue', '_Close_AR',
+       '_Close_AR_residue', '_Close_TransformedForecast', '_Close_Detrended',
+       '_Close_Deseasonalized', 'Close_TransformedForecast_inverted',
+       'Close_Forecast', '_Close_TransformedResidue', 'Close_Residue',
+       'Close_Forecast_Lower_Bound', 'Close_Forecast_Upper_Bound',
+       'Close_Forecast_Quantile_2', 'Close_Forecast_Quantile_8',
+       'Close_Forecast_Quantile_14', 'Close_Forecast_Quantile_20',
+       'Close_Forecast_Quantile_26', 'Close_Forecast_Quantile_32',
+       'Close_Forecast_Quantile_38', 'Close_Forecast_Quantile_44',
+       'Close_Forecast_Quantile_50', 'Close_Forecast_Quantile_56',
+       'Close_Forecast_Quantile_62', 'Close_Forecast_Quantile_68',
+       'Close_Forecast_Quantile_74', 'Close_Forecast_Quantile_80',
+       'Close_Forecast_Quantile_86', 'Close_Forecast_Quantile_92',
+       'Close_Forecast_Quantile_98'],
+      dtype='object')
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1265 entries, 0 to 1264
+Data columns (total 3 columns):
+ #   Column          Non-Null Count  Dtype        
+---  ------          --------------  -----        
+ 0   Date            1265 non-null   datetime64[s]
+ 1   Close           1258 non-null   float64      
+ 2   Close_Forecast  1265 non-null   float64      
+dtypes: datetime64[s](1), float64(2)
+memory usage: 29.8 KB
+Forecasts
+            Date       Close  Close_Forecast
+1251 2016-07-19   99.870003       99.830002
+1252 2016-07-20   99.959999       99.870003
+1253 2016-07-21   99.430000       99.959999
+1254 2016-07-22   98.660004       99.430000
+1255 2016-07-25   97.339996       98.660004
+1256 2016-07-26   96.669998       97.339996
+1257 2016-07-27  102.949997       96.669998
+1258 2016-07-28         NaN      102.949997
+1259 2016-07-29         NaN      102.949997
+1260 2016-07-30         NaN      102.949997
+1261 2016-07-31         NaN      102.949997
+1262 2016-08-01         NaN      102.949997
+1263 2016-08-02         NaN      102.949997
+1264 2016-08-03         NaN      102.949997
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/bugs/issue_4/issue_4.py', 'ElapsedTimeSecs':(66.29, 0.64, 22.71), 'MAX_MEM_KB':232692, 'CPU_PRCNT':'35%', 'FILES_IN':8, 'FILES_OUT':1192, 'EXIT_STATUS':0}

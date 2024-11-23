@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Antoine Carme <Antoine.Carme@Laposte.net>
+# Copyright (C) 2016 Antoine Carme <Antoine.Carme@outlook.com>
 # All rights reserved.
 
 # This file is part of the Python Automatic Forecasting (PyAF) library and is made available under
@@ -61,13 +61,6 @@ class cHierarchicalForecastEngine:
         lForecastPerf =  tsperf.cPerf();
         lForecastPerf.compute(actual, predicted, name);
         return lForecastPerf;
-
-    def generateCode(self, iDSN = None, iDialect = None):
-        from CodeGen import TS_CodeGen_Objects as tscodegen
-        lCodeGenerator = tscodegen.cDecompositionCodeGenObject(iDSN, iDialect);
-        lSQL = lCodeGenerator.generateCode(self);
-        # print("GENERATED_SQL_CODE" , lSQL);
-        return lSQL;
 
     def create_signal_hierarchy(self , iInputDS, iTime, iSignal, iHorizon, iHierarchy, iExogenousData = None):
         lSignalHierarchy = None;

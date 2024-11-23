@@ -9,6 +9,9 @@ import pyaf.ForecastEngine as autof
 import logging
 import logging.config
 
+
+np.random.seed(1789)
+
 #logging.config.fileConfig('logging.conf')
 
 logging.basicConfig(level=logging.INFO)
@@ -22,8 +25,9 @@ def process_dataset_with_noise(idataset , sigma):
     import warnings
 
     with warnings.catch_warnings():
-        warnings.simplefilter("error")
+        # warnings.simplefilter("error")
         N = idataset.mFullDataset.shape[0];
+        idataset.mFullDataset[idataset.mSignalVar] = idataset.mFullDataset[idataset.mName] 
         idataset.mFullDataset["orig_" + idataset.mSignalVar] = idataset.mFullDataset[idataset.mSignalVar];
         lSignalVar = idataset.mSignalVar + "_" + str(sigma);
         lNoise = np.random.randn(N) * sigma;
@@ -52,7 +56,7 @@ def process_dataset_with_noise(idataset , sigma):
         lEngine.getModelInfo();
         # lEngine.standardPlots(name = "outputs/my_exog_" + str(nbex) + "_" + str(n));
         # lEngine.mSignalDecomposition.mBestModel.mTimeInfo.mResolution
-        print(lEngine.mSignalDecomposition.mTrPerfDetails.head());
+        
         dfapp_in = training_ds.copy();
         dfapp_in.tail()
 

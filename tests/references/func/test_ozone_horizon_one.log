@@ -1,0 +1,161 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['Ozone'], 'Horizons': {'Ozone': 1}}
+     Month  Ozone       Time
+0  1955-01    2.7 1955-01-01
+1  1955-02    2.0 1955-02-01
+2  1955-03    3.6 1955-03-01
+3  1955-04    5.0 1955-04-01
+4  1955-05    6.5 1955-05-01
+INFO:pyaf.std:TRAINING_ENGINE_END 3.418
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Time' TimeMin=1955-01-01T00:00:00.000000 TimeMax=1968-06-01T00:00:00.000000 TimeDelta=<DateOffset: months=1> Horizon=1
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='Ozone' Length=204  Min=1.2 Max=8.7  Mean=3.835784 StdDev=1.491559
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='Diff_Ozone' Min=-0.573333 Max=0.466667  Mean=-0.00098 StdDev=0.147082
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE 'Diff_'
+INFO:pyaf.std:BEST_DECOMPOSITION  'Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_AR(51)' [LinearTrend + NoCycle + AR]
+INFO:pyaf.std:TREND_DETAIL 'Diff_Ozone_LinearTrend' [LinearTrend]
+INFO:pyaf.std:CYCLE_DETAIL 'Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]' [NoCycle]
+INFO:pyaf.std:AUTOREG_DETAIL 'Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_AR(51)' [AR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.315), 'RMSE': np.float64(1.7561), 'MAE': np.float64(1.3004), 'MASE': np.float64(1.4891)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.1536), 'RMSE': np.float64(0.5142), 'MAE': np.float64(0.4384), 'MASE': np.float64(0.6241)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.0491), 'RMSE': np.float64(0.0589), 'MAE': np.float64(0.0589), 'MASE': np.float64(0.0)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.315), 'RMSE': np.float64(1.7561), 'MAE': np.float64(1.3004), 'MASE': np.float64(1.4891)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.1536), 'RMSE': np.float64(0.5142), 'MAE': np.float64(0.4384), 'MASE': np.float64(0.6241)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.0491), 'RMSE': np.float64(0.0589), 'MAE': np.float64(0.0589), 'MASE': np.float64(0.0)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'M', 'Trend': 'S', 'Cycle': 'S', 'AR': 'L'} [LMSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:DIFFERENCING_TRANSFORMATION Difference 0.20000000000000007
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:LINEAR_RIDGE_TREND LinearTrend (np.float64(0.005353), array([-0.009391]))
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:ZERO_CYCLE_MODEL_VALUES Diff_Ozone_LinearTrend_residue_zeroCycle[0.0] 0.0 {}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_COEFF 1 Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_Lag1 -0.298696
+INFO:pyaf.std:AR_MODEL_COEFF 2 Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_Lag12 0.215567
+INFO:pyaf.std:AR_MODEL_COEFF 3 Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_Lag37 0.174276
+INFO:pyaf.std:AR_MODEL_COEFF 4 Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_Lag36 0.173396
+INFO:pyaf.std:AR_MODEL_COEFF 5 Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_Lag7 -0.163419
+INFO:pyaf.std:AR_MODEL_COEFF 6 Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_Lag10 0.162826
+INFO:pyaf.std:AR_MODEL_COEFF 7 Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_Lag8 -0.147582
+INFO:pyaf.std:AR_MODEL_COEFF 8 Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_Lag39 -0.124932
+INFO:pyaf.std:AR_MODEL_COEFF 9 Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_Lag46 -0.12044
+INFO:pyaf.std:AR_MODEL_COEFF 10 Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_Lag48 0.119461
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'Ozone'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Ozone' 0 {'Transformation': 'Diff_Ozone', 'DecompositionType': 'T+S+R', 'Model': 'Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_AR(51)', 'Voting': 95.0, 'Complexity': 'LMSSS', 'Forecast_MASE_1': 0.6241}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'Ozone'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/my_ozone_horizon_one_Ozone_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/my_ozone_horizon_one_Ozone_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/my_ozone_horizon_one_Ozone_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/my_ozone_horizon_one_Ozone_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/my_ozone_horizon_one_Ozone_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/my_ozone_horizon_one_Ozone_prediction_intervals_output.png')
+/home/runner/work/pyaf/pyaf/pyaf/TS/Plots.py:35: UserWarning: Tight layout not applied. The bottom and top margins cannot be made large enough to accommodate all Axes decorations.
+  fig.tight_layout()
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/my_ozone_horizon_one_Ozone_quantiles_output.png')
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['Ozone'], 'Horizons': {'Ozone': 1}}
+INFO:pyaf.std:FORECASTING_ENGINE_END 0.045
+Forecast Columns  Index(['Time', 'Ozone', 'Ozone_scaled', 'Diff_Ozone', 'row_number',
+       'Time_Normalized', 'Diff_Ozone_LinearTrend',
+       'Diff_Ozone_LinearTrend_residue',
+       'Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]',
+       'Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue',
+       'Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_AR(51)',
+       'Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_AR(51)_residue',
+       'Ozone_Transformed', 'Diff_Ozone_Trend', 'Diff_Ozone_Trend_residue',
+       'Diff_Ozone_Cycle', 'Diff_Ozone_Cycle_residue', 'Diff_Ozone_AR',
+       'Diff_Ozone_AR_residue', 'Diff_Ozone_TransformedForecast',
+       'Diff_Ozone_Detrended', 'Diff_Ozone_Deseasonalized',
+       'Ozone_TransformedForecast_inverted', 'Ozone_Forecast',
+       'Diff_Ozone_TransformedResidue', 'Ozone_Residue',
+       'Ozone_Forecast_Lower_Bound', 'Ozone_Forecast_Upper_Bound',
+       'Ozone_Forecast_Quantile_2', 'Ozone_Forecast_Quantile_18',
+       'Ozone_Forecast_Quantile_34', 'Ozone_Forecast_Quantile_50',
+       'Ozone_Forecast_Quantile_66', 'Ozone_Forecast_Quantile_82',
+       'Ozone_Forecast_Quantile_98'],
+      dtype='object')
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 205 entries, 0 to 204
+Data columns (total 3 columns):
+ #   Column          Non-Null Count  Dtype         
+---  ------          --------------  -----         
+ 0   Time            205 non-null    datetime64[ns]
+ 1   Ozone           204 non-null    float64       
+ 2   Ozone_Forecast  205 non-null    float64       
+dtypes: datetime64[ns](1), float64(2)
+memory usage: 4.9 KB
+None
+Forecasts
+           Time  Ozone  Ozone_Forecast
+204 1972-01-01    NaN        0.865517
+
+
+<ModelInfo>
+{
+    "Ozone": {
+        "Complexity": {
+            "AR": "L",
+            "Cycle": "S",
+            "Decomposition": "S",
+            "Transformation": "M",
+            "Trend": "S"
+        },
+        "Dataset": {
+            "Signal": "Ozone",
+            "Time": {
+                "Horizon": 1,
+                "TimeDelta": "<DateOffset: months=1>",
+                "TimeMax": "1971-12-01 00:00:00",
+                "TimeMin": "1955-01-01 00:00:00",
+                "TimeVariable": "Time"
+            },
+            "Training_Signal_Length": 204
+        },
+        "Model": {
+            "AR_Model": "AR",
+            "Best_Decomposition": "Diff_Ozone_LinearTrend_residue_zeroCycle[0.0]_residue_AR(51)",
+            "Cycle": "NoCycle",
+            "Signal_Decomposition_Type": "T+S+R",
+            "Signal_Transoformation": "Difference",
+            "Trend": "LinearTrend"
+        },
+        "Model_Performance": {
+            "1": {
+                "AUC": 0.5003,
+                "DiffSMAPE": 0.1524,
+                "ErrorMean": -0.0314,
+                "ErrorStdDev": 0.5132,
+                "KS": 0.0976,
+                "KendallTau": 0.734,
+                "Length": 41,
+                "LnQ": 1.3976,
+                "MAE": 0.4384,
+                "MAPE": 0.1536,
+                "MASE": 0.6241,
+                "MannWhitneyU": 841.0,
+                "MedAE": 0.4257,
+                "Pearson": 0.884,
+                "R2": 0.7573,
+                "RMSE": 0.5142,
+                "RMSSE": 0.6202,
+                "SMAPE": 0.1555,
+                "Signal": "Ozone_Forecast_1"
+            }
+        },
+        "Model_Selection_Criterion": "MASE"
+    },
+    "Training_Time": 3.418
+}
+</ModelInfo>
+
+
+
+
+<Forecast>
+{"Time":{"203":"1971-12-01T00:00:00.000","204":"1972-01-01T00:00:00.000"},"Ozone":{"203":1.2,"204":null},"Ozone_Forecast":{"203":1.1411259441,"204":0.8655170154}}
+</Forecast>
+
+
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/func/test_ozone_horizon_one.py', 'ElapsedTimeSecs':(18.72, 0.46, 6.87), 'MAX_MEM_KB':230092, 'CPU_PRCNT':'39%', 'FILES_IN':8, 'FILES_OUT':2288, 'EXIT_STATUS':0}

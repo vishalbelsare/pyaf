@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Antoine Carme <Antoine.Carme@Laposte.net>
+# Copyright (C) 2016 Antoine Carme <Antoine.Carme@outlook.com>
 # All rights reserved.
 
 # This file is part of the Python Automatic Forecasting (PyAF) library and is made available under
@@ -16,7 +16,7 @@ class cTimeInfo:
     # class data
 
     def __init__(self):
-        self.mSignalFrame = pd.DataFrame()
+        self.mSignalFrame = None
         self.mTimeMin = None;
         self.mTimeMax = None;
         self.mTimeMinMaxDiff = None;
@@ -37,8 +37,9 @@ class cTimeInfo:
     def to_dict(self):
         dict1 = {};
         dict1["TimeVariable"] =  self.mTime;
-        dict1["TimeMinMax"] =  [str(self.mSignalFrame[self.mTime].min()) ,
-                                str(self.mSignalFrame[self.mTime].max())];
+        dict1["TimeMin"] =  str(self.mSignalFrame[self.mTime].min())
+        dict1["TimeMax"] =  str(self.mSignalFrame[self.mTime].max())
+        dict1["TimeDelta"] =  str(self.mTimeDelta)
         dict1["Horizon"] =  self.mHorizon;
         return dict1;
 
@@ -46,11 +47,9 @@ class cTimeInfo:
         df[self.mRowNumberColumn] = self.mSignalFrame[self.mRowNumberColumn]
         df[self.mTime] = self.mSignalFrame[self.mTime]
         df[self.mNormalizedTimeColumn] = self.mSignalFrame[self.mNormalizedTimeColumn]
-        df[self.mSignal] = self.mSignalFrame[self.mSignal]
-        df[self.mOriginalSignal] = self.mSignalFrame[self.mOriginalSignal]
 
     def get_time_dtype(self):
-        # print(self.mTimeMax, type(self.mTimeMax))
+        # tsutil.print_pyaf_detailed_info(self.mTimeMax, type(self.mTimeMax))
         lType = self.mSignalFrame[self.mTime].dtype;
         return lType;
 
@@ -66,29 +65,45 @@ class cTimeInfo:
     def transformDataset(self, df):
         self.checkDateTypesForNewDataset(df);
         # new row
-        lLastRow = df.tail(1).copy();
         lNextTime = self.nextTime(df, 1)
-        lLastRow[self.mTime] = lNextTime
-        lLastRow[self.mSignal] = np.nan
-        if(self.mNormalizedTimeColumn in df.columns):
-            lLastRow[self.mNormalizedTimeColumn] = self.normalizeTime(lNextTime)
-            lLastRow[self.mRowNumberColumn] = lLastRow[self.mRowNumberColumn].max() + 1
-        # print(lLastRow.columns ,  df.columns)
-        assert(str(lLastRow.columns) == str(df.columns))
-
-        df = pd.concat([df, lLastRow], ignore_index=True, verify_integrity = True, sort=False); 
-        
+        lNextRowNumber = df.index.max() + 1
+        lNextValues = {
+            self.mRowNumberColumn : df.shape[0] + 1,
+            self.mTime : lNextTime,
+            self.mSignal : np.nan,
+            self.mNormalizedTimeColumn : self.normalizeTime(lNextTime)
+        }
+        lNewColumns = {}
+        # keep column order.
+        for col in df.columns:
+            # append an empty new value by default
+            lNewValue = np.nan
+            if col in lNextValues.keys():
+                lNewValue = lNextValues[col]
+            lNewColumns[col] = np.append(df[col].values, [ lNewValue ])
         if(self.mNormalizedTimeColumn not in df.columns):
-            df[self.mRowNumberColumn] = np.arange(0, df.shape[0]);
-            df[self.mNormalizedTimeColumn] = self.compute_normalized_date_column(df[self.mTime])
-            
-        # print(df.tail());
-        return df;
+            # Avoid unnecessary column order changes.
+            lNewTimeColumn = np.append(df[self.mTime].values, [lNextTime])
+            lNewColumns[self.mRowNumberColumn] = np.arange(0, df.shape[0] + 1);
+            lNewColumns[self.mNormalizedTimeColumn] = self.compute_normalized_date_column(lNewTimeColumn)
+                
+        df1 = pd.DataFrame(lNewColumns)
+        # Goal here : profiling/perf. Avoid reindexing. Keep this as the last op.
+        df1.index = df.index.tolist() + [lNextRowNumber]
+        return df1;
 
 
     def isPhysicalTime(self):
         lHelper = dtfunc.cDateTime_Helper()
         return lHelper.isPhysicalTime(self.mSignalFrame[self.mTime])
+
+    def get_moving_window_lengths_for_time_resolution(self):
+        if(not self.isPhysicalTime()):
+            return self.mOptions.mMovingWindowLengths or [];
+        if(self.mOptions.mMovingWindowLengths is not None):
+            return self.mOptions.mMovingWindowLengths            
+        lHelper = dtfunc.cDateTime_Helper()
+        return lHelper.get_moving_window_lengths_for_time_resolution(self.mResolution)
 
     
     def analyzeSeasonals(self):
@@ -101,7 +116,7 @@ class cTimeInfo:
 
 
     def checkDateTypes(self):
-        # print(self.mSignalFrame.info());
+        # tsutil.print_pyaf_detailed_info(self.mSignalFrame.info());
         type1 = self.mSignalFrame[self.mTime].dtype
         if(type1.kind == 'O'):
             raise tsutil.PyAF_Error('Invalid Time Column Type ' + self.mTime + '[' + str(type1) + ']');
@@ -115,8 +130,8 @@ class cTimeInfo:
         self.mTimeDelta = lHelper.adaptTimeDeltaToTimeResolution(self.mResolution , self.mTimeDelta);    
     
     def computeTimeDelta(self):
-        #print(self.mSignalFrame.columns);
-        # print(self.mSignalFrame[self.mTime].head());
+        # tsutil.print_pyaf_detailed_info(self.mSignalFrame.columns);
+        # tsutil.print_pyaf_detailed_info(self.mSignalFrame[self.mTime].head());
         lEstim = self.mSplit.getEstimPart(self.mSignalFrame)
         lTimeBefore = lEstim[self.mTime].shift(1);
         # lTimeBefore.fillna(self.mTimeMin, inplace=True)
@@ -127,9 +142,9 @@ class cTimeInfo:
             else:
                 self.mTimeDelta = 1
             return
-        #print(self.mSignal, self.mTime, N);
-        #print(lEstim[self.mTime].head());
-        #print(lTimeBefore.head());
+        # tsutil.print_pyaf_detailed_info(self.mSignal, self.mTime, N);
+        # tsutil.print_pyaf_detailed_info(lEstim[self.mTime].head());
+        # tsutil.print_pyaf_detailed_info(lTimeBefore.head());
         lDiffs = lEstim[self.mTime][1:N] - lTimeBefore[1:N]
         
         if(self.mOptions.mTimeDeltaComputationMethod == "USER"):
@@ -145,8 +160,8 @@ class cTimeInfo:
         self.adaptTimeDeltaToTimeResolution();
 
     def estimate(self):
-        #print(self.mSignalFrame.columns);
-        #print(self.mSignalFrame[self.mTime].head());
+        # tsutil.print_pyaf_detailed_info(self.mSignalFrame.columns);
+        # tsutil.print_pyaf_detailed_info(self.mSignalFrame[self.mTime].head());
         self.checkDateTypes();
         
         self.mRowNumberColumn = "row_number"
@@ -162,7 +177,7 @@ class cTimeInfo:
             self.mTimeMax = np.datetime64(self.mTimeMax.to_pydatetime());
         self.mTimeMinMaxDiff = self.mTimeMax - self.mTimeMin;
         self.mEstimCount = lEstim.shape[0]
-        # print(self.mTimeMin, self.mTimeMax , self.mTimeMinMaxDiff , (self.mTimeMax - self.mTimeMin)/self.mTimeMinMaxDiff)
+        # tsutil.print_pyaf_detailed_info(self.mTimeMin, self.mTimeMax , self.mTimeMinMaxDiff , (self.mTimeMax - self.mTimeMin)/self.mTimeMinMaxDiff)
         self.computeTimeDelta();
         self.mSignalFrame[self.mNormalizedTimeColumn] = self.compute_normalized_date_column(self.mSignalFrame[self.mTime])
         self.dump();
@@ -174,10 +189,8 @@ class cTimeInfo:
     def compute_normalized_date_column(self, idate_column):
         if(self.mEstimCount == 1):
             return 0.0;
-        vf = np.vectorize(self.normalizeTime)
-        return vf(idate_column)
+        return self.normalizeTime(idate_column)
 
-    @tsutil.cMemoize
     def normalizeTime(self , iTime):
         if(self.mEstimCount == 1):
             return 0.0;
@@ -191,11 +204,11 @@ class cTimeInfo:
         return lTimeValue;
     
     def nextTime(self, df, iSteps):
-        #print(df.tail(1)[self.mTime]);
+        # tsutil.print_pyaf_detailed_info(df.tail(1)[self.mTime]);
         lLastTime = df[self.mTime].values[-1]
         if(self.isPhysicalTime()):
             lLastTime = pd.Timestamp(lLastTime)
-            # print("NEXT_TIME" , lLastTime, iSteps, self.mTimeDelta);
+            # tsutil.print_pyaf_detailed_info("NEXT_TIME" , lLastTime, iSteps, self.mTimeDelta);
             lNextTime = lLastTime + iSteps * self.mTimeDelta;
             lNextTime = self.cast_to_time_dtype(lNextTime.to_datetime64())
         else:

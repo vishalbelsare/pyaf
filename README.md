@@ -2,8 +2,7 @@
 PyAF (Python Automatic Forecasting)
 ===================================
 
-[![CircleCI](https://circleci.com/gh/antoinecarme/pyaf/tree/master.svg?style=shield)](https://circleci.com/gh/antoinecarme/pyaf/tree/master)
-
+[![Github/CI/CD](https://github.com/antoinecarme/pyaf/actions/workflows/python-app.yml/badge.svg)](https://github.com/antoinecarme/pyaf/actions/workflows/python-app.yml)
 
 PyAF is an Open Source Python library for Automatic Forecasting built on top of
 popular data science python modules: NumPy, SciPy, Pandas and scikit-learn.
@@ -20,33 +19,33 @@ PyAF is distributed under the [3-Clause BSD license](https://tldrlegal.com/licen
 Demo 
 ----
 ```Python
-import numpy as np
-import pandas as pd
+import numpy as np, pandas as pd
 import pyaf.ForecastEngine as autof
 
-# generate a daily signal covering one year 2016 in a pandas dataframe
-N = 360
-df_train = pd.DataFrame({"Date": pd.date_range(start="2016-01-25", periods=N, freq='D'),
-                         "Signal": (np.arange(N)//40 + np.arange(N) % 21 + np.random.randn(N))})
+if __name__ == '__main__':
+   # generate a daily signal covering one year 2016 in a pandas dataframe
+   N = 360
+   df_train = pd.DataFrame({"Date": pd.date_range(start="2016-01-25", periods=N, freq='D'),
+   	                    "Signal": (np.arange(N)//40 + np.arange(N) % 21 + np.random.randn(N))})
+				  
+   # create a forecast engine, the main object handling all the operations
+   lEngine = autof.cForecastEngine()
 
-# create a forecast engine, the main object handling all the operations
-lEngine = autof.cForecastEngine()
+   # get the best time series model for predicting one week
+   lEngine.train(iInputDS=df_train, iTime='Date', iSignal='Signal', iHorizon=7);
+   lEngine.getModelInfo() # => relative error 7% (MAPE)
 
-# get the best time series model for predicting one week
-lEngine.train(iInputDS=df_train, iTime='Date', iSignal='Signal', iHorizon=7);
-lEngine.getModelInfo() # => relative error 7% (MAPE)
+   # predict one week
+   df_forecast = lEngine.forecast(iInputDS=df_train, iHorizon=7)
+   # list the columns of the forecast dataset
+   print(df_forecast.columns)
 
-# predict one week
-df_forecast = lEngine.forecast(iInputDS=df_train, iHorizon=7)
-# list the columns of the forecast dataset
-print(df_forecast.columns)
+   # print the real forecasts
+   # Future dates : ['2017-01-19T00:00:00.000000000' '2017-01-20T00:00:00.000000000' '2017-01-21T00:00:00.000000000' '2017-01-22T00:00:00.000000000' '2017-01-23T00:00:00.000000000' '2017-01-24T00:00:00.000000000' '2017-01-25T00:00:00.000000000']
+   print(df_forecast['Date'].tail(7).values)
 
-# print the real forecasts
-# Future dates : ['2017-01-19T00:00:00.000000000' '2017-01-20T00:00:00.000000000' '2017-01-21T00:00:00.000000000' '2017-01-22T00:00:00.000000000' '2017-01-23T00:00:00.000000000' '2017-01-24T00:00:00.000000000' '2017-01-25T00:00:00.000000000']
-print(df_forecast['Date'].tail(7).values)
-
-# signal forecast : [ 9.74934646  10.04419761  12.15136455  12.20369717  14.09607727 15.68086323  16.22296559]
-print(df_forecast['Signal_Forecast'].tail(7).values)
+   # signal forecast : [ 9.74934646  10.04419761  12.15136455  12.20369717  14.09607727 15.68086323  16.22296559]
+   print(df_forecast['Signal_Forecast'].tail(7).values)
 ```
 [also availabe as a jupyter notebook](docs/sample_code.ipynb)
 
@@ -157,7 +156,7 @@ It can be installed from PyPI for the latest official release:
    
 The development version is also available by executing:
 
-	pip install scipy pandas sklearn matplotlib pydot dill sqlalchemy xgboost statsmodels
+	pip install scipy pandas scikit-learn matplotlib pydot xgboost statsmodels
 	pip install --upgrade git+git://github.com/antoinecarme/pyaf.git
 
 

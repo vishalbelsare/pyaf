@@ -9,25 +9,29 @@ import pyaf.Bench.TS_datasets as tsds
 
 
 lValues = [ k for k in range(2,24, 4)];
+lValues = [64]
 # lValues = lValues + [ k for k in range(24, 128, 8)];
 for cyc in lValues:
     print("TEST_CYCLES_START", cyc)
-    b1 = tsds.generate_random_TS(N = 32000 , FREQ = 'H', seed = 0, trendtype = "constant", cycle_length = cyc, transform = "None", sigma = 0.1, exog_count = 0, ar_order=0);
-    df = b1.mPastData
-
+    b1 = tsds.generate_random_TS(N = 3200 , FREQ = 'H', seed = 0, trendtype = "constant", cycle_length = cyc, transform = "None", sigma = 0.1, exog_count = 0, ar_order=0);
+    df = b1.mPastData.copy()
+    df[b1.mSignalVar] = df[b1.mName]
+    
     # df.tail(10)
     # df[:-10].tail()
     # df[:-10:-1]
     # df.describe()
 
     lEngine = autof.cForecastEngine()
-    lEngine.mOptions.mCycleLengths = [ k for k in range(2,128) ];
+    lEngine.mOptions.mCycleLengths = [ k for k in range(4,128, 4) ];
     lEngine
 
     H = cyc * 2;
     lEngine.train(df , b1.mTimeVar , b1.mSignalVar, H);
     lEngine.getModelInfo();
 
+    lEngine.standardPlots("outputs/issue_82_long_cycles_" + str(cyc));
+    
     lEngine.mSignalDecomposition.mBestModel.mTimeInfo.mResolution
 
     dfapp_in = df.copy();

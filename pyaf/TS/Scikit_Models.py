@@ -2,9 +2,7 @@ import numpy as np
 import pandas as pd
 from . import SignalDecomposition_AR as tsar
 from . import Utils as tsutil
-
-import sys
-
+from . import Complexity as tscomplex
 
 class cAbstract_Scikit_Model(tsar.cAbstractAR):
     def __init__(self , cycle_residue_name, P , iExogenousInfo = None):
@@ -12,9 +10,12 @@ class cAbstract_Scikit_Model(tsar.cAbstractAR):
         self.mNbLags = P;
         self.mNbExogenousLags = P;
         self.mScikitModel = None;
+        self.mFeatureSelector = None
+        self.mComplexity = tscomplex.eModelComplexity.High;
+        self.set_name();
 
     def dumpCoefficients(self, iMax=10):
-        # print(self.mScikitModel.__dict__);
+        # tsutil.print_pyaf_detailed_info(self.mScikitModel.__dict__);
         pass
 
     def build_Scikit_Model(self):
@@ -23,29 +24,31 @@ class cAbstract_Scikit_Model(tsar.cAbstractAR):
     def set_name(self):
         assert(0);
 
+    def get_used_variables(self):
+        lUsed = []
+        for (series, lList_p) in self.mLagsForSeries.items():
+            used = [p for p in lList_p if (series+'_Lag' + str(p) in self.mInputNamesAfterSelection)]
+            if(len(used) > 0):
+                lUsed = lUsed + [series]
+        return lUsed
 
-    def is_used(self, name):
-        if(self.mFeatureSelector):
-            return (name in self.mInputNamesAfterSelection)
-        return True
-        
     def fit(self):
-        #  print("ESTIMATE_SCIKIT_MODEL_START" , self.mCycleResidueName);
+        # tsutil.print_pyaf_detailed_info("ESTIMATE_SCIKIT_MODEL_START" , self.mCycleResidueName);
 
         self.build_Scikit_Model();
-        self.set_name();
         
         series = self.mCycleResidueName; 
         self.mTime = self.mTimeInfo.mTime;
         self.mSignal = self.mTimeInfo.mSignal;
         lAREstimFrame = self.mSplit.getEstimPart(self.mARFrame)
 
-        # print("mAREstimFrame columns :" , self.mAREstimFrame.columns);
         lARInputs = lAREstimFrame[self.mInputNames].values
+
         lARTarget = lAREstimFrame[series].values
-        # print(len(self.mInputNames), lARInputs.shape , lARTarget.shape)
+        # tsutil.print_pyaf_detailed_info(len(self.mInputNames), lARInputs.shape , lARTarget.shape)
         assert(lARInputs.shape[1] > 0);
         assert(lARTarget.shape[0] > 0);
+        assert(lARInputs.shape[1] == len(self.mInputNames))
 
         from sklearn.feature_selection import SelectKBest
         from sklearn.feature_selection import f_regression
@@ -58,7 +61,7 @@ class cAbstract_Scikit_Model(tsar.cAbstractAR):
         try:
             self.mFeatureSelector.fit(lARInputs, lARTarget);
         except Exception as e:
-            print("SCIKIT_MODEL_FEATURE_SELECTION_FAILURE" , self.mOutName, lARInputs.shape, e);
+            tsutil.print_pyaf_detailed_info("SCIKIT_MODEL_FEATURE_SELECTION_FAILURE" , self.mOutName, lARInputs.shape, e);
             if(self.mOptions.mDebug):
                 df1 = pd.DataFrame(lARInputs);
                 df1.columns = self.mInputNames
@@ -69,22 +72,21 @@ class cAbstract_Scikit_Model(tsar.cAbstractAR):
 
         if(self.mFeatureSelector):
             lARInputsAfterSelection =  self.mFeatureSelector.transform(lARInputs);
-            # print(self.mInputNames , self.mFeatureSelector.get_support(indices=True));
             lSupport = self.mFeatureSelector.get_support(indices=True);
             self.mInputNamesAfterSelection = [self.mInputNames[k] for k in lSupport];
+                
         else:
             lARInputsAfterSelection = lARInputs;
             self.mInputNamesAfterSelection = self.mInputNames;
 
-        self.mComplexity = len(self.mInputNamesAfterSelection)
         assert(len(self.mInputNamesAfterSelection) == lARInputsAfterSelection.shape[1]);
-        # print("FEATURE_SELECTION" , self.mOutName, lARInputs.shape[1] , lARInputsAfterSelection.shape[1]);
+        # tsutil.print_pyaf_detailed_info("FEATURE_SELECTION" , self.mOutName, lARInputs.shape[1] , lARInputsAfterSelection.shape[1]);
         del lARInputs;
 
         try:
             self.mScikitModel.fit(lARInputsAfterSelection, lARTarget)
         except Exception as e:
-            print("SCIKIT_MODEL_FIT_FAILURE" , self.mOutName, lARInputsAfterSelection.shape, e);
+            tsutil.print_pyaf_detailed_info("SCIKIT_MODEL_FIT_FAILURE" , self.mOutName, lARInputsAfterSelection.shape, e);
             if(self.mOptions.mDebug):
                 df1 = pd.DataFrame(lARInputsAfterSelection);
                 df1.columns = self.mInputNamesAfterSelection
@@ -104,33 +106,31 @@ class cAbstract_Scikit_Model(tsar.cAbstractAR):
             self.mARFrame[self.mOutName] = lPredicted
         else:
             # issue_34 failure SVD does not converge
-            self.mARFrame[self.mOutName] = self.mDefaultValues[series]
+            self.mARFrame[self.mOutName] = 0.0
+            if(self.mDecompositionType in ['TSR']):
+                self.mARFrame[self.mOutName] = 1.0
+                
 
         self.compute_ar_residue(self.mARFrame)
 
-        # print("ESTIMATE_SCIKIT_MODEL_END" , self.mOutName);
+        # tsutil.print_pyaf_detailed_info("ESTIMATE_SCIKIT_MODEL_END" , self.mOutName);
 
 
     def transformDataset(self, df, horizon_index = 1):
         series = self.mCycleResidueName; 
         if(self.mExogenousInfo is not None):
             df = self.mExogenousInfo.transformDataset(df);
-        # print(df.columns);
-        # print(df.info());
-        # print(df.head());
-        # print(df.tail());
-        lag_df = self.generateLagsForForecast(df);
-        # print(self.mInputNames);
-        # print(self.mFormula, "\n", lag_df.columns);
-        # lag_df.to_csv("LAGGED_ " + str(self.mNbLags) + ".csv");
-        # print(len(list(lag_df.columns)) , len(self.mInputNamesAfterSelection))
-        inputs_after_feat_selection = lag_df.values[:,1:] # the first column is the signal
+        lag_df = self.generateLagsForForecast(df, selection = self.mInputNamesAfterSelection);
+        inputs_after_feat_selection = lag_df[self.mInputNamesAfterSelection].values
         # inputs_after_feat_selection = self.mFeatureSelector.transform(inputs) if self.mFeatureSelector else inputs;
         if(self.mScikitModel is not None):
             pred = self.mScikitModel.predict(inputs_after_feat_selection)
             df[self.mOutName] = pred;
         else:
-            df[self.mOutName] = self.mDefaultValues[series];
+            df[self.mOutName] = 0.0
+            if(self.mDecompositionType in ['TSR']):
+                df[self.mOutName] = 1.0
+
             
         self.compute_ar_residue(df)
         return df;
@@ -140,12 +140,12 @@ class cAbstract_Scikit_Model(tsar.cAbstractAR):
 class cAutoRegressiveModel(cAbstract_Scikit_Model):
     def __init__(self , cycle_residue_name, P , iExogenousInfo = None):
         super().__init__(cycle_residue_name, P, iExogenousInfo)
-        self.mComplexity = P;
+        self.mComplexity = tscomplex.eModelComplexity.High;
 
     def dumpCoefficients(self, iMax=10):
         logger = tsutil.get_pyaf_logger();
-        lDict = dict(zip(self.mInputNamesAfterSelection , self.mScikitModel.coef_));
-        lDict1 = dict(zip(self.mInputNamesAfterSelection , abs(self.mScikitModel.coef_)));
+        lDict = dict(zip(self.mInputNamesAfterSelection , self.mScikitModel.coef_.round(6)));
+        lDict1 = dict(zip(self.mInputNamesAfterSelection , abs(self.mScikitModel.coef_.round(6))));
         i = 1;
         lOrderedVariables = sorted(lDict1.keys(), key=lDict1.get, reverse=True);
         for k in lOrderedVariables[0:iMax]:
@@ -156,7 +156,7 @@ class cAutoRegressiveModel(cAbstract_Scikit_Model):
     def build_Scikit_Model(self):
         import sklearn.linear_model as linear_model
         # issue_22 : warning about singular matrix => change the solver by default. 
-        self.mScikitModel = linear_model.Ridge(solver='svd')
+        self.mScikitModel = linear_model.Ridge(solver='svd', alpha = 0.0)
 
     def set_name(self):
         self.mOutName = self.mCycleResidueName +  '_AR(' + str(self.mNbLags) + ")";
@@ -170,7 +170,7 @@ class cAutoRegressiveModel(cAbstract_Scikit_Model):
 class cSVR_Model(cAbstract_Scikit_Model):
     def __init__(self , cycle_residue_name, P , iExogenousInfo = None):
         super().__init__(cycle_residue_name, P, iExogenousInfo)
-        self.mComplexity = 2*P;
+        self.mComplexity = tscomplex.eModelComplexity.High;
 
     def dumpCoefficients(self, iMax=10):
         pass
@@ -191,7 +191,7 @@ class cSVR_Model(cAbstract_Scikit_Model):
 class cXGBoost_Model(cAbstract_Scikit_Model):
     def __init__(self , cycle_residue_name, P , iExogenousInfo = None):
         super().__init__(cycle_residue_name, P, iExogenousInfo)
-        self.mComplexity = 2*P;
+        self.mComplexity = tscomplex.eModelComplexity.High;
 
     def dumpCoefficients(self, iMax=10):
         pass
@@ -226,7 +226,7 @@ class cXGBoost_Model(cAbstract_Scikit_Model):
 class cLightGBM_Model(cAbstract_Scikit_Model):
     def __init__(self , cycle_residue_name, P , iExogenousInfo = None):
         super().__init__(cycle_residue_name, P, iExogenousInfo)
-        self.mComplexity = 2*P;
+        self.mComplexity = tscomplex.eModelComplexity.High;
 
     def dumpCoefficients(self, iMax=10):
         pass

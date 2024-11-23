@@ -1,4 +1,6 @@
-
+import matplotlib
+matplotlib.use('Agg')
+    
 import pandas as pd
 
 import datetime
@@ -32,7 +34,7 @@ Countries = ['GB', 'US', 'DE', 'BE', 'CN', 'JP', 'CH', 'HK', 'NL', 'CA' , 'OTHER
 len(Wines) * len(Variants) * len(Countries) 
 
 
-from IPython.display import display
+# from IPython.display import display
 
 
 # In[13]:
@@ -125,7 +127,7 @@ print(lInfo['Models']['BORDEAUX_ROUGE_CN'])
 
 perfs = [];
 for model in sorted(lInfo['Models'].keys()):
-    lPerf = lInfo['Models'][model]['Model_Performance']
+    lPerf = lInfo['Models'][model]['Model_Performance'][1]
     perfs.append([model , lPerf['RMSE'] , lPerf['MAPE']])
 df_perf = pd.DataFrame(perfs , columns=['Model' , 'RMSE' , 'MAPE']);
 df_perf = df_perf.sort_values(by = ['MAPE'])
@@ -133,33 +135,47 @@ print(df_perf)
 
 lEngine.mSignalHierarchy.plot()
 
-CN_Engine = lEngine.mSignalHierarchy.mModels # __CN is at hierarchical level 2
+AllSignals_Engine = lEngine.mSignalHierarchy.mModels # __CN is at hierarchical level 2
 
-CN_Engine.getModelInfo()
+AllSignals_Engine.getModelInfo()
 
-CN_Engine.standardPlots()
+CN_Model = AllSignals_Engine.mSignalDecomposition.mBestModels['__CN'] 
+CN_Model.standardPlots("outputs/bugs_hier_grouping_issue_55_CN")
 
 lEngine.mOptions.mHierarchicalCombinationMethod = ["BU" , 'TD' , 'MO' , 'OC'];
 dfapp_out = lEngine.forecast(train_df, H);
 
+def strip_leading_underscores_if_needed(col_name):
+    # this is a workaround for some matplotlib bugs. legend cannot contain names starting with '_'
+    patched_name = col_name[2:] if(col_name.startswith('__')) else col_name
+    patched_name = patched_name[1:] if(patched_name.startswith('_')) else patched_name
+    return patched_name
 
-for c in Countries:
-    country = "__" + c
-    dfapp_out.plot('Month' , 
-                    [country , country + '_Forecast' , 
-                     country + '_BU_Forecast',  
-                     country + '_PHA_TD_Forecast',  
-                     country + '_AHP_TD_Forecast'  ,  
-                     country + '_MO_Forecast' ,
-                     country + '_OC_Forecast'  ],
-                figsize=(32 , 12)).legend(fontsize=18)
+dfapp_out.columns = [strip_leading_underscores_if_needed(col) for col in dfapp_out.columns]
 
-world = '__'
-dfapp_out.plot('Month' , 
-                [world , world + '_Forecast' , 
-                 world + '_BU_Forecast',  
-                 world + '_PHA_TD_Forecast',  
-                 world + '_AHP_TD_Forecast'  ,  
-                 world + '_MO_Forecast' ,
-                 world + '_OC_Forecast'  ],
-                figsize=(32 , 12)).legend(fontsize=18)
+print(dfapp_out.columns)
+dfapp_out.info()
+
+for country in Countries:
+    plot = dfapp_out.plot('Month' , 
+                          [country , country + '_Forecast' , 
+                           country + '_BU_Forecast',  
+                           country + '_PHA_TD_Forecast',  
+                           country + '_AHP_TD_Forecast'  ,  
+                           country + '_MO_Forecast' ,
+                           country + '_OC_Forecast'  ],
+                          figsize=(32 , 12)).legend(fontsize=18)
+    fig = plot.get_figure()
+    fig.savefig("outputs/bugs_hier_grouping_issue_55_Forecast_" + country + ".png")
+
+world = ''
+plot = dfapp_out.plot('Month' , 
+                      [world , world + 'Forecast' , 
+                       world + 'BU_Forecast',  
+                       world + 'PHA_TD_Forecast',  
+                       world + 'AHP_TD_Forecast'  ,  
+                       world + 'MO_Forecast' ,
+                       world + 'OC_Forecast'  ],
+                      figsize=(32 , 12)).legend(fontsize=18)
+fig = plot.get_figure()
+fig.savefig("outputs/bugs_hier_grouping_issue_55_Forecast_world_.png")

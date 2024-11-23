@@ -1,0 +1,434 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['Signal_0.01'], 'Horizons': {'Signal_0.01': 12}}
+INFO:pyaf.std:PYAF_MODEL_SAMPLING_ACTIVATED (8192, 1960)
+INFO:pyaf.std:AR_MODEL_ADD_EXOGENOUS 1012 337
+INFO:pyaf.std:TRAINING_ENGINE_END 6.672
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=2000-01-01T00:00:00.000000 TimeMax=2002-03-10T00:00:00.000000 TimeDelta=<DateOffset: days=1> Horizon=12
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='Signal_0.01' Length=1012  Min=-0.003865 Max=1.565898  Mean=1.011442 StdDev=0.356947
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_Signal_0.01' Min=0.0 Max=1.0  Mean=0.64679 StdDev=0.227389
+INFO:pyaf.std:EXOGENOUS_DATA ['exog_1', 'exog_2', 'exog_3', 'exog_4', 'exog_5', 'exog_6', 'exog_7', 'exog_8', 'exog_9', 'exog_10', 'exog_11', 'exog_12', 'exog_13', 'exog_14', 'exog_15', 'exog_16', 'exog_17', 'exog_18', 'exog_19', 'exog_20', 'exog_21', 'exog_22', 'exog_23', 'exog_24', 'exog_25', 'exog_26', 'exog_27', 'exog_28', 'exog_29', 'exog_30', 'exog_31', 'exog_32', 'exog_33', 'exog_34', 'exog_35', 'exog_36', 'exog_37', 'exog_38', 'exog_39', 'exog_40', 'exog_41', 'exog_42', 'exog_43', 'exog_44', 'exog_45', 'exog_46', 'exog_47', 'exog_48', 'exog_49', 'exog_50', 'exog_51', 'exog_52', 'exog_53', 'exog_54', 'exog_55', 'exog_56', 'exog_57', 'exog_58', 'exog_59', 'exog_60', 'exog_61', 'exog_62', 'exog_63', 'exog_64', 'exog_65', 'exog_66', 'exog_67', 'exog_68', 'exog_69', 'exog_70', 'exog_71', 'exog_72', 'exog_73', 'exog_74', 'exog_75', 'exog_76', 'exog_77', 'exog_78', 'exog_79', 'exog_80', 'exog_81', 'exog_82', 'exog_83', 'exog_84', 'exog_85', 'exog_86', 'exog_87', 'exog_88', 'exog_89', 'exog_90', 'exog_91', 'exog_92', 'exog_93', 'exog_94', 'exog_95', 'exog_96', 'exog_97', 'exog_98', 'exog_99', 'exog_100']
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_Signal_0.01_LinearTrend_residue_Cycle_None_residue_ARX(64)' [LinearTrend + Cycle_None + ARX]
+INFO:pyaf.std:TREND_DETAIL '_Signal_0.01_LinearTrend' [LinearTrend]
+INFO:pyaf.std:CYCLE_DETAIL '_Signal_0.01_LinearTrend_residue_Cycle_None' [Cycle_None]
+INFO:pyaf.std:AUTOREG_DETAIL '_Signal_0.01_LinearTrend_residue_Cycle_None_residue_ARX(64)' [ARX]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.1409), 'RMSE': np.float64(0.0236), 'MAE': np.float64(0.0157), 'MASE': np.float64(0.1149)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.0079), 'RMSE': np.float64(0.0144), 'MAE': np.float64(0.0113), 'MASE': np.float64(0.1432)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.0071), 'RMSE': np.float64(0.0123), 'MAE': np.float64(0.0106), 'MASE': np.float64(0.1554)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=12 {'MAPE': np.float64(0.5078), 'RMSE': np.float64(0.2774), 'MAE': np.float64(0.1856), 'MASE': np.float64(1.3579)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=12 {'MAPE': np.float64(0.0566), 'RMSE': np.float64(0.0989), 'MAE': np.float64(0.08), 'MASE': np.float64(1.0176)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=12 {'MAPE': np.float64(0.0513), 'RMSE': np.float64(0.091), 'MAE': np.float64(0.0768), 'MASE': np.float64(1.122)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'S', 'Cycle': 'S', 'AR': 'L'} [LSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:LINEAR_RIDGE_TREND LinearTrend (np.float64(0.243989), array([0.664398]))
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:BEST_CYCLE_LENGTH_VALUES _Signal_0.01_LinearTrend_residue_Cycle_None None 0.006132 {}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_COEFF 1 exog_2=AC_Lag30 9588831477599.781
+INFO:pyaf.std:AR_MODEL_COEFF 2 exog_5=AC_Lag35 -9375468817280.803
+INFO:pyaf.std:AR_MODEL_COEFF 3 exog_5=AC_Lag15 -7376125799702.575
+INFO:pyaf.std:AR_MODEL_COEFF 4 exog_2=AC_Lag45 -7308714662508.389
+INFO:pyaf.std:AR_MODEL_COEFF 5 exog_5=AC_Lag30 6711615131267.886
+INFO:pyaf.std:AR_MODEL_COEFF 6 exog_5=AC_Lag25 -6454751188207.78
+INFO:pyaf.std:AR_MODEL_COEFF 7 exog_4=AC_Lag20 6077812515929.592
+INFO:pyaf.std:AR_MODEL_COEFF 8 exog_1=AC_Lag45 -5979767720620.524
+INFO:pyaf.std:AR_MODEL_COEFF 9 exog_4=AC_Lag10 5360202531581.117
+INFO:pyaf.std:AR_MODEL_COEFF 10 exog_2=AC_Lag20 -4347617982662.1084
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_START
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_1' {'0': 701, 'AE': 57, 'AD': 30, 'AC': 12}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_1' ['exog_1=AC']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_2' {'0': 693, 'AE': 50, 'AD': 41, 'AC': 11}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_2' ['exog_2=0', 'exog_2=AC']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_3' {'0': 692, 'AE': 42, 'AD': 41, 'AF': 13, 'AC': 12}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_3' ['exog_3=AC']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_4' {'0': 688, 'AE': 45, 'AD': 38, 'AF': 20, 'AC': 9}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_4' ['exog_4=AC']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_5' {'0': 679, 'AE': 52, 'AD': 34, 'AF': 28, 'AC': 7}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_5' ['exog_5=AC']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_20' {'0': 630, 'AG': 61, 'AF': 55, 'AE': 35, 'AH': 19}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_20' ['exog_20=0']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_21' {'0': 660, 'AG': 54, 'AF': 44, 'AE': 23, 'AH': 19}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_21' ['exog_21=0']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_23' {'0': 657, 'AF': 48, 'AG': 47, 'AH': 28, 'AE': 20}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_23' ['exog_23=0']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_24' {'0': 656, 'AF': 52, 'AG': 44, 'AH': 34, 'AE': 14}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_24' ['exog_24=0']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_26' {'0': 650, 'AH': 60, 'AG': 46, 'AF': 44}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_26' ['exog_26=0']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_27' {'0': 637, 'AH': 59, 'AG': 53, 'AF': 46}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_27' ['exog_27=0']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_28' {'0': 636, 'AH': 61, 'AG': 53, 'AF': 38, 'AI': 12}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_28' ['exog_28=0']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_29' {'0': 658, 'AH': 54, 'AG': 41, 'AF': 27, 'AI': 20}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_29' ['exog_29=0']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_FREQUENCIES 'exog_35' {'0': 647, 'AH': 52, 'AG': 49, 'AI': 46, 'AJ': 6}
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_USED 'exog_35' ['exog_35=0']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CATEGORICAL_EXCLUDED 64 ['exog_6', 'exog_7', 'exog_8', 'exog_9', 'exog_10'] ... ['exog_74', 'exog_75', 'exog_76', 'exog_77', 'exog_78']
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_CONTINUOUS_EXCLUDED 0 []
+INFO:pyaf.std:EXOGENOUS_VARIABLE_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'Signal_0.01'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Signal_0.01' 0 {'Transformation': '_Signal_0.01', 'DecompositionType': 'T+S+R', 'Model': '_Signal_0.01_LinearTrend_residue_Cycle_None_residue_ARX(64)', 'Voting': 6.5, 'Complexity': 'LSSSS', 'Forecast_MASE_1': 0.1432, 'Forecast_MASE_2': 0.1521, 'Forecast_MASE_3': 0.1818, 'Forecast_MASE_4': 0.195, 'Forecast_MASE_5': 0.2363, 'Forecast_MASE_6': 0.2772, 'Forecast_MASE_7': 0.3461, 'Forecast_MASE_8': 0.4329, 'Forecast_MASE_9': 0.5327, 'Forecast_MASE_10': 0.6807, 'Forecast_MASE_11': 0.8293, 'Forecast_MASE_12': 1.0176}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'Signal_0.01'
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['Signal_0.01'], 'Horizons': {'Signal_0.01': 12}}
+INFO:pyaf.std:PYAF_MODEL_SAMPLING_ACTIVATED (8192, 1960)
+INFO:pyaf.std:FORECASTING_ENGINE_END 1.184
+TRYING_TO_LOAD_RANDOM_DATASET Signal_1024_D_0_linear_5_log_0.0_100 data/ARTIFICIAL_DATA/1024/Signal_1024_D_0_linear_5_log_0.0_100
+LAOD_FAILED_TRYING_TO_GENERATE_RANDOM_DATASET Signal_1024_D_0_linear_5_log_0.0_100
+GENERATING_RANDOM_DATASET Signal_1024_D_0_linear_5_log_0.0_100
+TREND 0.0976270078546495 0.43037873274483895 0.20552675214328775
+Forecast Columns  Index(['Date', 'Signal_0.01', 'Signal_0.01_scaled', '_Signal_0.01',
+       'row_number', 'Date_Normalized', '_Signal_0.01_LinearTrend',
+       '_Signal_0.01_LinearTrend_residue',
+       '_Signal_0.01_LinearTrend_residue_Cycle_None',
+       '_Signal_0.01_LinearTrend_residue_Cycle_None_residue',
+       ...
+       'Signal_0.01_Forecast_Quantile_36', 'Signal_0.01_Forecast_Quantile_43',
+       'Signal_0.01_Forecast_Quantile_50', 'Signal_0.01_Forecast_Quantile_57',
+       'Signal_0.01_Forecast_Quantile_64', 'Signal_0.01_Forecast_Quantile_71',
+       'Signal_0.01_Forecast_Quantile_78', 'Signal_0.01_Forecast_Quantile_85',
+       'Signal_0.01_Forecast_Quantile_92', 'Signal_0.01_Forecast_Quantile_99'],
+      dtype='object', length=380)
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1024 entries, 0 to 1023
+Data columns (total 5 columns):
+ #   Column                            Non-Null Count  Dtype         
+---  ------                            --------------  -----         
+ 0   Date                              1024 non-null   datetime64[ns]
+ 1   Signal_0.01                       1012 non-null   float64       
+ 2   Signal_0.01_Forecast              1024 non-null   float64       
+ 3   Signal_0.01_Forecast_Lower_Bound  12 non-null     float64       
+ 4   Signal_0.01_Forecast_Upper_Bound  12 non-null     float64       
+dtypes: datetime64[ns](1), float64(4)
+memory usage: 40.1 KB
+Forecasts
+ [[Timestamp('2002-10-09 00:00:00') nan 1.5332017306723251
+  1.504977730672325 1.5614257306723252]
+ [Timestamp('2002-10-10 00:00:00') nan 1.4922058518270596
+  1.4633938518270595 1.5210178518270596]
+ [Timestamp('2002-10-11 00:00:00') nan 1.5604988580659551
+  1.5258068580659552 1.595190858065955]
+ [Timestamp('2002-10-12 00:00:00') nan 1.5187826585648208
+  1.4811506585648209 1.5564146585648206]
+ [Timestamp('2002-10-13 00:00:00') nan 1.4493079161713096
+  1.4040319161713095 1.4945839161713097]
+ [Timestamp('2002-10-14 00:00:00') nan 1.5403847190559508
+  1.4872687190559508 1.5935007190559507]
+ [Timestamp('2002-10-15 00:00:00') nan 1.4925291406441343
+  1.4268691406441343 1.5581891406441344]
+ [Timestamp('2002-10-16 00:00:00') nan 1.559312240528149
+  1.478560240528149 1.640064240528149]
+ [Timestamp('2002-10-17 00:00:00') nan 1.5225481168058428
+  1.4227841168058428 1.6223121168058428]
+ [Timestamp('2002-10-18 00:00:00') nan 1.4538606638940983
+  1.3286166638940984 1.5791046638940982]
+ [Timestamp('2002-10-19 00:00:00') nan 1.543959620938241
+  1.388923620938241 1.6989956209382409]
+ [Timestamp('2002-10-20 00:00:00') nan 1.4916576425857335
+  1.2978136425857336 1.6855016425857334]]
+
+
+<ModelInfo>
+{
+    "Signal_0.01": {
+        "Complexity": {
+            "AR": "L",
+            "Cycle": "S",
+            "Decomposition": "S",
+            "Transformation": "S",
+            "Trend": "S"
+        },
+        "Dataset": {
+            "Exogenous_Data": {
+                "Categorical_Variables": {
+                    "exog_1": {
+                        "0": 701,
+                        "AC": 12,
+                        "AD": 30,
+                        "AE": 57
+                    },
+                    "exog_2": {
+                        "0": 693,
+                        "AC": 11,
+                        "AD": 41,
+                        "AE": 50
+                    },
+                    "exog_20": {
+                        "0": 630,
+                        "AE": 35,
+                        "AF": 55,
+                        "AG": 61,
+                        "AH": 19
+                    },
+                    "exog_21": {
+                        "0": 660,
+                        "AE": 23,
+                        "AF": 44,
+                        "AG": 54,
+                        "AH": 19
+                    },
+                    "exog_23": {
+                        "0": 657,
+                        "AE": 20,
+                        "AF": 48,
+                        "AG": 47,
+                        "AH": 28
+                    },
+                    "exog_24": {
+                        "0": 656,
+                        "AE": 14,
+                        "AF": 52,
+                        "AG": 44,
+                        "AH": 34
+                    },
+                    "exog_26": {
+                        "0": 650,
+                        "AF": 44,
+                        "AG": 46,
+                        "AH": 60
+                    },
+                    "exog_27": {
+                        "0": 637,
+                        "AF": 46,
+                        "AG": 53,
+                        "AH": 59
+                    },
+                    "exog_28": {
+                        "0": 636,
+                        "AF": 38,
+                        "AG": 53,
+                        "AH": 61,
+                        "AI": 12
+                    },
+                    "exog_29": {
+                        "0": 658,
+                        "AF": 27,
+                        "AG": 41,
+                        "AH": 54,
+                        "AI": 20
+                    },
+                    "exog_3": {
+                        "0": 692,
+                        "AC": 12,
+                        "AD": 41,
+                        "AE": 42,
+                        "AF": 13
+                    },
+                    "exog_35": {
+                        "0": 647,
+                        "AG": 49,
+                        "AH": 52,
+                        "AI": 46,
+                        "AJ": 6
+                    },
+                    "exog_4": {
+                        "0": 688,
+                        "AC": 9,
+                        "AD": 38,
+                        "AE": 45,
+                        "AF": 20
+                    },
+                    "exog_5": {
+                        "0": 679,
+                        "AC": 7,
+                        "AD": 34,
+                        "AE": 52,
+                        "AF": 28
+                    }
+                },
+                "Categorical_Variables_Excluded": [
+                    "exog_6",
+                    "exog_7",
+                    "exog_8",
+                    "exog_9",
+                    "exog_10",
+                    "exog_11",
+                    "exog_12",
+                    "exog_13",
+                    "exog_14",
+                    "exog_15",
+                    "exog_16",
+                    "exog_17",
+                    "exog_18",
+                    "exog_19",
+                    "exog_22",
+                    "exog_25",
+                    "exog_30",
+                    "exog_31",
+                    "exog_32",
+                    "exog_33",
+                    "exog_34",
+                    "exog_36",
+                    "exog_37",
+                    "exog_38",
+                    "exog_39",
+                    "exog_40",
+                    "exog_41",
+                    "exog_42",
+                    "exog_43",
+                    "exog_44",
+                    "exog_45",
+                    "exog_46",
+                    "exog_47",
+                    "exog_48",
+                    "exog_49",
+                    "exog_50",
+                    "exog_51",
+                    "exog_52",
+                    "exog_53",
+                    "exog_54",
+                    "exog_55",
+                    "exog_56",
+                    "exog_57",
+                    "exog_58",
+                    "exog_59",
+                    "exog_60",
+                    "exog_61",
+                    "exog_62",
+                    "exog_63",
+                    "exog_64",
+                    "exog_65",
+                    "exog_66",
+                    "exog_67",
+                    "exog_68",
+                    "exog_69",
+                    "exog_70",
+                    "exog_71",
+                    "exog_72",
+                    "exog_73",
+                    "exog_74",
+                    "exog_75",
+                    "exog_76",
+                    "exog_77",
+                    "exog_78"
+                ],
+                "Categorical_Variables_Usage": {
+                    "exog_1": [
+                        "exog_1=AC"
+                    ],
+                    "exog_2": [
+                        "exog_2=0",
+                        "exog_2=AC"
+                    ],
+                    "exog_20": [
+                        "exog_20=0"
+                    ],
+                    "exog_21": [
+                        "exog_21=0"
+                    ],
+                    "exog_23": [
+                        "exog_23=0"
+                    ],
+                    "exog_24": [
+                        "exog_24=0"
+                    ],
+                    "exog_26": [
+                        "exog_26=0"
+                    ],
+                    "exog_27": [
+                        "exog_27=0"
+                    ],
+                    "exog_28": [
+                        "exog_28=0"
+                    ],
+                    "exog_29": [
+                        "exog_29=0"
+                    ],
+                    "exog_3": [
+                        "exog_3=AC"
+                    ],
+                    "exog_35": [
+                        "exog_35=0"
+                    ],
+                    "exog_4": [
+                        "exog_4=AC"
+                    ],
+                    "exog_5": [
+                        "exog_5=AC"
+                    ]
+                },
+                "Continuous_Variables": {},
+                "Continuous_Variables_Excluded": []
+            },
+            "Signal": "Signal_0.01",
+            "Time": {
+                "Horizon": 12,
+                "TimeDelta": "<DateOffset: days=1>",
+                "TimeMax": "2002-10-08 00:00:00",
+                "TimeMin": "2000-01-01 00:00:00",
+                "TimeVariable": "Date"
+            },
+            "Training_Signal_Length": 1012
+        },
+        "Model": {
+            "AR_Model": "ARX",
+            "Best_Decomposition": "_Signal_0.01_LinearTrend_residue_Cycle_None_residue_ARX(64)",
+            "Cycle": "Cycle_None",
+            "Signal_Decomposition_Type": "T+S+R",
+            "Signal_Transoformation": "NoTransf",
+            "Trend": "LinearTrend"
+        },
+        "Model_Performance": {
+            "1": {
+                "AUC": 0.5116,
+                "DiffSMAPE": 0.0076,
+                "ErrorMean": -0.0029,
+                "ErrorStdDev": 0.0141,
+                "KS": 0.05,
+                "KendallTau": 0.8649,
+                "Length": 200,
+                "LnQ": 0.0204,
+                "MAE": 0.0113,
+                "MAPE": 0.0079,
+                "MASE": 0.1432,
+                "MannWhitneyU": 20464.0,
+                "MedAE": 0.0094,
+                "Pearson": 0.9783,
+                "R2": 0.9547,
+                "RMSE": 0.0144,
+                "RMSSE": 0.1709,
+                "SMAPE": 0.0079,
+                "Signal": "Signal_0.01_Forecast_1"
+            },
+            "12": {
+                "AUC": 0.598,
+                "DiffSMAPE": 0.0559,
+                "ErrorMean": -0.034,
+                "ErrorStdDev": 0.0928,
+                "KS": 0.255,
+                "KendallTau": 0.386,
+                "Length": 200,
+                "LnQ": 1.0552,
+                "MAE": 0.08,
+                "MAPE": 0.0566,
+                "MASE": 1.0176,
+                "MannWhitneyU": 23920.0,
+                "MedAE": 0.0698,
+                "Pearson": 0.549,
+                "R2": -1.1358,
+                "RMSE": 0.0989,
+                "RMSSE": 1.1736,
+                "SMAPE": 0.0579,
+                "Signal": "Signal_0.01_Forecast_12"
+            }
+        },
+        "Model_Selection_Criterion": "MASE"
+    },
+    "Training_Time": 6.672
+}
+</ModelInfo>
+
+
+
+
+<Forecast>
+{"Date":{"1000":"2002-09-27T00:00:00.000","1001":"2002-09-28T00:00:00.000","1002":"2002-09-29T00:00:00.000","1003":"2002-09-30T00:00:00.000","1004":"2002-10-01T00:00:00.000","1005":"2002-10-02T00:00:00.000","1006":"2002-10-03T00:00:00.000","1007":"2002-10-04T00:00:00.000","1008":"2002-10-05T00:00:00.000","1009":"2002-10-06T00:00:00.000","1010":"2002-10-07T00:00:00.000","1011":"2002-10-08T00:00:00.000","1012":"2002-10-09T00:00:00.000","1013":"2002-10-10T00:00:00.000","1014":"2002-10-11T00:00:00.000","1015":"2002-10-12T00:00:00.000","1016":"2002-10-13T00:00:00.000","1017":"2002-10-14T00:00:00.000","1018":"2002-10-15T00:00:00.000","1019":"2002-10-16T00:00:00.000","1020":"2002-10-17T00:00:00.000","1021":"2002-10-18T00:00:00.000","1022":"2002-10-19T00:00:00.000","1023":"2002-10-20T00:00:00.000"},"Signal_0.01":{"1000":1.4995794489,"1001":1.4332510428,"1002":1.5381173589,"1003":1.4814382966,"1004":1.5540476362,"1005":1.5152024968,"1006":1.445714786,"1007":1.533121171,"1008":1.4836038423,"1009":1.5658980433,"1010":1.536958051,"1011":1.4406994184,"1012":null,"1013":null,"1014":null,"1015":null,"1016":null,"1017":null,"1018":null,"1019":null,"1020":null,"1021":null,"1022":null,"1023":null},"Signal_0.01_Forecast":{"1000":1.5108629729,"1001":1.4228466121,"1002":1.5177948759,"1003":1.469435237,"1004":1.5496945919,"1005":1.5088526802,"1006":1.424823898,"1007":1.5391842855,"1008":1.4810656157,"1009":1.5563402234,"1010":1.5176438594,"1011":1.4452873102,"1012":1.5332017307,"1013":1.4922058518,"1014":1.5604988581,"1015":1.5187826586,"1016":1.4493079162,"1017":1.5403847191,"1018":1.4925291406,"1019":1.5593122405,"1020":1.5225481168,"1021":1.4538606639,"1022":1.5439596209,"1023":1.4916576426},"Signal_0.01_Forecast_Lower_Bound":{"1000":null,"1001":null,"1002":null,"1003":null,"1004":null,"1005":null,"1006":null,"1007":null,"1008":null,"1009":null,"1010":null,"1011":null,"1012":1.5049777307,"1013":1.4633938518,"1014":1.5258068581,"1015":1.4811506586,"1016":1.4040319162,"1017":1.4872687191,"1018":1.4268691406,"1019":1.4785602405,"1020":1.4227841168,"1021":1.3286166639,"1022":1.3889236209,"1023":1.2978136426},"Signal_0.01_Forecast_Upper_Bound":{"1000":null,"1001":null,"1002":null,"1003":null,"1004":null,"1005":null,"1006":null,"1007":null,"1008":null,"1009":null,"1010":null,"1011":null,"1012":1.5614257307,"1013":1.5210178518,"1014":1.5951908581,"1015":1.5564146586,"1016":1.4945839162,"1017":1.5935007191,"1018":1.5581891406,"1019":1.6400642405,"1020":1.6223121168,"1021":1.5791046639,"1022":1.6989956209,"1023":1.6855016426}}
+</Forecast>
+
+
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/bugs/issue_34/test_artificial_1024_log_linear_5_12_100.py', 'ElapsedTimeSecs':(12.67, 0.26, 4.29), 'MAX_MEM_KB':179680, 'CPU_PRCNT':'35%', 'FILES_IN':8, 'FILES_OUT':624, 'EXIT_STATUS':0}

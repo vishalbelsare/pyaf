@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Antoine Carme <Antoine.Carme@Laposte.net>
+# Copyright (C) 2016 Antoine Carme <Antoine.Carme@outlook.com>
 # All rights reserved.
 
 # This file is part of the Python Automatic Forecasting (PyAF) library and is made available under
@@ -6,8 +6,15 @@
 
 import pandas as pd
 import numpy as np
+from enum import IntEnum
 
 from . import Utils as tsutil
+
+class eDatasetType(IntEnum):
+    Fit = 1
+    Forecast = 2
+    Test = 3
+
 
 class cCuttingInfo:
     def __init__(self):
@@ -73,8 +80,8 @@ class cCuttingInfo:
         
     def defineCuttingParameters(self):
         lStr = "CUTTING_START SignalVariable='" + self.mSignal +"'";
-        # print(lStr);
-        #print(self.mSignalFrame.head())
+        # tsutil.print_pyaf_detailed_info(lStr);
+        # tsutil.print_pyaf_detailed_info(self.mSignalFrame.head())
         if(self.mOptions.mCustomSplit is not None):
             self.set_split(self.mOptions.mCustomSplit)
         else:
@@ -83,15 +90,17 @@ class cCuttingInfo:
         lStr = "CUTTING_PARAMETERS " + str(self.mTrainSize) + " Estimation = (" + str(self.mEstimStart) + " , " + str(self.mEstimEnd) + ")";
         lStr += " Validation = (" + str(self.mValidStart) + " , " + str(self.mValidEnd) + ")";
         lStr += " Test = (" + str(self.mTestStart) + " , " + str(self.mTestEnd) + ")";
-        #print(lStr);
+        # tsutil.print_pyaf_detailed_info(lStr);
         
         pass
 
     def cutFrame(self, df):
-        lFrameFit = df[self.mEstimStart : self.mEstimEnd];
-        lFrameForecast = df[self.mValidStart : self.mValidEnd];
-        lFrameTest = df[self.mTestStart : self.mTestEnd];
-        return (lFrameFit, lFrameForecast, lFrameTest)
+        lDict = {
+            eDatasetType.Fit : df[self.mEstimStart : self.mEstimEnd],
+            eDatasetType.Forecast : df[self.mValidStart : self.mValidEnd],
+            eDatasetType.Test : df[self.mTestStart : self.mTestEnd]
+        }
+        return lDict
 
     def getEstimPart(self, df):
         lFrameFit = df[self.mEstimStart : self.mEstimEnd];
@@ -101,6 +110,13 @@ class cCuttingInfo:
         lFrameValid = df[self.mValidStart : self.mValidEnd];
         return lFrameValid;
 
+    def add_dataset_indicators(self, df):
+        lCutting = self.cutFrame(df)
+        for (lDataset, lFrame) in lCutting.items():
+            lColumnName = "dataset_indicator_" + lDataset.name
+            df[lColumnName] = np.nan
+            df.loc[lFrame.index, lColumnName] = 1.0
+        return df
 
     def info(self):
         lStr2 += " Estimation = (" + str(self.mEstimStart) + " , " + str(self.mEstimEnd) + ")";

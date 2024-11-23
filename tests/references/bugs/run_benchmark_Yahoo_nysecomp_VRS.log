@@ -1,0 +1,103 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['VRS'], 'Horizons': {'VRS': 1}}
+INFO:pyaf.std:TRAINING_ENGINE_END 1.242
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=2016-07-20T00:00:00.000000 TimeMax=2016-07-26T00:00:00.000000 TimeDelta=<DateOffset: days=2> Horizon=1
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='VRS' Length=5  Min=11.53 Max=11.8  Mean=11.644 StdDev=0.110743
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='Diff_VRS' Min=-0.555556 Max=0.0  Mean=-0.2 StdDev=0.19682
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE 'Diff_'
+INFO:pyaf.std:BEST_DECOMPOSITION  'Diff_VRS_PolyTrend_residue_zeroCycle[0.0]_residue_NoAR' [PolyTrend + NoCycle + NoAR]
+INFO:pyaf.std:TREND_DETAIL 'Diff_VRS_PolyTrend' [PolyTrend]
+INFO:pyaf.std:CYCLE_DETAIL 'Diff_VRS_PolyTrend_residue_zeroCycle[0.0]' [NoCycle]
+INFO:pyaf.std:AUTOREG_DETAIL 'Diff_VRS_PolyTrend_residue_zeroCycle[0.0]_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.0007), 'RMSE': np.float64(0.0102), 'MAE': np.float64(0.0078), 'MASE': np.float64(0.1151)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.0007), 'RMSE': np.float64(0.0102), 'MAE': np.float64(0.0078), 'MASE': np.float64(0.1151)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.0007), 'RMSE': np.float64(0.0102), 'MAE': np.float64(0.0078), 'MASE': np.float64(0.1151)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.0007), 'RMSE': np.float64(0.0102), 'MAE': np.float64(0.0078), 'MASE': np.float64(0.1151)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.0007), 'RMSE': np.float64(0.0102), 'MAE': np.float64(0.0078), 'MASE': np.float64(0.1151)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.0007), 'RMSE': np.float64(0.0102), 'MAE': np.float64(0.0078), 'MASE': np.float64(0.1151)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'M', 'Trend': 'M', 'Cycle': 'S', 'AR': 'S'} [MMSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:DIFFERENCING_TRANSFORMATION Difference 1.0
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:POLYNOMIAL_RIDGE_TREND PolyTrend (np.float64(0.035979), array([-2.487407,  3.205714, -0.773333]))
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:ZERO_CYCLE_MODEL_VALUES Diff_VRS_PolyTrend_residue_zeroCycle[0.0] 0.0 {}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'VRS'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'VRS' 0 {'Transformation': 'Diff_VRS', 'DecompositionType': 'T+S+R', 'Model': 'Diff_VRS_PolyTrend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 15.0, 'Complexity': 'MMSSS', 'Forecast_MASE_1': 0.1151}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'VRS' 1 {'Transformation': 'RelDiff_VRS', 'DecompositionType': 'T+S+R', 'Model': 'RelDiff_VRS_PolyTrend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 15.0, 'Complexity': 'MMSSS', 'Forecast_MASE_1': 0.1156}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'VRS'
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['VRS'], 'Horizons': {'VRS': 1}}
+INFO:pyaf.std:FORECASTING_ENGINE_END 0.049
+ACQUIRED_YAHOO_LINKS 37
+load_yahoo_stock_prices nysecomp 1
+BENCH_TYPE YAHOO_STOCKS_nysecomp OneDataFramePerSignal
+STARTING_BENCH_FOR_SIGNAL YAHOO_STOCKS_nysecomp VRS 1
+BENCH_DATA YAHOO_STOCKS_nysecomp
+TIME :  Date N= 5 H= 1 HEAD= ['2016-07-20T00:00:00.000000000' '2016-07-21T00:00:00.000000000'
+ '2016-07-22T00:00:00.000000000' '2016-07-25T00:00:00.000000000'
+ '2016-07-26T00:00:00.000000000'] TAIL= ['2016-07-20T00:00:00.000000000' '2016-07-21T00:00:00.000000000'
+ '2016-07-22T00:00:00.000000000' '2016-07-25T00:00:00.000000000'
+ '2016-07-26T00:00:00.000000000']
+SIGNAL :  VRS N= 5 H= 1 HEAD= [11.8  11.75 11.6  11.54 11.53] TAIL= [11.8  11.75 11.6  11.54 11.53]
+     VRS       Date
+0  11.80 2016-07-20
+1  11.75 2016-07-21
+2  11.60 2016-07-22
+3  11.54 2016-07-25
+4  11.53 2016-07-26
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 5 entries, 0 to 4
+Data columns (total 2 columns):
+ #   Column  Non-Null Count  Dtype         
+---  ------  --------------  -----         
+ 0   VRS     5 non-null      float64       
+ 1   Date    5 non-null      datetime64[ns]
+dtypes: datetime64[ns](1), float64(1)
+memory usage: 212.0 bytes
+None
+   Split Transformation DecompositionType  ... Forecast_MASE_1 Test_MASE_1 Voting
+0   None       Diff_VRS             T+S+R  ...          0.1151      0.1151   15.0
+1   None    RelDiff_VRS             T+S+R  ...          0.1156      0.1156   15.0
+2   None     CumSum_VRS             T+S+R  ...          0.2087      0.2087   13.0
+3   None           _VRS             T+S+R  ...          0.3048      0.3048   12.0
+4   None           _VRS             T+S+R  ...          0.5099      0.5099   11.0
+5   None       Diff_VRS             T+S+R  ...          0.5748      0.5748   10.0
+6   None       Diff_VRS             T+S+R  ...          0.5687      0.5687   10.0
+7   None    RelDiff_VRS             T+S+R  ...          0.5780      0.5780   10.0
+8   None    RelDiff_VRS             T+S+R  ...          0.5726      0.5726   10.0
+9   None           _VRS             T+S+R  ...          0.8000      0.8000    6.0
+10  None       Diff_VRS             T+S+R  ...          0.8000      0.8000    6.0
+11  None    RelDiff_VRS             T+S+R  ...          0.8000      0.8000    6.0
+12  None     CumSum_VRS             T+S+R  ...          0.8889      0.8889    3.0
+13  None     CumSum_VRS             T+S+R  ...          1.0490      1.0490    2.0
+14  None     CumSum_VRS             T+S+R  ...          1.3037      1.3037    1.0
+15  None           _VRS             T+S+R  ...          1.5526      1.5526    0.0
+
+[16 rows x 11 columns]
+  Split Transformation DecompositionType  ... Forecast_MASE_1 Test_MASE_1 Voting
+0  None       Diff_VRS             T+S+R  ...          0.1151      0.1151   15.0
+1  None    RelDiff_VRS             T+S+R  ...          0.1156      0.1156   15.0
+2  None     CumSum_VRS             T+S+R  ...          0.2087      0.2087   13.0
+3  None           _VRS             T+S+R  ...          0.3048      0.3048   12.0
+4  None           _VRS             T+S+R  ...          0.5099      0.5099   11.0
+
+[5 rows x 11 columns]
+1 0    11.55
+Name: VRS, dtype: float64
+1 0    11.688057
+Name: VRS_Forecast, dtype: float64
+FORECAST_DETAIL_ACTUAL Yahoo_Stock_Price_nysecomp.VRS VRS [np.float64(11.55)]
+FORECAST_DETAIL_PREDICTED Yahoo_Stock_Price_nysecomp.VRS VRS [np.float64(11.688057142857142)]
+BENCHMARK_PERF_DETAIL_SIGNAL_HORIZON Yahoo_Stock_Price_nysecomp.VRS VRS 5 1
+BENCHMARK_PERF_DETAIL_BENCH_TIME_IN_SECONDS PYAF_SYSTEM_DEPENDENT_ Yahoo_Stock_Price_nysecomp.VRS VRS 3.982139825820923
+BENCHMARK_PERF_DETAIL_BEST_MODEL Yahoo_Stock_Price_nysecomp.VRS VRS PolyTrend + NoCycle + NoAR
+BENCHMARK_PERF_DETAIL_PERF_COUNT Yahoo_Stock_Price_nysecomp.VRS VRS 1
+BENCHMARK_PERF_DETAIL_PERF_MAPE_SMAPE_MASE Yahoo_Stock_Price_nysecomp.VRS VRS 0.012 0.0119 0.0
+BENCHMARK_PERF_DETAIL_PERF_L1_L2_R2 Yahoo_Stock_Price_nysecomp.VRS VRS 0.1381 0.1381 -190597745.9388
+BENCHMARK_SUCCESS 'YAHOO_STOCKS_nysecomp_VRS_1'
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/bugs/run_benchmark_Yahoo_nysecomp_VRS.py', 'ElapsedTimeSecs':(8.05, 0.28, 2.34), 'MAX_MEM_KB':154164, 'CPU_PRCNT':'32%', 'FILES_IN':840, 'FILES_OUT':96, 'EXIT_STATUS':0}

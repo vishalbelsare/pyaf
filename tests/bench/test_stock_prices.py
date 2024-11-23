@@ -4,7 +4,6 @@ import numpy as np
 import pyaf.ForecastEngine as autof
 import pyaf.Bench.TS_datasets as tsds
 
-import pyaf.CodeGen.TS_CodeGenerator as tscodegen
 
 stock = "BNP.PA";
 b1 = tsds.load_yahoo_stock_prices("cac40")[stock]
@@ -20,8 +19,8 @@ H = b1.mHorizon[stock]
 
 lEngine.train(df , b1.mTimeVar , b1.mSignalVar , H)
 lEngine.getModelInfo();
-print(lEngine.mSignalDecomposition.mTrPerfDetails.head());
 
+lEngine.standardPlots("outputs/stock_prices_cac40")
 
 dfapp_in = df.copy();
 dfapp_in.tail()

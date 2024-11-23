@@ -25,8 +25,8 @@ H = b1.mHorizon;
 # lEngine.mOptions.mDebugPerformance = True;
 lEngine.train(df , b1.mTimeVar , b1.mSignalVar, H);
 lEngine.getModelInfo();
-perfs = lEngine.mSignalDecomposition.mTrPerfDetails 
-print(perfs.head(perfs.shape[0]));
+
+lEngine.standardPlots("outputs/func_ozone_bench_mode")
 
 dfapp_in = df;
 # dfapp_in.tail()

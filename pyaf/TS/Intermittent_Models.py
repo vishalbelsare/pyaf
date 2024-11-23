@@ -3,8 +3,7 @@ import pandas as pd
 from . import SignalDecomposition_AR as tsar
 from . import Utils as tsutil
 from . import Perf as tsperf
-
-import sys
+from . import Complexity as tscomplex
 
 
 def is_signal_intermittent(iSeries, iOptions):
@@ -21,7 +20,7 @@ class cCroston_Model(tsar.cAbstractAR):
         super().__init__(cycle_residue_name, iExogenousInfo)
         self.mNbLags = 1
         self.mAlpha = None
-        
+        self.mComplexity = tscomplex.eModelComplexity.High;        
 
     def dumpCoefficients(self, iMax=10):
         logger = tsutil.get_pyaf_logger();
@@ -43,7 +42,7 @@ class cCroston_Model(tsar.cAbstractAR):
 
 
     def estimate_alpha(self, df):
-        # print("CROSTON_OPTIONS" , self.mOptions.mCrostonOptions.__dict__)
+        # tsutil.print_pyaf_detailed_info("CROSTON_OPTIONS" , self.mOptions.mCrostonOptions.__dict__)
         method = self.mOptions.mCrostonOptions.mMethod
         if(self.mOptions.mCrostonOptions.mAlpha is not None):
             self.mAlpha = self.mOptions.mCrostonOptions.mAlpha
@@ -55,13 +54,14 @@ class cCroston_Model(tsar.cAbstractAR):
             for alpha in np.arange(0.05 , 1.0, 0.05):
                 forecast_df = self.compute_forecast(df, alpha, method, 1)
                 lPerf = tsperf.cPerf();
-                lPerf.computeCriterion(forecast_df[self.mCycleResidueName] ,  forecast_df[lForecastColumnName] ,
-                                       self.mOptions.mCrostonOptions.mAlphaCriterion,
-                                       "CROSTON_SEL_" + '_Fit_' + str(alpha))
-                lPerfs[alpha] = lPerf.mL2
+                lDict = lPerf.computeCriterionValues(forecast_df[self.mCycleResidueName] ,
+                                                     forecast_df[lForecastColumnName] ,
+                                                     [self.mOptions.mCrostonOptions.mAlphaCriterion],
+                                                     "CROSTON_SEL_" + '_Fit_' + str(alpha))
+                lPerfs[alpha] = lDict[self.mOptions.mCrostonOptions.mAlphaCriterion]
             self.mAlpha = min(lPerfs, key=lPerfs.get)
-            # print(lPerfs)
-            # print("CROSTON_OPTIMIZED_ALPHA" , self.mAlpha)
+            # tsutil.print_pyaf_detailed_info(lPerfs)
+            # tsutil.print_pyaf_detailed_info("CROSTON_OPTIMIZED_ALPHA" , self.mAlpha)
             return
     
     def croston(self, df, horizon_index = 1):
@@ -79,21 +79,27 @@ class cCroston_Model(tsar.cAbstractAR):
         lSES = SimpleExpSmoothing(x).fit(smoothing_level=alpha, optimized=False)
         y = lSES.fittedvalues
         return y
-    
+
     def compute_forecast(self, df, alpha, method, horizon_index = 1):
-        # print(df.shape)
-        # print(df.columns)
-        # print(df[['Date', 'Signal', '_Signal', 'row_number', '_Signal_ConstantTrend_residue_zeroCycle_residue']].tail(12))
+        # tsutil.print_pyaf_detailed_info(df.shape)
+        # tsutil.print_pyaf_detailed_info(df.columns)
+        # tsutil.print_pyaf_detailed_info(df[['Date', 'Signal', '_Signal', 'row_number', '_Signal_ConstantTrend_residue_zeroCycle_residue']].tail(12))
         lCounts_df = df[[self.mTime, self.mCycleResidueName]].copy()
         lCounts_df['index'] = np.arange(lCounts_df.shape[0])
+        df1 = lCounts_df.reset_index()
+
         counts = lCounts_df[self.mCycleResidueName] - self.mOffset
         counts = counts[:-(horizon_index)]
-        # print(list(counts.unique()))
-        # print(counts.describe())
+        # tsutil.print_pyaf_detailed_info(list(counts.unique()))
+        # tsutil.print_pyaf_detailed_info(counts.describe())
         # assert(not np.isnan(counts[:-1]).any())
         #  q is often called the “demand” and a the “inter-arrival time”.
         q = counts[abs(counts) > 1e-8]
-        demand_times = pd.Series(list(q.index)) + 1
+        if(q.shape[0] == 0):
+            df1['forecast'] = self.mOffset
+            return df1
+        assert(q.shape[0] > 0)
+        demand_times = pd.Series(list(q.index), dtype=np.float64) + 1
         a = demand_times - demand_times.shift(1).fillna(0.0)
         df2 = pd.DataFrame({'demand_time' : list(demand_times), 'q' : list(q) , 'a' : list(a) })
         
@@ -106,9 +112,8 @@ class cCroston_Model(tsar.cAbstractAR):
 
         for h in range(horizon_index):
             lCounts_df.loc[-(h+1), self.mCycleResidueName] = None
-        df1 = lCounts_df.reset_index()
         df3 = df1.merge(df2 , how='left', on=('index' , 'index'))
-        df4 = df3.fillna(method='ffill')
+        df4 = df3.ffill()
         # fill first empty fit data with zero counts (when signal starts with zeros)
         i = 0
         while(np.isnan(df4.loc[i , 'forecast'])):
@@ -118,7 +123,7 @@ class cCroston_Model(tsar.cAbstractAR):
         return df4
         
     def fit(self):
-        #  print("ESTIMATE_CROSTON_MODEL_START" , self.mCycleResidueName);
+        # tsutil.print_pyaf_detailed_info("ESTIMATE_CROSTON_MODEL_START" , self.mCycleResidueName);
 
         self.set_name();
         
@@ -127,17 +132,16 @@ class cCroston_Model(tsar.cAbstractAR):
         self.mSignal = self.mTimeInfo.mSignal;
         lAREstimFrame = self.mSplit.getEstimPart(self.mARFrame)
         self.mOffset = lAREstimFrame[self.mCycleResidueName].min()
-        print("OFFSET", (self.mCycleResidueName, self.mOffset))
+        # tsutil.print_pyaf_detailed_info("OFFSET", (self.mCycleResidueName, self.mOffset))
         self.estimate_alpha(lAREstimFrame)
         self.mFeatureSelector =  None;
         self.mInputNamesAfterSelection = self.mInputNames;
-        self.mComplexity = 2
 
         lPredicted = self.croston(self.mARFrame);
         self.mARFrame[self.mOutName] = lPredicted['forecast']
         self.compute_ar_residue(self.mARFrame)
 
-        # print("ESTIMATE_CROSTON_MODEL_END" , self.mOutName);
+        # tsutil.print_pyaf_detailed_info("ESTIMATE_CROSTON_MODEL_END" , self.mOutName);
 
 
     def transformDataset(self, df, horizon_index = 1):

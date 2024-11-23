@@ -1,0 +1,171 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['freight'], 'Horizons': {'freight': 2}}
+INFO:pyaf.std:TRAINING_ENGINE_END 3.582
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=1947 TimeMax=1982 TimeDelta=1 Horizon=2
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='freight' Length=47  Min=298.1 Max=6243.1  Mean=2177.346809 StdDev=1474.626929
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_freight' Min=0.0 Max=1.0  Mean=0.316105 StdDev=0.248045
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_freight_Lag1Trend_residue_Cycle_None_residue_NoAR' [Lag1Trend + Cycle_None + NoAR]
+INFO:pyaf.std:TREND_DETAIL '_freight_Lag1Trend' [Lag1Trend]
+INFO:pyaf.std:CYCLE_DETAIL '_freight_Lag1Trend_residue_Cycle_None' [Cycle_None]
+INFO:pyaf.std:AUTOREG_DETAIL '_freight_Lag1Trend_residue_Cycle_None_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.6012), 'RMSE': np.float64(1658.2713), 'MAE': np.float64(1237.3139), 'MASE': np.float64(0.9722)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.2863), 'RMSE': np.float64(291.4778), 'MAE': np.float64(248.9278), 'MASE': np.float64(0.8961)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.3232), 'RMSE': np.float64(723.6195), 'MAE': np.float64(677.95), 'MASE': np.float64(0.7282)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=2 {'MAPE': np.float64(1.0933), 'RMSE': np.float64(2228.2598), 'MAE': np.float64(1795.1486), 'MASE': np.float64(1.4105)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=2 {'MAPE': np.float64(0.5502), 'RMSE': np.float64(472.4619), 'MAE': np.float64(412.0333), 'MASE': np.float64(1.4832)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=2 {'MAPE': np.float64(0.3362), 'RMSE': np.float64(969.0576), 'MAE': np.float64(777.55), 'MASE': np.float64(0.8352)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'S', 'Cycle': 'S', 'AR': 'S'} [SSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:LAG1_TREND Lag1Trend 0.728907
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:BEST_CYCLE_LENGTH_VALUES _freight_Lag1Trend_residue_Cycle_None None -0.033545 {}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'freight'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'freight' 0 {'Transformation': '_freight', 'DecompositionType': 'T+S+R', 'Model': '_freight_Lag1Trend_residue_Cycle_None_residue_NoAR', 'Voting': 94.5, 'Complexity': 'SSSSS', 'Forecast_MASE_1': 0.8961, 'Forecast_MASE_2': 1.4832}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'freight' 1 {'Transformation': '_freight', 'DecompositionType': 'T+S+R', 'Model': '_freight_Lag1Trend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 94.5, 'Complexity': 'SSSSS', 'Forecast_MASE_1': 0.8961, 'Forecast_MASE_2': 1.4832}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'freight' 2 {'Transformation': 'CumSum_freight', 'DecompositionType': 'T+S+R', 'Model': 'CumSum_freight_Lag1Trend_residue_Cycle_None_residue_NoAR', 'Voting': 94.5, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.8961, 'Forecast_MASE_2': 1.4832}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'freight' 3 {'Transformation': 'CumSum_freight', 'DecompositionType': 'T+S+R', 'Model': 'CumSum_freight_Lag1Trend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 94.5, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.8961, 'Forecast_MASE_2': 1.4832}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'freight' 4 {'Transformation': 'Diff_freight', 'DecompositionType': 'T+S+R', 'Model': 'Diff_freight_Lag1Trend_residue_Cycle_None_residue_NoAR', 'Voting': 94.5, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.8961, 'Forecast_MASE_2': 1.4832}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'freight' 5 {'Transformation': 'Diff_freight', 'DecompositionType': 'T+S+R', 'Model': 'Diff_freight_Lag1Trend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 94.5, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.8961, 'Forecast_MASE_2': 1.4832}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'freight' 6 {'Transformation': 'RelDiff_freight', 'DecompositionType': 'T+S+R', 'Model': 'RelDiff_freight_Lag1Trend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 94.5, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.8961, 'Forecast_MASE_2': 1.4832}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'freight'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/expsmooth_freight.csv_2_freight_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/expsmooth_freight.csv_2_freight_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/expsmooth_freight.csv_2_freight_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/expsmooth_freight.csv_2_freight_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/expsmooth_freight.csv_2_freight_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/expsmooth_freight.csv_2_freight_prediction_intervals_output.png')
+/home/runner/work/pyaf/pyaf/pyaf/TS/Plots.py:35: UserWarning: Tight layout not applied. The bottom and top margins cannot be made large enough to accommodate all Axes decorations.
+  fig.tight_layout()
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/expsmooth_freight.csv_2_freight_quantiles_output.png')
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['freight'], 'Horizons': {'freight': 4}}
+PERFORMANCE MAPE_FORECAST freight 0.5502
+INFO:pyaf.std:TRAINING_ENGINE_END 3.106
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=1947 TimeMax=1980 TimeDelta=1 Horizon=4
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='freight' Length=47  Min=298.1 Max=6243.1  Mean=2177.346809 StdDev=1474.626929
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='CumSum_freight' Min=0.728907 Max=14.856955  Mean=8.313123 StdDev=4.459449
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE 'CumSum_'
+INFO:pyaf.std:BEST_DECOMPOSITION  'CumSum_freight_ConstantTrend_residue_Cycle_None_residue_NoAR' [ConstantTrend + Cycle_None + NoAR]
+INFO:pyaf.std:TREND_DETAIL 'CumSum_freight_ConstantTrend' [ConstantTrend]
+INFO:pyaf.std:CYCLE_DETAIL 'CumSum_freight_ConstantTrend_residue_Cycle_None' [Cycle_None]
+INFO:pyaf.std:AUTOREG_DETAIL 'CumSum_freight_ConstantTrend_residue_Cycle_None_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.8113), 'RMSE': np.float64(2641.5871), 'MAE': np.float64(2178.725), 'MASE': np.float64(1.6778)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.4987), 'RMSE': np.float64(661.3473), 'MAE': np.float64(507.1111), 'MASE': np.float64(1.7098)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.8018), 'RMSE': np.float64(1433.582), 'MAE': np.float64(1337.65), 'MASE': np.float64(2.5372)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=4 {'MAPE': np.float64(0.8113), 'RMSE': np.float64(2641.5871), 'MAE': np.float64(2178.725), 'MASE': np.float64(1.6778)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=4 {'MAPE': np.float64(0.4987), 'RMSE': np.float64(661.3473), 'MAE': np.float64(507.1111), 'MASE': np.float64(1.7098)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=4 {'MAPE': np.float64(0.8018), 'RMSE': np.float64(1433.582), 'MAE': np.float64(1337.65), 'MASE': np.float64(2.5372)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'M', 'Trend': 'S', 'Cycle': 'S', 'AR': 'S'} [MSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES Integration None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:CONSTANT_TREND CumSum_freight_ConstantTrend 6.22463
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:BEST_CYCLE_LENGTH_VALUES CumSum_freight_ConstantTrend_residue_Cycle_None None -0.899731 {}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'freight'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'freight' 0 {'Transformation': 'CumSum_freight', 'DecompositionType': 'T+S+R', 'Model': 'CumSum_freight_ConstantTrend_residue_Cycle_None_residue_NoAR', 'Voting': 155.5, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 1.7098, 'Forecast_MASE_2': 1.7098, 'Forecast_MASE_3': 1.7098, 'Forecast_MASE_4': 1.7098}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'freight' 1 {'Transformation': 'CumSum_freight', 'DecompositionType': 'T+S+R', 'Model': 'CumSum_freight_ConstantTrend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 155.5, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 1.7098, 'Forecast_MASE_2': 1.7098, 'Forecast_MASE_3': 1.7098, 'Forecast_MASE_4': 1.7098}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'freight'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/expsmooth_freight.csv_4_freight_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/expsmooth_freight.csv_4_freight_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/expsmooth_freight.csv_4_freight_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/expsmooth_freight.csv_4_freight_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/expsmooth_freight.csv_4_freight_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/expsmooth_freight.csv_4_freight_prediction_intervals_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/expsmooth_freight.csv_4_freight_quantiles_output.png')
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['freight'], 'Horizons': {'freight': 8}}
+PERFORMANCE MAPE_FORECAST freight 0.4987
+INFO:pyaf.std:TRAINING_ENGINE_END 5.173
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=1947 TimeMax=1977 TimeDelta=1 Horizon=8
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='freight' Length=47  Min=298.1 Max=6243.1  Mean=2177.346809 StdDev=1474.626929
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='CumSum_freight' Min=0.728907 Max=14.856955  Mean=8.313123 StdDev=4.459449
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE 'CumSum_'
+INFO:pyaf.std:BEST_DECOMPOSITION  'CumSum_freight_ConstantTrend_residue_Cycle_None_residue_NoAR' [ConstantTrend + Cycle_None + NoAR]
+INFO:pyaf.std:TREND_DETAIL 'CumSum_freight_ConstantTrend' [ConstantTrend]
+INFO:pyaf.std:CYCLE_DETAIL 'CumSum_freight_ConstantTrend_residue_Cycle_None' [Cycle_None]
+INFO:pyaf.std:AUTOREG_DETAIL 'CumSum_freight_ConstantTrend_residue_Cycle_None_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.8011), 'RMSE': np.float64(2343.922), 'MAE': np.float64(1969.9306), 'MASE': np.float64(1.6717)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.555), 'RMSE': np.float64(2904.683), 'MAE': np.float64(1778.1312), 'MASE': np.float64(1.8642)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.7508), 'RMSE': np.float64(1204.0506), 'MAE': np.float64(1087.2938), 'MASE': np.float64(2.8182)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=8 {'MAPE': np.float64(0.8011), 'RMSE': np.float64(2343.922), 'MAE': np.float64(1969.9306), 'MASE': np.float64(1.6717)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=8 {'MAPE': np.float64(0.555), 'RMSE': np.float64(2904.683), 'MAE': np.float64(1778.1312), 'MASE': np.float64(1.8642)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=8 {'MAPE': np.float64(0.7508), 'RMSE': np.float64(1204.0506), 'MAE': np.float64(1087.2938), 'MASE': np.float64(2.8182)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'M', 'Trend': 'S', 'Cycle': 'S', 'AR': 'S'} [MSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES Integration None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:CONSTANT_TREND CumSum_freight_ConstantTrend 5.598237
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:BEST_CYCLE_LENGTH_VALUES CumSum_freight_ConstantTrend_residue_Cycle_None None -0.753561 {}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'freight'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'freight' 0 {'Transformation': 'CumSum_freight', 'DecompositionType': 'T+S+R', 'Model': 'CumSum_freight_ConstantTrend_residue_Cycle_None_residue_NoAR', 'Voting': 268.75, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 1.8642, 'Forecast_MASE_2': 1.8642, 'Forecast_MASE_3': 1.8642, 'Forecast_MASE_4': 1.8642, 'Forecast_MASE_5': 1.8642, 'Forecast_MASE_6': 1.8642, 'Forecast_MASE_7': 1.8642, 'Forecast_MASE_8': 1.8642}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'freight' 1 {'Transformation': 'CumSum_freight', 'DecompositionType': 'T+S+R', 'Model': 'CumSum_freight_ConstantTrend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 268.75, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 1.8642, 'Forecast_MASE_2': 1.8642, 'Forecast_MASE_3': 1.8642, 'Forecast_MASE_4': 1.8642, 'Forecast_MASE_5': 1.8642, 'Forecast_MASE_6': 1.8642, 'Forecast_MASE_7': 1.8642, 'Forecast_MASE_8': 1.8642}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'freight'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/expsmooth_freight.csv_8_freight_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/expsmooth_freight.csv_8_freight_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/expsmooth_freight.csv_8_freight_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/expsmooth_freight.csv_8_freight_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/expsmooth_freight.csv_8_freight_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/expsmooth_freight.csv_8_freight_prediction_intervals_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/expsmooth_freight.csv_8_freight_quantiles_output.png')
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['freight'], 'Horizons': {'freight': 12}}
+PERFORMANCE MAPE_FORECAST freight 0.555
+INFO:pyaf.std:TRAINING_ENGINE_END 8.728
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=1947 TimeMax=1993 TimeDelta=1 Horizon=12
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='freight' Length=47  Min=298.1 Max=6243.1  Mean=2177.346809 StdDev=1474.626929
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='Diff_freight' Min=-0.613288 Max=0.581194  Mean=-0.007664 StdDev=0.246226
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE 'Diff_'
+INFO:pyaf.std:BEST_DECOMPOSITION  'Diff_freight_PolyTrend_residue_zeroCycle[0.0]_residue_NoAR' [PolyTrend + NoCycle + NoAR]
+INFO:pyaf.std:TREND_DETAIL 'Diff_freight_PolyTrend' [PolyTrend]
+INFO:pyaf.std:CYCLE_DETAIL 'Diff_freight_PolyTrend_residue_zeroCycle[0.0]' [NoCycle]
+INFO:pyaf.std:AUTOREG_DETAIL 'Diff_freight_PolyTrend_residue_zeroCycle[0.0]_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.6294), 'RMSE': np.float64(1256.8521), 'MAE': np.float64(918.9621), 'MASE': np.float64(0.8781)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.6294), 'RMSE': np.float64(1256.8521), 'MAE': np.float64(918.9621), 'MASE': np.float64(0.8781)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.6294), 'RMSE': np.float64(1256.8521), 'MAE': np.float64(918.9621), 'MASE': np.float64(0.8781)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=12 {'MAPE': np.float64(0.6294), 'RMSE': np.float64(1256.8521), 'MAE': np.float64(918.9621), 'MASE': np.float64(0.8781)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=12 {'MAPE': np.float64(0.6294), 'RMSE': np.float64(1256.8521), 'MAE': np.float64(918.9621), 'MASE': np.float64(0.8781)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=12 {'MAPE': np.float64(0.6294), 'RMSE': np.float64(1256.8521), 'MAE': np.float64(918.9621), 'MASE': np.float64(0.8781)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'M', 'Trend': 'M', 'Cycle': 'S', 'AR': 'S'} [MMSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:DIFFERENCING_TRANSFORMATION Difference 0.7289066442388561
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:POLYNOMIAL_RIDGE_TREND PolyTrend (np.float64(-0.123257), array([ 1.065635, -2.412356,  1.548869]))
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:ZERO_CYCLE_MODEL_VALUES Diff_freight_PolyTrend_residue_zeroCycle[0.0] 0.0 {}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'freight'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'freight' 0 {'Transformation': 'Diff_freight', 'DecompositionType': 'T+S+R', 'Model': 'Diff_freight_PolyTrend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 409.0, 'Complexity': 'MMSSS', 'Forecast_MASE_1': 0.8781, 'Forecast_MASE_2': 0.8781, 'Forecast_MASE_3': 0.8781, 'Forecast_MASE_4': 0.8781, 'Forecast_MASE_5': 0.8781, 'Forecast_MASE_6': 0.8781, 'Forecast_MASE_7': 0.8781, 'Forecast_MASE_8': 0.8781, 'Forecast_MASE_9': 0.8781, 'Forecast_MASE_10': 0.8781, 'Forecast_MASE_11': 0.8781, 'Forecast_MASE_12': 0.8781}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'freight'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/expsmooth_freight.csv_12_freight_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/expsmooth_freight.csv_12_freight_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/expsmooth_freight.csv_12_freight_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/expsmooth_freight.csv_12_freight_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/expsmooth_freight.csv_12_freight_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/expsmooth_freight.csv_12_freight_prediction_intervals_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/expsmooth_freight.csv_12_freight_quantiles_output.png')
+PERFORMANCE MAPE_FORECAST freight 0.6294
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/expsmooth/expsmooth_dataset_freight.py', 'ElapsedTimeSecs':(62.20, 1.21, 30.60), 'MAX_MEM_KB':241600, 'CPU_PRCNT':'51%', 'FILES_IN':8, 'FILES_OUT':5560, 'EXIT_STATUS':0}

@@ -1,0 +1,415 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['Used'], 'Horizons': {'Used': 10}}
+        Date  Used
+0 2011-11-01   587
+1 2011-11-02   578
+2 2011-11-03   600
+3 2011-11-04   599
+4 2011-11-05   678
+INFO:pyaf.std:PERF_DUMP_START
+INFO:pyaf.std:[
+    {
+        "Category": "NoTransf_LinearTrend_Cycle_None_NoAR",
+        "Complexity": "SSSSS",
+        "DetailedFormula": [
+            "_Used",
+            "T+S+R",
+            null,
+            "_Used_LinearTrend_residue_Cycle_None_residue_NoAR"
+        ],
+        "Forecast_MASE_1": 0.9348,
+        "Forecast_MASE_10": 0.9348,
+        "Forecast_MASE_2": 0.9348,
+        "Forecast_MASE_3": 0.9348,
+        "Forecast_MASE_4": 0.9348,
+        "Forecast_MASE_5": 0.9348,
+        "Forecast_MASE_6": 0.9348,
+        "Forecast_MASE_7": 0.9348,
+        "Forecast_MASE_8": 0.9348,
+        "Forecast_MASE_9": 0.9348,
+        "Model": "_Used_LinearTrend_residue_Cycle_None_residue_NoAR",
+        "Voting": 339.9
+    },
+    {
+        "Category": "NoTransf_LinearTrend_NoCycle_NoAR",
+        "Complexity": "SSSSS",
+        "DetailedFormula": [
+            "_Used",
+            "T+S+R",
+            null,
+            "_Used_LinearTrend_residue_zeroCycle[0.0]_residue_NoAR"
+        ],
+        "Forecast_MASE_1": 0.9348,
+        "Forecast_MASE_10": 0.9348,
+        "Forecast_MASE_2": 0.9348,
+        "Forecast_MASE_3": 0.9348,
+        "Forecast_MASE_4": 0.9348,
+        "Forecast_MASE_5": 0.9348,
+        "Forecast_MASE_6": 0.9348,
+        "Forecast_MASE_7": 0.9348,
+        "Forecast_MASE_8": 0.9348,
+        "Forecast_MASE_9": 0.9348,
+        "Model": "_Used_LinearTrend_residue_zeroCycle[0.0]_residue_NoAR",
+        "Voting": 339.9
+    },
+    {
+        "Category": "Integration_LinearTrend_Cycle_None_NoAR",
+        "Complexity": "MSSSS",
+        "DetailedFormula": [
+            "CumSum_Used",
+            "T+S+R",
+            null,
+            "CumSum_Used_LinearTrend_residue_Cycle_None_residue_NoAR"
+        ],
+        "Forecast_MASE_1": 0.9419,
+        "Forecast_MASE_10": 0.9419,
+        "Forecast_MASE_2": 0.9419,
+        "Forecast_MASE_3": 0.9419,
+        "Forecast_MASE_4": 0.9419,
+        "Forecast_MASE_5": 0.9419,
+        "Forecast_MASE_6": 0.9419,
+        "Forecast_MASE_7": 0.9419,
+        "Forecast_MASE_8": 0.9419,
+        "Forecast_MASE_9": 0.9419,
+        "Model": "CumSum_Used_LinearTrend_residue_Cycle_None_residue_NoAR",
+        "Voting": 339.9
+    },
+    {
+        "Category": "Integration_LinearTrend_NoCycle_NoAR",
+        "Complexity": "MSSSS",
+        "DetailedFormula": [
+            "CumSum_Used",
+            "T+S+R",
+            null,
+            "CumSum_Used_LinearTrend_residue_zeroCycle[0.0]_residue_NoAR"
+        ],
+        "Forecast_MASE_1": 0.9419,
+        "Forecast_MASE_10": 0.9419,
+        "Forecast_MASE_2": 0.9419,
+        "Forecast_MASE_3": 0.9419,
+        "Forecast_MASE_4": 0.9419,
+        "Forecast_MASE_5": 0.9419,
+        "Forecast_MASE_6": 0.9419,
+        "Forecast_MASE_7": 0.9419,
+        "Forecast_MASE_8": 0.9419,
+        "Forecast_MASE_9": 0.9419,
+        "Model": "CumSum_Used_LinearTrend_residue_zeroCycle[0.0]_residue_NoAR",
+        "Voting": 339.9
+    },
+    {
+        "Category": "NoTransf_ConstantTrend_Cycle_None_NoAR",
+        "Complexity": "SSSSS",
+        "DetailedFormula": [
+            "_Used",
+            "T+S+R",
+            null,
+            "_Used_ConstantTrend_residue_Cycle_None_residue_NoAR"
+        ],
+        "Forecast_MASE_1": 0.9747,
+        "Forecast_MASE_10": 0.9747,
+        "Forecast_MASE_2": 0.9747,
+        "Forecast_MASE_3": 0.9747,
+        "Forecast_MASE_4": 0.9747,
+        "Forecast_MASE_5": 0.9747,
+        "Forecast_MASE_6": 0.9747,
+        "Forecast_MASE_7": 0.9747,
+        "Forecast_MASE_8": 0.9747,
+        "Forecast_MASE_9": 0.9747,
+        "Model": "_Used_ConstantTrend_residue_Cycle_None_residue_NoAR",
+        "Voting": 316.5
+    },
+    {
+        "Category": "NoTransf_ConstantTrend_NoCycle_NoAR",
+        "Complexity": "SSSSS",
+        "DetailedFormula": [
+            "_Used",
+            "T+S+R",
+            null,
+            "_Used_ConstantTrend_residue_zeroCycle[0.0]_residue_NoAR"
+        ],
+        "Forecast_MASE_1": 0.9747,
+        "Forecast_MASE_10": 0.9747,
+        "Forecast_MASE_2": 0.9747,
+        "Forecast_MASE_3": 0.9747,
+        "Forecast_MASE_4": 0.9747,
+        "Forecast_MASE_5": 0.9747,
+        "Forecast_MASE_6": 0.9747,
+        "Forecast_MASE_7": 0.9747,
+        "Forecast_MASE_8": 0.9747,
+        "Forecast_MASE_9": 0.9747,
+        "Model": "_Used_ConstantTrend_residue_zeroCycle[0.0]_residue_NoAR",
+        "Voting": 316.5
+    },
+    {
+        "Category": "Difference_ConstantTrend_NoCycle_NoAR",
+        "Complexity": "MSSSS",
+        "DetailedFormula": [
+            "Diff_Used",
+            "T+S+R",
+            null,
+            "Diff_Used_ConstantTrend_residue_zeroCycle[0.0]_residue_NoAR"
+        ],
+        "Forecast_MASE_1": 0.9751,
+        "Forecast_MASE_10": 0.9751,
+        "Forecast_MASE_2": 0.9751,
+        "Forecast_MASE_3": 0.9751,
+        "Forecast_MASE_4": 0.9751,
+        "Forecast_MASE_5": 0.9751,
+        "Forecast_MASE_6": 0.9751,
+        "Forecast_MASE_7": 0.9751,
+        "Forecast_MASE_8": 0.9751,
+        "Forecast_MASE_9": 0.9751,
+        "Model": "Diff_Used_ConstantTrend_residue_zeroCycle[0.0]_residue_NoAR",
+        "Voting": 316.5
+    },
+    {
+        "Category": "Integration_PolyTrend_Cycle_None_NoAR",
+        "Complexity": "MMSSS",
+        "DetailedFormula": [
+            "CumSum_Used",
+            "T+S+R",
+            null,
+            "CumSum_Used_PolyTrend_residue_Cycle_None_residue_NoAR"
+        ],
+        "Forecast_MASE_1": 1.0136,
+        "Forecast_MASE_10": 1.0136,
+        "Forecast_MASE_2": 1.0136,
+        "Forecast_MASE_3": 1.0136,
+        "Forecast_MASE_4": 1.0136,
+        "Forecast_MASE_5": 1.0136,
+        "Forecast_MASE_6": 1.0136,
+        "Forecast_MASE_7": 1.0136,
+        "Forecast_MASE_8": 1.0136,
+        "Forecast_MASE_9": 1.0136,
+        "Model": "CumSum_Used_PolyTrend_residue_Cycle_None_residue_NoAR",
+        "Voting": 299.2
+    },
+    {
+        "Category": "Integration_PolyTrend_NoCycle_NoAR",
+        "Complexity": "MMSSS",
+        "DetailedFormula": [
+            "CumSum_Used",
+            "T+S+R",
+            null,
+            "CumSum_Used_PolyTrend_residue_zeroCycle[0.0]_residue_NoAR"
+        ],
+        "Forecast_MASE_1": 1.0136,
+        "Forecast_MASE_10": 1.0136,
+        "Forecast_MASE_2": 1.0136,
+        "Forecast_MASE_3": 1.0136,
+        "Forecast_MASE_4": 1.0136,
+        "Forecast_MASE_5": 1.0136,
+        "Forecast_MASE_6": 1.0136,
+        "Forecast_MASE_7": 1.0136,
+        "Forecast_MASE_8": 1.0136,
+        "Forecast_MASE_9": 1.0136,
+        "Model": "CumSum_Used_PolyTrend_residue_zeroCycle[0.0]_residue_NoAR",
+        "Voting": 299.2
+    },
+    {
+        "Category": "NoTransf_LinearTrend_Cycle_None_AR",
+        "Complexity": "LSSSS",
+        "DetailedFormula": [
+            "_Used",
+            "T+S+R",
+            null,
+            "_Used_LinearTrend_residue_Cycle_None_residue_AR(15)"
+        ],
+        "Forecast_MASE_1": 0.5219,
+        "Forecast_MASE_10": 1.1311,
+        "Forecast_MASE_2": 0.8673,
+        "Forecast_MASE_3": 1.0843,
+        "Forecast_MASE_4": 0.8111,
+        "Forecast_MASE_5": 0.9388,
+        "Forecast_MASE_6": 1.1943,
+        "Forecast_MASE_7": 1.1562,
+        "Forecast_MASE_8": 1.1345,
+        "Forecast_MASE_9": 1.1304,
+        "Model": "_Used_LinearTrend_residue_Cycle_None_residue_AR(15)",
+        "Voting": 298.0
+    }
+]
+INFO:pyaf.std:PERF_DUMP_END
+INFO:pyaf.std:TRAINING_ENGINE_END 13.579
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=2011-11-01T00:00:00.000000 TimeMax=2011-12-10T00:00:00.000000 TimeDelta=<DateOffset: days=1> Horizon=10
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='Used' Length=61  Min=550 Max=800  Mean=627.885246 StdDev=51.324458
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_Used' Min=0.0 Max=1.0  Mean=0.311541 StdDev=0.205298
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_Used_LinearTrend_residue_Cycle_None_residue_NoAR' [LinearTrend + Cycle_None + NoAR]
+INFO:pyaf.std:TREND_DETAIL '_Used_LinearTrend' [LinearTrend]
+INFO:pyaf.std:CYCLE_DETAIL '_Used_LinearTrend_residue_Cycle_None' [Cycle_None]
+INFO:pyaf.std:AUTOREG_DETAIL '_Used_LinearTrend_residue_Cycle_None_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.048), 'RMSE': np.float64(37.8731), 'MAE': np.float64(29.737), 'MASE': np.float64(0.8349)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.0393), 'RMSE': np.float64(32.0516), 'MAE': np.float64(25.2388), 'MASE': np.float64(0.9348)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.1117), 'RMSE': np.float64(95.6602), 'MAE': np.float64(79.4656), 'MASE': np.float64(1.4079)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=10 {'MAPE': np.float64(0.048), 'RMSE': np.float64(37.8731), 'MAE': np.float64(29.737), 'MASE': np.float64(0.8349)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=10 {'MAPE': np.float64(0.0393), 'RMSE': np.float64(32.0516), 'MAE': np.float64(25.2388), 'MASE': np.float64(0.9348)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=10 {'MAPE': np.float64(0.1117), 'RMSE': np.float64(95.6602), 'MAE': np.float64(79.4656), 'MASE': np.float64(1.4079)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'S', 'Cycle': 'S', 'AR': 'S'} [SSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:LINEAR_RIDGE_TREND LinearTrend (np.float64(0.250893), array([0.027615]))
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:BEST_CYCLE_LENGTH_VALUES _Used_LinearTrend_residue_Cycle_None None -0.045408 {}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'Used'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Used' 0 {'Transformation': '_Used', 'DecompositionType': 'T+S+R', 'Model': '_Used_LinearTrend_residue_Cycle_None_residue_NoAR', 'Voting': 339.9, 'Complexity': 'SSSSS', 'Forecast_MASE_1': 0.9348, 'Forecast_MASE_2': 0.9348, 'Forecast_MASE_3': 0.9348, 'Forecast_MASE_4': 0.9348, 'Forecast_MASE_5': 0.9348, 'Forecast_MASE_6': 0.9348, 'Forecast_MASE_7': 0.9348, 'Forecast_MASE_8': 0.9348, 'Forecast_MASE_9': 0.9348, 'Forecast_MASE_10': 0.9348}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Used' 1 {'Transformation': '_Used', 'DecompositionType': 'T+S+R', 'Model': '_Used_LinearTrend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 339.9, 'Complexity': 'SSSSS', 'Forecast_MASE_1': 0.9348, 'Forecast_MASE_2': 0.9348, 'Forecast_MASE_3': 0.9348, 'Forecast_MASE_4': 0.9348, 'Forecast_MASE_5': 0.9348, 'Forecast_MASE_6': 0.9348, 'Forecast_MASE_7': 0.9348, 'Forecast_MASE_8': 0.9348, 'Forecast_MASE_9': 0.9348, 'Forecast_MASE_10': 0.9348}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Used' 2 {'Transformation': 'CumSum_Used', 'DecompositionType': 'T+S+R', 'Model': 'CumSum_Used_LinearTrend_residue_Cycle_None_residue_NoAR', 'Voting': 339.9, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.9419, 'Forecast_MASE_2': 0.9419, 'Forecast_MASE_3': 0.9419, 'Forecast_MASE_4': 0.9419, 'Forecast_MASE_5': 0.9419, 'Forecast_MASE_6': 0.9419, 'Forecast_MASE_7': 0.9419, 'Forecast_MASE_8': 0.9419, 'Forecast_MASE_9': 0.9419, 'Forecast_MASE_10': 0.9419}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Used' 3 {'Transformation': 'CumSum_Used', 'DecompositionType': 'T+S+R', 'Model': 'CumSum_Used_LinearTrend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 339.9, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.9419, 'Forecast_MASE_2': 0.9419, 'Forecast_MASE_3': 0.9419, 'Forecast_MASE_4': 0.9419, 'Forecast_MASE_5': 0.9419, 'Forecast_MASE_6': 0.9419, 'Forecast_MASE_7': 0.9419, 'Forecast_MASE_8': 0.9419, 'Forecast_MASE_9': 0.9419, 'Forecast_MASE_10': 0.9419}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'Used'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/sof_example_Used_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/sof_example_Used_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/sof_example_Used_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/sof_example_Used_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/sof_example_Used_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/sof_example_Used_prediction_intervals_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/sof_example_Used_quantiles_output.png')
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['Used'], 'Horizons': {'Used': 10}}
+INFO:pyaf.std:FORECASTING_ENGINE_END 0.421
+Forecast Columns  Index(['Date', 'Used', 'Used_scaled', '_Used', 'row_number', 'Date_Normalized',
+       '_Used_LinearTrend', '_Used_LinearTrend_residue',
+       '_Used_LinearTrend_residue_Cycle_None',
+       '_Used_LinearTrend_residue_Cycle_None_residue',
+       '_Used_LinearTrend_residue_Cycle_None_residue_NoAR',
+       '_Used_LinearTrend_residue_Cycle_None_residue_NoAR_residue',
+       'Used_Transformed', '_Used_Trend', '_Used_Trend_residue', '_Used_Cycle',
+       '_Used_Cycle_residue', '_Used_AR', '_Used_AR_residue',
+       '_Used_TransformedForecast', '_Used_Detrended', '_Used_Deseasonalized',
+       'Used_TransformedForecast_inverted', 'Used_Forecast',
+       '_Used_TransformedResidue', 'Used_Residue', 'Used_Forecast_Lower_Bound',
+       'Used_Forecast_Upper_Bound', 'Used_Forecast_Quantile_17',
+       'Used_Forecast_Quantile_50', 'Used_Forecast_Quantile_83'],
+      dtype='object')
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 71 entries, 0 to 70
+Data columns (total 5 columns):
+ #   Column                     Non-Null Count  Dtype         
+---  ------                     --------------  -----         
+ 0   Date                       71 non-null     datetime64[ns]
+ 1   Used                       61 non-null     float64       
+ 2   Used_Forecast              71 non-null     float64       
+ 3   Used_Forecast_Lower_Bound  10 non-null     float64       
+ 4   Used_Forecast_Upper_Bound  10 non-null     float64       
+dtypes: datetime64[ns](1), float64(4)
+memory usage: 2.9 KB
+None
+Forecasts
+          Date   Used  ...  Used_Forecast_Lower_Bound  Used_Forecast_Upper_Bound
+51 2011-12-22  550.0  ...                        NaN                        NaN
+52 2011-12-23  600.0  ...                        NaN                        NaN
+53 2011-12-24  610.0  ...                        NaN                        NaN
+54 2011-12-25  590.0  ...                        NaN                        NaN
+55 2011-12-26  750.0  ...                        NaN                        NaN
+56 2011-12-27  750.0  ...                        NaN                        NaN
+57 2011-12-28  666.0  ...                        NaN                        NaN
+58 2011-12-29  678.0  ...                        NaN                        NaN
+59 2011-12-30  800.0  ...                        NaN                        NaN
+60 2011-12-31  750.0  ...                        NaN                        NaN
+61 2012-01-01    NaN  ...                 560.700065                 686.342337
+62 2012-01-02    NaN  ...                 560.877082                 686.519354
+63 2012-01-03    NaN  ...                 561.054099                 686.696371
+64 2012-01-04    NaN  ...                 561.231115                 686.873387
+65 2012-01-05    NaN  ...                 561.408132                 687.050404
+66 2012-01-06    NaN  ...                 561.585149                 687.227421
+67 2012-01-07    NaN  ...                 561.762166                 687.404438
+68 2012-01-08    NaN  ...                 561.939183                 687.581455
+69 2012-01-09    NaN  ...                 562.116200                 687.758472
+70 2012-01-10    NaN  ...                 562.293217                 687.935489
+
+[20 rows x 5 columns]
+
+
+<ModelInfo>
+{
+    "Training_Time": 13.579,
+    "Used": {
+        "Complexity": {
+            "AR": "S",
+            "Cycle": "S",
+            "Decomposition": "S",
+            "Transformation": "S",
+            "Trend": "S"
+        },
+        "Dataset": {
+            "Signal": "Used",
+            "Time": {
+                "Horizon": 10,
+                "TimeDelta": "<DateOffset: days=1>",
+                "TimeMax": "2011-12-31 00:00:00",
+                "TimeMin": "2011-11-01 00:00:00",
+                "TimeVariable": "Date"
+            },
+            "Training_Signal_Length": 61
+        },
+        "Model": {
+            "AR_Model": "NoAR",
+            "Best_Decomposition": "_Used_LinearTrend_residue_Cycle_None_residue_NoAR",
+            "Cycle": "Cycle_None",
+            "Signal_Decomposition_Type": "T+S+R",
+            "Signal_Transoformation": "NoTransf",
+            "Trend": "LinearTrend"
+        },
+        "Model_Performance": {
+            "1": {
+                "AUC": 0.4876,
+                "DiffSMAPE": 0.0399,
+                "ErrorMean": -7.4929,
+                "ErrorStdDev": 31.1635,
+                "KS": 0.4545,
+                "KendallTau": 0.1297,
+                "Length": 11,
+                "LnQ": 0.0274,
+                "MAE": 25.2388,
+                "MAPE": 0.0393,
+                "MASE": 0.9348,
+                "MannWhitneyU": 59.0,
+                "MedAE": 24.1341,
+                "Pearson": 0.1463,
+                "R2": -0.0526,
+                "RMSE": 32.0516,
+                "RMSSE": 0.8333,
+                "SMAPE": 0.04,
+                "Signal": "Used_Forecast_1"
+            },
+            "10": {
+                "AUC": 0.4876,
+                "DiffSMAPE": 0.0399,
+                "ErrorMean": -7.4929,
+                "ErrorStdDev": 31.1635,
+                "KS": 0.4545,
+                "KendallTau": 0.1297,
+                "Length": 11,
+                "LnQ": 0.0274,
+                "MAE": 25.2388,
+                "MAPE": 0.0393,
+                "MASE": 0.9348,
+                "MannWhitneyU": 59.0,
+                "MedAE": 24.1341,
+                "Pearson": 0.1463,
+                "R2": -0.0526,
+                "RMSE": 32.0516,
+                "RMSSE": 0.8333,
+                "SMAPE": 0.04,
+                "Signal": "Used_Forecast_10"
+            }
+        },
+        "Model_Selection_Criterion": "MASE"
+    }
+}
+</ModelInfo>
+
+
+
+
+<Forecast>
+{"Date":{"51":"2011-12-22T00:00:00.000","52":"2011-12-23T00:00:00.000","53":"2011-12-24T00:00:00.000","54":"2011-12-25T00:00:00.000","55":"2011-12-26T00:00:00.000","56":"2011-12-27T00:00:00.000","57":"2011-12-28T00:00:00.000","58":"2011-12-29T00:00:00.000","59":"2011-12-30T00:00:00.000","60":"2011-12-31T00:00:00.000","61":"2012-01-01T00:00:00.000","62":"2012-01-02T00:00:00.000","63":"2012-01-03T00:00:00.000","64":"2012-01-04T00:00:00.000","65":"2012-01-05T00:00:00.000","66":"2012-01-06T00:00:00.000","67":"2012-01-07T00:00:00.000","68":"2012-01-08T00:00:00.000","69":"2012-01-09T00:00:00.000","70":"2012-01-10T00:00:00.000"},"Used":{"51":550.0,"52":600.0,"53":610.0,"54":590.0,"55":750.0,"56":750.0,"57":666.0,"58":678.0,"59":800.0,"60":750.0,"61":null,"62":null,"63":null,"64":null,"65":null,"66":null,"67":null,"68":null,"69":null,"70":null},"Used_Forecast":{"51":621.7510318949,"52":621.9280487805,"53":622.105065666,"54":622.2820825516,"55":622.4590994371,"56":622.6361163227,"57":622.8131332083,"58":622.9901500938,"59":623.1671669794,"60":623.3441838649,"61":623.5212007505,"62":623.698217636,"63":623.8752345216,"64":624.0522514071,"65":624.2292682927,"66":624.4062851782,"67":624.5833020638,"68":624.7603189493,"69":624.9373358349,"70":625.1143527205},"Used_Forecast_Lower_Bound":{"51":null,"52":null,"53":null,"54":null,"55":null,"56":null,"57":null,"58":null,"59":null,"60":null,"61":560.7000647505,"62":560.877081636,"63":561.0540985216,"64":561.2311154071,"65":561.4081322927,"66":561.5851491782,"67":561.7621660638,"68":561.9391829493,"69":562.1161998349,"70":562.2932167205},"Used_Forecast_Upper_Bound":{"51":null,"52":null,"53":null,"54":null,"55":null,"56":null,"57":null,"58":null,"59":null,"60":null,"61":686.3423367505,"62":686.519353636,"63":686.6963705216,"64":686.8733874071,"65":687.0504042927,"66":687.2274211782,"67":687.4044380638,"68":687.5814549493,"69":687.7584718349,"70":687.9354887205}}
+</Forecast>
+
+
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/real-life/test_sof_example.py', 'ElapsedTimeSecs':(42.18, 0.59, 13.85), 'MAX_MEM_KB':221616, 'CPU_PRCNT':'34%', 'FILES_IN':16, 'FILES_OUT':1464, 'EXIT_STATUS':0}

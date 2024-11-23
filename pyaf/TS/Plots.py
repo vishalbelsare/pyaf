@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Antoine Carme <Antoine.Carme@Laposte.net>
+# Copyright (C) 2016 Antoine Carme <Antoine.Carme@outlook.com>
 # All rights reserved.
 
 # This file is part of the Python Automatic Forecasting (PyAF) library and is made available under
@@ -10,6 +10,8 @@ import numpy as np
 from io import BytesIO
 import base64
 
+from . import Utils as tsutil
+
 
 SIGNAL_COLOR='green'
 FORECAST_COLOR='blue'
@@ -20,6 +22,20 @@ UPPER_COLOR='grey'
 LOWER_COLOR='black'
 
 
+def add_watermark(fig):
+    import matplotlib, pyaf, os
+    import matplotlib.pyplot as plt
+    lDict = {}
+    lDict["URI"] = "https://pypi.org/project/pyaf/"
+    lDict["Version"] =  pyaf.__version__
+    from datetime import datetime
+    lDict["Date"] = datetime.today().strftime('%Y-%m-%d')
+    lDict["PID"] = os.getpid()
+    lWaterMark = "Generated with PyAF. " + str(lDict)
+    fig.tight_layout()
+    plt.figtext(0.002, 0.002, lWaterMark, rotation = 'vertical', alpha = 0.2, fontsize = 6)
+    return 
+
 def add_patched_legend(ax , names):
     # matplotlib does not like labels starting with '_'
     patched_names = []
@@ -27,7 +43,7 @@ def add_patched_legend(ax , names):
         # remove leading '_' => here, this is almost OK: no signal transformation
         patched_name = name.lstrip('_')
         patched_names = patched_names + [ patched_name ]
-    # print("add_patched_legend" , names, patched_names)
+    # tsutil.print_pyaf_detailed_info("add_patched_legend" , names, patched_names)
     ax.legend(patched_names)
 
 def fig_to_png_base64(fig):
@@ -37,9 +53,11 @@ def fig_to_png_base64(fig):
     figdata_png = base64.b64encode(figfile.getvalue())
     return figdata_png.decode('utf8')
 
-
+def log_saving_plot_message(name, filename):
+    logger = tsutil.get_pyaf_logger();
+    logger.info("SAVING_PLOT " + str((name , filename)));
     
-def decomp_plot_internal(df, time, signal, estimator, residue, name = None, format='png', max_length = 1000, horizon = 1) :
+def decomp_plot_internal(df, time, signal, estimator, residue, name = None, format='png', max_length = 1000, horizon = 1, title = None) :
     assert(df.shape[0] > 0)
     assert(df.shape[1] > 0)
     assert(time in df.columns)
@@ -50,12 +68,14 @@ def decomp_plot_internal(df, time, signal, estimator, residue, name = None, form
 
     import matplotlib
     import matplotlib.pyplot as plt
-    # print("MATPLOTLIB_BACKEND",  matplotlib.get_backend())
+    # tsutil.print_pyaf_detailed_info("MATPLOTLIB_BACKEND",  matplotlib.get_backend())
     # matplotlib.use('Agg')
     df1 = df.tail(max(max_length , 4 * horizon));
     if(name is not None):
         plt.switch_backend('Agg')
-    fig, axs = plt.subplots(ncols=2, figsize=(32, 16))
+    fig, axs = plt.subplots(ncols=2, figsize=(12, 8),
+                            gridspec_kw={'width_ratios': [4, 1]})
+
     lColor = COMPONENT_COLOR;
     if(name is not None and name.endswith("Forecast")):
         lColor = FORECAST_COLOR;
@@ -63,26 +83,33 @@ def decomp_plot_internal(df, time, signal, estimator, residue, name = None, form
                   color=[SIGNAL_COLOR, lColor, RESIDUE_COLOR],
                   ax=axs[0] , grid = True, legend=False)
     add_patched_legend(axs[0] , [signal, estimator, residue])
+    if(title is not None):
+        axs[0].set_title(title + "\n")
+    else:
+        axs[0].set_title(estimator + "\n")
     residues =  df1[residue].values
 
     import scipy.stats as scistats
     resid = residues[~np.isnan(residues)]
     scistats.probplot(resid, dist="norm", plot=axs[1])
 
+    add_watermark(fig)
     return fig
 
-def decomp_plot(df, time, signal, estimator, residue, name = None, format='png', max_length = 1000, horizon = 1) :
-    fig = decomp_plot_internal(df, time, signal, estimator, residue, name, format, max_length, horizon)
+def decomp_plot(df, time, signal, estimator, residue, name = None, format='png', max_length = 1000, horizon = 1, title = None) :
+    fig = decomp_plot_internal(df, time, signal, estimator, residue, name, format, max_length, horizon, title)
     if(name is not None):
         import matplotlib
         import matplotlib.pyplot as plt
         plt.switch_backend('Agg')
+        name1 = name.split('_')[-1]
+        log_saving_plot_message(name1, name + '_decomp_output.' + format)
         fig.savefig(name + '_decomp_output.' + format)
         plt.close(fig)
 
 
-def decomp_plot_as_png_base64(df, time, signal, estimator, residue, name = None, max_length = 1000, horizon = 1) :
-    fig = decomp_plot_internal(df, time, signal, estimator, residue, name, format, max_length, horizon)
+def decomp_plot_as_png_base64(df, time, signal, estimator, residue, name = None, max_length = 1000, horizon = 1, title = None) :
+    fig = decomp_plot_internal(df, time, signal, estimator, residue, name, format, max_length, horizon, title)
  
     import matplotlib
     import matplotlib.pyplot as plt
@@ -90,8 +117,7 @@ def decomp_plot_as_png_base64(df, time, signal, estimator, residue, name = None,
     plt.close(fig)
     return png_b64
     
-def prediction_interval_plot_internal(df, time, signal, estimator, lower, upper, name = None, format='png', max_length = 1000, horizon =
- 1) :
+def prediction_interval_plot_internal(df, time, signal, estimator, lower, upper, name = None, format='png', max_length = 1000, horizon = 1, title = None) :
     assert(df.shape[0] > 0)
     assert(df.shape[1] > 0)
     assert(time in df.columns)
@@ -99,7 +125,6 @@ def prediction_interval_plot_internal(df, time, signal, estimator, lower, upper,
     assert(estimator in df.columns)
     assert(lower in df.columns)
     assert(upper in df.columns)
-
 
     df1 = df.tail(max(max_length, 4 * horizon)).copy();
     lMin = np.mean(df1[signal]) -  np.std(df1[signal]) * 10;
@@ -112,37 +137,43 @@ def prediction_interval_plot_internal(df, time, signal, estimator, lower, upper,
     lEstimtorValue = df1[estimator][lLastSignalPos];
     df1.loc[lLastSignalPos , lower] = lEstimtorValue;
     df1.loc[lLastSignalPos , upper] = lEstimtorValue;
-
+    
     import matplotlib
     # matplotlib.use('Agg')
     import matplotlib.pyplot as plt
+    
     if(name is not None):
         plt.switch_backend('Agg')
     fig, axs = plt.subplots(ncols=1, figsize=(16, 8))
+    
+    if(title is not None):
+        axs.set_title(title + "\n")
+    else:
+        axs.set_title("Prediction Intervals\n")
+
     df1.plot.line(time, [signal, estimator, lower, upper],
                   color=[SIGNAL_COLOR, FORECAST_COLOR, LOWER_COLOR, UPPER_COLOR],
                   ax=axs, grid = True, legend=False)
     add_patched_legend(axs , [signal, estimator, lower, upper])
 
-    x = df1[time];
-    type1 = x.dtype
-    if(type1.kind == 'M'):
-        x = x.apply(lambda t : t.date());
-    axs.fill_between(x.values, df1[lower], df1[upper], color=SHADED_COLOR, alpha=.2)
-
+    axs.fill_between(df1[time].values, df1[lower], df1[upper], color=SHADED_COLOR, alpha=.2)
+    
+    add_watermark(fig)
+    
     return fig
 
-def prediction_interval_plot(df, time, signal, estimator, lower, upper, name = None, format='png', max_length = 1000, horizon = 1) :
-    fig = prediction_interval_plot_internal(df, time, signal, estimator, lower, upper, name, format, max_length, horizon)
+def prediction_interval_plot(df, time, signal, estimator, lower, upper, name = None, format='png', max_length = 1000, horizon = 1, title = None) :
+    fig = prediction_interval_plot_internal(df, time, signal, estimator, lower, upper, name, format, max_length, horizon, title)
     if(name is not None):
         import matplotlib
         import matplotlib.pyplot as plt
         plt.switch_backend('Agg')
+        log_saving_plot_message('PredictionIntervals', name + '_prediction_intervals_output.' + format)
         fig.savefig(name + '_prediction_intervals_output.' + format)
         plt.close(fig)
     
-def prediction_interval_plot_as_png_base64(df, time, signal, estimator, lower, upper, name = None, max_length = 1000, horizon = 1) :
-    fig = prediction_interval_plot_internal(df, time, signal, estimator, lower, upper, name, format, max_length, horizon)
+def prediction_interval_plot_as_png_base64(df, time, signal, estimator, lower, upper, name = None, max_length = 1000, horizon = 1, title = None) :
+    fig = prediction_interval_plot_internal(df, time, signal, estimator, lower, upper, name, format, max_length, horizon, title)
 
     import matplotlib
     import matplotlib.pyplot as plt
@@ -151,7 +182,7 @@ def prediction_interval_plot_as_png_base64(df, time, signal, estimator, lower, u
     return png_b64
 
 
-def quantiles_plot_internal(df, time, signal, estimator, iQuantiles, name = None, format='png', horizon = 1) :
+def quantiles_plot_internal(df, time, signal, estimator, iQuantiles, name = None, format='png', horizon = 1, title = None) :
     assert(df.shape[0] > 0)
     assert(df.shape[1] > 0)
     assert(time in df.columns)
@@ -167,45 +198,76 @@ def quantiles_plot_internal(df, time, signal, estimator, iQuantiles, name = None
     if(name is not None):
         plt.switch_backend('Agg')
     lMin, lMax = df1[lQuantileNames].values.min(), df1[lQuantileNames].values.max()
-    
-    cm = plt.cm.get_cmap('RdYlBu_r')
-    fig, axs = plt.subplots(horizon, 1, figsize=(12, 12), squeeze = True)
+    # Avoid a warning from matplotlib.
+    lEps = 0.01
+    if((lMax - lMin) < lEps):
+        lMin, lMax = lMin - lEps, lMax + lEps
+        
+    #  Forecast Quantiles Plots can be improved #225 
+    # Use a more meaningful color map (gradient, Blue = Low, Green = Normal, Red = High) for synchronized histograms.
+    # Blue/Red for lower/higher quartile, decreasing alpha towards ther median.
+    # Green for the 2nd and 3rd quartiles (inter-quartile range, not outliers)
+    # pre-defined matplotlib colormap 'turbo' is the closest to this behavior. Don't reinvent the wheel.
+    cm_turbo = matplotlib.colormaps.get('turbo')
+    # quantize the colors (keep only 16)
+    cm = matplotlib.colors.ListedColormap(cm_turbo.colors[0:256:16])
+    #  Forecast Quantiles Plots can be improved #225
+    # Better separate histograms (original issue solution). Assign a fixed height (1 cm) to each histogram.
+    fig, axs = plt.subplots(horizon, 1, figsize=(12, horizon / 2.54), squeeze = True)
     # plt.subplots_adjust(hspace=1)
-    # print(axs)
+    # tsutil.print_pyaf_detailed_info(axs)
     if (horizon == 1):
         axs = [axs]
     for h in range(horizon):
         lIdx = df1.index[h]
         lTime = df1.loc[lIdx, time]
         q_values = df1.loc[lIdx, lQuantileNames].tolist()
-        _, bins1, patches = axs[h].hist(q_values, bins = q_values, weights=[1]*len(lQuantileNames), density = True)
+        q_values = [max(x , -1e10) for x in q_values]
+        q_values = [min(x , +1e10) for x in q_values]
+        if((max(q_values) - min(q_values)) < lEps):
+            # Avoid a warning from matplotlib for a constant signal.
+            q_values = [min(q_values) - lEps] + [max(q_values) + lEps]
+        # tsutil.print_pyaf_detailed_info(h, horizon, lIdx, lTime, q_values)
+        _, bins1, patches = axs[h].hist(q_values, bins = q_values, weights=[1]*len(q_values), density = True)
         for i, p in enumerate(patches):
             j = (bins1[i] - lMin) / (lMax - lMin)
             plt.setp(p, 'facecolor', cm(j))
         if(h == 0):
-            axs[h].set_title('Forecast Quantiles')
+            if(title is not None):
+                axs[h].set_title(title)
+            else:
+                axs[h].set_title('Forecast Quantiles')
         axs[h].set_xlim((lMin,lMax))
         # axs[h].set_ylim((0, 1.0))
-        axs[h].set_ylabel('H_' + str(h + 1))
+
+        # Remove some unnecessary borders and yticks.
+        axs[h].spines['top'].set_visible(False)
+        axs[h].spines['right'].set_visible(False)
+        axs[h].spines['left'].set_visible(False)
+        
+        axs[h].set_ylabel('H=' + str(h + 1), rotation=0, horizontalalignment='left')
+        axs[h].set_yticks([])
         axs[h].set_yticklabels([])
         if(h < (horizon - 1)):
             axs[h].set_xlabel('')
             axs[h].set_xticklabels([])
 
+    add_watermark(fig)
     return fig
 
-def quantiles_plot(df, time, signal, estimator, iQuantiles, name = None, format='png', horizon = 1) :
-    fig = quantiles_plot_internal(df, time, signal, estimator, iQuantiles, name, format, horizon)
+def quantiles_plot(df, time, signal, estimator, iQuantiles, name = None, format='png', horizon = 1, title = None) :
+    fig = quantiles_plot_internal(df, time, signal, estimator, iQuantiles, name, format, horizon, title)
     import matplotlib
     import matplotlib.pyplot as plt
     if(name is not None):
         plt.switch_backend('Agg')
+        log_saving_plot_message('Quantiles', name + '_quantiles_output.' + format)
         fig.savefig(name + '_quantiles_output.' + format)
         plt.close(fig)
     
 
-def quantiles_plot_as_png_base64(df, time, signal, estimator, iQuantiles, name = None, format='png', horizon = 1) :
-    fig = quantiles_plot_internal(df, time, signal, estimator, iQuantiles, name, format, horizon)
+def quantiles_plot_as_png_base64(df, time, signal, estimator, iQuantiles, name = None, format='png', horizon = 1, title = None) :
+    fig = quantiles_plot_internal(df, time, signal, estimator, iQuantiles, name, format, horizon, title)
     import matplotlib
     import matplotlib.pyplot as plt
     
@@ -251,13 +313,14 @@ def plot_hierarchy_internal(structure , iAnnotations, name):
                     lEdgeLabel = iAnnotations[col + "_" + col1];
                 lEdge = pydot.Edge(node_col, node_col1, color="red", label=lEdgeLabel, fontsize="12.0")
                 graph.add_edge(lEdge)
-    # print(graph.obj_dict)
+    # tsutil.print_pyaf_detailed_info(graph.obj_dict)
     return graph
     
 def plot_hierarchy(structure , iAnnotations, name):
     graph = plot_hierarchy_internal(structure , iAnnotations, name)
     if(name is not None):
-        graph.write_png(name);
+        log_saving_plot_message("Hierarchical_Structure", name + '.png')
+        graph.write_png(name + ".png");
     else:
         from IPython.display import Image, display
         plot1 = Image(graph.create_png())

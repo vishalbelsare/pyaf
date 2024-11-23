@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Antoine Carme <Antoine.Carme@Laposte.net>
+# Copyright (C) 2016 Antoine Carme <Antoine.Carme@outlook.com>
 # All rights reserved.
 
 # This file is part of the Python Automatic Forecasting (PyAF) library and is made available under
@@ -10,6 +10,45 @@ import numpy as np
 
 class cModelControl:
 
+    gKnownDecompositionTypes = ['T+S+R', 'TS+R', 'TSR']
+    gKnownTransformations = ['None', 'Difference', 'RelativeDifference',
+                             'Integration', 'BoxCox',
+                             'Quantization', 'Logit',
+                             'Fisher', 'Anscombe'];
+    gKnownTrends = ['ConstantTrend', 
+                    'Lag1Trend', 'LinearTrend', 'PolyTrend', 
+                    'MovingAverage', 'MovingMedian'];
+    gKnownPeriodics = ['NoCycle', 'BestCycle',
+                       'Seasonal_MonthOfYear' ,
+                       'Seasonal_Second' ,
+                       'Seasonal_Minute' ,
+                       'Seasonal_Hour' ,
+                       'Seasonal_HourOfWeek' ,
+                       'Seasonal_TwoHourOfWeek' ,
+                       'Seasonal_ThreeHourOfWeek' ,
+                       'Seasonal_FourHourOfWeek' ,
+                       'Seasonal_SixHourOfWeek' ,
+                       'Seasonal_EightHourOfWeek' ,
+                       'Seasonal_TwelveHourOfWeek' ,
+                       'Seasonal_DayOfWeek' ,
+                       'Seasonal_DayOfMonth',
+                       'Seasonal_DayOfYear',
+                       'Seasonal_WeekOfMonth',
+                       'Seasonal_DayOfNthWeekOfMonth',
+                       'Seasonal_WeekOfYear'];
+
+    # "AutoRegression" becomes a little bit confusing as croston does not use lags (???)
+    # rather use wikipedia terminology :  https://en.wikipedia.org/wiki/Decomposition_of_time_series
+    # AutoRegression => "irregular component"
+    gKnownAutoRegressions = ['NoAR' ,
+                             'AR' , 'ARX' ,
+                             'SVR', 'SVRX',
+                             'MLP' , 'MLPX' ,
+                             'LSTM' , 'LSTMX' ,
+                             'XGB' , 'XGBX' ,
+                             'CROSTON', # No CROSTONX for the moment
+                             'LGB', 'LGBX'];
+
     def __init__(self):
         self.mActiveTransformations = {};
         self.mActivePeriodics = {};
@@ -17,100 +56,89 @@ class cModelControl:
         self.mActiveAutoRegressions = {};
         #  Add Multiplicative Models/Seasonals #178 
         self.mActiveDecompositionTypes = {}
-        self.mKnownDecompositionTypes = ['T+S+R', 'TS+R', 'TSR']
-        self.mKnownTransformations = ['None', 'Difference', 'RelativeDifference',
-                                      'Integration', 'BoxCox',
-                                      'Quantization', 'Logit',
-                                      'Fisher', 'Anscombe'];
-        self.mKnownTrends = ['ConstantTrend', 
-                             'Lag1Trend', 'LinearTrend', 'PolyTrend', 
-                             'MovingAverage', 'MovingMedian'];
-        self.mKnownPeriodics = ['NoCycle', 'BestCycle',
-                                'Seasonal_MonthOfYear' ,
-                                'Seasonal_Second' ,
-                                'Seasonal_Minute' ,
-                                'Seasonal_Hour' ,
-                                'Seasonal_HourOfWeek' ,
-                                'Seasonal_TwoHourOfWeek' ,
-                                'Seasonal_ThreeHourOfWeek' ,
-                                'Seasonal_FourHourOfWeek' ,
-                                'Seasonal_SixHourOfWeek' ,
-                                'Seasonal_EightHourOfWeek' ,
-                                'Seasonal_TwelveHourOfWeek' ,
-                                'Seasonal_DayOfWeek' ,
-                                'Seasonal_DayOfMonth',
-                                'Seasonal_DayOfYear',
-                                'Seasonal_WeekOfMonth',
-                                'Seasonal_DayOfNthWeekOfMonth',
-                                'Seasonal_WeekOfYear'];
 
-        # "AutoRegression" becomes a little bit confusing as croston does not use lags (???)
-        # rather use wikipedia terminology :  https://en.wikipedia.org/wiki/Decomposition_of_time_series
-        # AutoRegression => "irregular component"
-        self.mKnownAutoRegressions = ['NoAR' , 'AR' , 'ARX' , 'SVR', 'SVRX', 'MLP' , 'LSTM' , 'XGB' , 'XGBX' , 'CROSTON', 'LGB', 'LGBX'];
+    def set_active_models_for_fast_mode(self):
         # now , set he default models
-        self.set_active_transformations(self.mKnownTransformations[0:4]);
-        self.set_active_trends(self.mKnownTrends[0:4]);
-        self.set_active_periodics(self.mKnownPeriodics);
-        self.set_active_autoregressions(self.mKnownAutoRegressions[0:3]);
+        self.set_active_transformations(cModelControl.gKnownTransformations[0:4]);
+        self.set_active_trends(cModelControl.gKnownTrends[0:4]);
+        self.set_active_periodics(cModelControl.gKnownPeriodics);
+        self.set_active_autoregressions(cModelControl.gKnownAutoRegressions[0:3]);
         # Add Multiplicative Models/Seasonals #178.
         # Only additive models are activated by default        
         self.set_active_decomposition_types(['T+S+R']);
+
+    def set_active_models_for_slow_mode(self):
+        self.set_active_transformations(cModelControl.gKnownTransformations);
+        self.set_active_trends(cModelControl.gKnownTrends);
+        self.set_active_periodics(cModelControl.gKnownPeriodics);
+        self.set_active_autoregressions(cModelControl.gKnownAutoRegressions);
+        self.set_active_decomposition_types(cModelControl.gKnownDecompositionTypes);
+
+
+    def check_model_type_validity(self, category, allowed_values, value):
+        from . import Utils as tsutil
+        
+        if(value not in allowed_values):
+            raise tsutil.PyAF_Error("INVALID_MODEL_TYPE Invalid '" + category + "' Type '" + value + "'. Allowed '" + category + "' Values : " + str(allowed_values));
+
+    def generic_model_activation(self, iTypes, iToBeActivated, default_model):
+        lActivatedModels = {}
+        for model_type in iTypes:
+            if(model_type in iToBeActivated):
+                lActivatedModels[model_type] = True;
+            else:
+                lActivatedModels[model_type] = False;
+        if(True not in lActivatedModels.values()):
+            # default
+            lActivatedModels[default_model] = True;
+        return lActivatedModels
         
     def set_active_decomposition_types(self, iDecompTypes):
-        self.mActiveDecompositionTypes = {};
-        for decomp_type in self.mKnownDecompositionTypes:
-            if(decomp_type in iDecompTypes):
-                self.mActiveDecompositionTypes[decomp_type] = True;
-            else:
-                self.mActiveDecompositionTypes[decomp_type] = False;
-        if(True not in self.mActiveDecompositionTypes.values()):
-            # default
-            self.mActiveTransformations['T+S+R'] = True;
+        for dec_type in iDecompTypes:
+            self.check_model_type_validity('DecompositionType', cModelControl.gKnownDecompositionTypes, dec_type)
+            
+        self.mActiveDecompositionTypes = self.generic_model_activation(
+            cModelControl.gKnownDecompositionTypes,
+            iDecompTypes,
+            'T+S+R'
+        )
             
     def set_active_transformations(self, transformations):
-        self.mActiveTransformations = {};
-        for transformation in self.mKnownTransformations:
-            if(transformation in transformations):
-                self.mActiveTransformations[transformation] = True;
-            else:
-                self.mActiveTransformations[transformation] = False;
-        if(True not in self.mActiveTransformations.values()):
-            # default
-            self.mActiveTransformations['None'] = True;
+        for transformation in transformations:
+            self.check_model_type_validity('Transformation', cModelControl.gKnownTransformations, transformation)
+            
+        self.mActiveTransformations = self.generic_model_activation(
+            cModelControl.gKnownTransformations,
+            transformations,
+            'None')
+        
     
     def set_active_trends(self, trends):
-        self.mActiveTrends = {};
-        for trend in self.mKnownTrends:
-            if(trend in trends):
-                self.mActiveTrends[trend] = True;
-            else:
-                self.mActiveTrends[trend] = False;
-        if(True not in self.mActiveTrends.values()):
-            # default
-            self.mActiveTrends['ConstantTrend'] = True;                
+        for trend in trends:
+            self.check_model_type_validity('Trend', cModelControl.gKnownTrends, trend)
+            
+        self.mActiveTrends = self.generic_model_activation(
+            cModelControl.gKnownTrends,
+            trends,
+            'ConstantTrend')
     
     def set_active_periodics(self, periodics):
-        self.mActivePeriodics = {};
-        for period in self.mKnownPeriodics:
-            if(period in periodics):
-                self.mActivePeriodics[period] = True;
-            else:
-                self.mActivePeriodics[period] = False;
-        if(True not in self.mActivePeriodics.values()):
-            # default
-            self.mActivePeriodics['NoCycle'] = True;
+        for period in periodics:
+            self.check_model_type_validity('Periodic', cModelControl.gKnownPeriodics, period)
+            
+        self.mActivePeriodics = self.generic_model_activation(
+            cModelControl.gKnownPeriodics,
+            periodics,
+            'NoCycle')
                     
     def set_active_autoregressions(self, autoregs):
-        self.mActiveAutoRegressions = {};
-        for autoreg in self.mKnownAutoRegressions:
-            if(autoreg in autoregs):
-                self.mActiveAutoRegressions[autoreg] = True;
-            else:
-                self.mActiveAutoRegressions[autoreg] = False;                
-        if(True not in self.mActiveAutoRegressions.values()):
-            # default
-            self.mActiveAutoRegressions['NoAR'] = True;
+        for autoreg in autoregs:
+            self.check_model_type_validity('AutoRegression', cModelControl.gKnownAutoRegressions, autoreg)
+            
+        self.mActiveAutoRegressions = self.generic_model_activation(
+            cModelControl.gKnownAutoRegressions,
+            autoregs,
+            'NoAR')
 
     def disable_all_transformations(self):
         self.set_active_transformations([]);
@@ -168,8 +196,8 @@ class cSignalDecomposition_Options(cModelControl):
         self.mBoxCoxOrders = [-2.0, -1.0 , 0.0,  2.0];
         self.mExtensiveBoxCoxOrders = [-2, -1, -0.5, -0.33 , -0.25 , 0.0, 2, 0.5, 0.33 , 0.25];
         self.mMaxFeatureForAutoreg = 1000;
-        self.mModelSelection_Criterion = "MAPE";
-        self.mCycle_Criterion = "MAPE";
+        self.mModelSelection_Criterion = "MASE";
+        self.mCycle_Criterion = "MASE";
         self.mCycle_Criterion_Threshold = None;
         self.mCycle_Encoding_Scheme = "Target_Median"; # "Target_Mean" or "Target_Median"
         self.mHierarchicalCombinationMethod = "BU";
@@ -179,28 +207,29 @@ class cSignalDecomposition_Options(cModelControl):
         self.mCrossValidationOptions = cCrossValidationOptions()
         self.mCrostonOptions = cCrostonOptions()
         self.mMissingDataOptions = cMissingDataOptions()
+        self.mDL_Backends = ("PyTorch", ) # Pytorch is the only supported backend for now
+        self.mPytorch_Options = None
+        self.mKeras_Options = None
+        self.mVotingMethod = "Condorcet" # Or None for Legacy Method (backward compatibility with PyAF 4.0). 
+        self.mMovingWindowLengths = None # [5, 7, 12, 24 , 30, 60];
         self.disableDebuggingOptions();
 
     def disableDebuggingOptions(self):
         self.mDebug = False;
         self.mDebugCycles = False;
+        self.mDebugAR = False;
         self.mDebugProfile = False;
         self.mDebugPerformance = False;
         
         
     def enable_slow_mode(self):
-        self.mQuantiles = [5, 10, 20]; # quintiles, deciles, and vingtiles;)
-        self.mMovingAverageLengths = [5, 7, 12, 24 , 30, 60];
-        self.mMovingMedianLengths = [5, 7, 12, 24 , 30, 60];
+        self.set_active_models_for_slow_mode()
+        self.mQuantiles = [ 20 ]; # vingtiles + use optimal rule
+        
         # PyAF does not detect complex seasonal patterns #73.
         # use unlimited cycle lengths in slow mode
         self.mCycleLengths = None;
 
-        self.set_active_transformations(self.mKnownTransformations);
-        self.set_active_trends(self.mKnownTrends);
-        self.set_active_periodics(self.mKnownPeriodics);
-        self.set_active_autoregressions(self.mKnownAutoRegressions);
-        self.set_active_decomposition_types(self.mKnownDecompositionTypes);
         
         self.mMaxAROrder = 64;
         self.mFilterSeasonals = False
@@ -209,10 +238,8 @@ class cSignalDecomposition_Options(cModelControl):
         self.mActivateSampling = False
 
     def enable_fast_mode(self):
-        self.mQuantiles = [5, 10, 20]; # quintiles, deciles, and vingtiles;)
-        self.mMovingAverageLengths = [5, 7, 12, 24 , 30, 60];
-        self.mMovingMedianLengths = [5, 7, 12, 24 , 30, 60];
-        
+        self.set_active_models_for_fast_mode()
+        self.mQuantiles = [ 20 ]; # vingtiles + use diaconis rule
         self.mCycleLengths = [5, 7, 12, 24 , 30, 60];
 
         self.mMaxAROrder = 64;
@@ -221,43 +248,45 @@ class cSignalDecomposition_Options(cModelControl):
 
     # Add a low-memory mode for Heroku #25
     def enable_low_memory_mode(self):
+        self.set_active_models_for_fast_mode()
         self.mMaxAROrder = 7;
         self.set_active_transformations(['None']);
         self.mParallelMode = False;
         self.mFilterSeasonals = True
         
-    '''
-    Cannot yet build keras models in parallel/multiprocessing in some cases
-    (tensorflow backend). theano seems OK.
-    Possible solution : increase developer knowledge of keras !!
-    '''
-    def  canBuildKerasModel(self, iModel):
-        try:
-            import keras
-            import keras
-            from keras import callbacks
-            from keras.models import Sequential
-            from keras.layers import Dense, Dropout
-            from keras.layers import LSTM
-            lBackEnd = keras.backend.backend()
-            if((lBackEnd == "tensorflow") and (self.mParallelMode)):
-                return False;
-            else:
-                return True;
-        except:
-            return False;
+    def has_module_installed(self, module_name):
+        import importlib
+        spec = importlib.util.find_spec(module_name)
+        return spec is not None
+
+    def get_available_DL_Backend(self):
+        # pick the first available backend
+        for lBackend in self.mDL_Backends:
+            if(lBackend == "PyTorch"):
+                if(self.has_module_installed("torch")):
+                    return lBackend
+            if(lBackend == "Keras"):
+                if(self.has_module_installed("tensorflow")):
+                    return lBackend
+        return None        
+
+    def getPytorchOrKerasClass(self, iModel):
+        lBackend = self.get_available_DL_Backend()
+        if(lBackend == "PyTorch"):
+            from . import Pytorch_Models as tspytorch
+            lDict = {"LSTM" : tspytorch.cLSTM_Model, "MLP" : tspytorch.cMLP_Model}
+            return lDict.get(iModel)
+        if(lBackend == "Keras"):
+            from . import Keras_Models as tskeras
+            lDict = {"LSTM" : tskeras.cLSTM_Model, "MLP" : tskeras.cMLP_Model}
+            return lDict.get(iModel)
+        return None
+    
+    def hasPytorchOrKerasInstalled(self, iModel):
+        return self.has_module_installed('torch') or self.has_module_installed('tensorflow')
 
     def  canBuildXGBoostModel(self, iModel):
-        try:
-            import xgboost
-            return True;
-        except:
-            return False;
+        return self.has_module_installed('xgboost')
 
     def  canBuildLightGBMModel(self, iModel):
-        try:
-            import lightgbm
-            return True;
-        except:
-            return False;
-
+        return self.has_module_installed('lightgbm')

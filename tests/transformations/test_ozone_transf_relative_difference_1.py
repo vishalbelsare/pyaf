@@ -11,6 +11,7 @@ def create_df():
     df.info();
     N = df.shape[0];
     df['signal2'] = 1;
+    df['signal2'] = df['signal2'].astype(np.float64)
     for i in range(N-1):
         df.loc[i+1, 'signal2'] = df.loc[i, 'signal2'] * (df.loc[i, 'rate'] + 1);
     print(df.head())
@@ -20,7 +21,7 @@ def create_df():
 
 def test_transformation(itransformation):
     df = create_df();
-    df.to_csv('a.csv')
+    # df.to_csv('a.csv')
     lEngine = autof.cForecastEngine()
     lEngine
 
@@ -37,8 +38,6 @@ def test_transformation(itransformation):
     lTimeVar = 'time'
     lEngine.train(df , lTimeVar , lSignalVar, H);
     lEngine.getModelInfo();
-    N = lEngine.mSignalDecomposition.mTrPerfDetails.shape[0]
-    print(lEngine.mSignalDecomposition.mTrPerfDetails.head(N));
 
     lEngine.mSignalDecomposition.mBestModel.mTimeInfo.mResolution
     

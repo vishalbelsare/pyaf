@@ -1,0 +1,329 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['Signal'], 'Horizons': {'Signal': 7}}
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:57: RuntimeWarning: overflow encountered in accumulate
+  return bound(*args, **kwds)
+INFO:pyaf.std:TRAINING_ENGINE_END 11.49
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=2016-01-25T00:00:00.000000 TimeMax=2016-11-01T00:00:00.000000 TimeDelta=<DateOffset: days=1> Horizon=7
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='Signal' Length=360  Min=-1.829677 Max=28.917859  Mean=13.853063 StdDev=6.746466
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_Signal' Min=0.0 Max=1.0  Mean=0.510049 StdDev=0.219415
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_AR(64)' [LinearTrend + Seasonal_DayOfWeek + AR]
+INFO:pyaf.std:TREND_DETAIL '_Signal_LinearTrend' [LinearTrend]
+INFO:pyaf.std:CYCLE_DETAIL '_Signal_LinearTrend_residue_Seasonal_DayOfWeek' [Seasonal_DayOfWeek]
+INFO:pyaf.std:AUTOREG_DETAIL '_Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_AR(64)' [AR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(10.8299), 'RMSE': np.float64(1.5427), 'MAE': np.float64(1.1173), 'MASE': np.float64(0.48)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.0666), 'RMSE': np.float64(1.2242), 'MAE': np.float64(0.9388), 'MASE': np.float64(0.4377)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.0462), 'RMSE': np.float64(1.1411), 'MAE': np.float64(0.7797), 'MASE': np.float64(0.1716)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=7 {'MAPE': np.float64(25.0186), 'RMSE': np.float64(8.6397), 'MAE': np.float64(7.0613), 'MASE': np.float64(3.0334)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=7 {'MAPE': np.float64(0.483), 'RMSE': np.float64(8.4066), 'MAE': np.float64(7.2059), 'MASE': np.float64(3.3592)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=7 {'MAPE': np.float64(0.8031), 'RMSE': np.float64(12.7622), 'MAE': np.float64(11.9137), 'MASE': np.float64(2.6217)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'S', 'Cycle': 'S', 'AR': 'L'} [LSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:LINEAR_RIDGE_TREND LinearTrend (np.float64(0.359617), array([0.233287]))
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:SEASONAL_MODEL_VALUES _Signal_LinearTrend_residue_Seasonal_DayOfWeek -0.009367 {0: np.float64(-0.104156), 1: np.float64(-0.051224), 2: np.float64(-0.032163), 3: np.float64(-0.000988), 4: np.float64(0.029122), 5: np.float64(0.068391), 6: np.float64(0.088859)}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_COEFF 1 _Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_Lag21 0.457115
+INFO:pyaf.std:AR_MODEL_COEFF 2 _Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_Lag1 0.372074
+INFO:pyaf.std:AR_MODEL_COEFF 3 _Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_Lag14 -0.355013
+INFO:pyaf.std:AR_MODEL_COEFF 4 _Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_Lag2 0.352458
+INFO:pyaf.std:AR_MODEL_COEFF 5 _Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_Lag16 0.217493
+INFO:pyaf.std:AR_MODEL_COEFF 6 _Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_Lag28 -0.174836
+INFO:pyaf.std:AR_MODEL_COEFF 7 _Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_Lag7 -0.170286
+INFO:pyaf.std:AR_MODEL_COEFF 8 _Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_Lag30 0.140203
+INFO:pyaf.std:AR_MODEL_COEFF 9 _Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_Lag23 -0.125973
+INFO:pyaf.std:AR_MODEL_COEFF 10 _Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_Lag57 0.108427
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'Signal'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Signal' 0 {'Transformation': '_Signal', 'DecompositionType': 'T+S+R', 'Model': '_Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_AR(64)', 'Voting': 435.1429, 'Complexity': 'LSSSS', 'Forecast_MASE_1': 0.4377, 'Forecast_MASE_2': 0.4429, 'Forecast_MASE_3': 0.5486, 'Forecast_MASE_4': 0.7458, 'Forecast_MASE_5': 1.3872, 'Forecast_MASE_6': 2.2573, 'Forecast_MASE_7': 3.3592}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'Signal'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/issue_94_Signal_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/issue_94_Signal_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/issue_94_Signal_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/issue_94_Signal_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/issue_94_Signal_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/issue_94_Signal_prediction_intervals_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/issue_94_Signal_quantiles_output.png')
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['Signal'], 'Horizons': {'Signal': 7}}
+INFO:pyaf.std:FORECASTING_ENGINE_END 0.626
+Index(['Date', 'Signal', 'Signal_scaled', '_Signal', 'row_number',
+       'Date_Normalized', '_Signal_LinearTrend', '_Signal_LinearTrend_residue',
+       '_Signal_LinearTrend_residue_Seasonal_DayOfWeek',
+       '_Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue',
+       '_Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_AR(64)',
+       '_Signal_LinearTrend_residue_Seasonal_DayOfWeek_residue_AR(64)_residue',
+       'Signal_Transformed', '_Signal_Trend', '_Signal_Trend_residue',
+       '_Signal_Cycle', '_Signal_Cycle_residue', '_Signal_AR',
+       '_Signal_AR_residue', '_Signal_TransformedForecast',
+       '_Signal_Detrended', '_Signal_Deseasonalized',
+       'Signal_TransformedForecast_inverted', 'Signal_Forecast',
+       '_Signal_TransformedResidue', 'Signal_Residue',
+       'Signal_Forecast_Lower_Bound', 'Signal_Forecast_Upper_Bound',
+       'Signal_Forecast_Quantile_2', 'Signal_Forecast_Quantile_14',
+       'Signal_Forecast_Quantile_26', 'Signal_Forecast_Quantile_38',
+       'Signal_Forecast_Quantile_50', 'Signal_Forecast_Quantile_62',
+       'Signal_Forecast_Quantile_74', 'Signal_Forecast_Quantile_86',
+       'Signal_Forecast_Quantile_98'],
+      dtype='object')
+['2017-01-19T00:00:00.000000000' '2017-01-20T00:00:00.000000000'
+ '2017-01-21T00:00:00.000000000' '2017-01-22T00:00:00.000000000'
+ '2017-01-23T00:00:00.000000000' '2017-01-24T00:00:00.000000000'
+ '2017-01-25T00:00:00.000000000']
+[12.2984442  13.03242158 13.5334615  14.3801538  16.05446143 19.1589852
+ 17.66828449]
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/bugs/issue_94/issue_94.py', 'ElapsedTimeSecs':(41.93, 0.60, 16.98), 'MAX_MEM_KB':224024, 'CPU_PRCNT':'41%', 'FILES_IN':8, 'FILES_OUT':2512, 'EXIT_STATUS':0}

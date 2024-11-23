@@ -29,11 +29,11 @@ lEngine.mOptions.set_active_autoregressions(['XGB']);
 
 lEngine.train(df , b1.mTimeVar , b1.mSignalVar, H);
 lEngine.getModelInfo();
-print(lEngine.mSignalDecomposition.mTrPerfDetails.head());
+
 
 lEngine.mSignalDecomposition.mBestModel.mTimeInfo.mResolution
 
-lEngine.standardPlots("outputs/my_ozone_svr_only");
+lEngine.standardPlots("outputs/my_ozone_xgb_only");
 
 dfapp_in = df.copy();
 dfapp_in.tail()

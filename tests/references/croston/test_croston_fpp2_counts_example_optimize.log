@@ -1,0 +1,94 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['Signal'], 'Horizons': {'Signal': 7}}
+INFO:pyaf.std:TRAINING_ENGINE_END 7.695
+INFO:pyaf.std:TIME_DETAIL TimeVariable='Date' TimeMin=2000-01-31T00:00:00.000000 TimeMax=2002-12-31T00:00:00.000000 TimeDelta=<DateOffset: days=30> Horizon=7
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='Signal' Length=36  Min=0.0 Max=11.0  Mean=1.055556 StdDev=2.332672
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_Signal' Min=0.0 Max=1.0  Mean=0.09596 StdDev=0.212061
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_Signal_ConstantTrend_residue_zeroCycle[0.0]_residue_CROSTON(None)' [ConstantTrend + NoCycle + CROSTON]
+INFO:pyaf.std:TREND_DETAIL '_Signal_ConstantTrend' [ConstantTrend]
+INFO:pyaf.std:CYCLE_DETAIL '_Signal_ConstantTrend_residue_zeroCycle[0.0]' [NoCycle]
+INFO:pyaf.std:AUTOREG_DETAIL '_Signal_ConstantTrend_residue_zeroCycle[0.0]_residue_CROSTON(None)' [CROSTON]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(7541083280.6766), 'RMSE': np.float64(2.337), 'MAE': np.float64(1.4844), 'MASE': np.float64(0.764), 'L2': np.float64(2.337)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(7541083280.6766), 'RMSE': np.float64(2.337), 'MAE': np.float64(1.4844), 'MASE': np.float64(0.764), 'L2': np.float64(2.337)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(7541083280.6766), 'RMSE': np.float64(2.337), 'MAE': np.float64(1.4844), 'MASE': np.float64(0.764), 'L2': np.float64(2.337)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=7 {'MAPE': np.float64(178626029.9621), 'RMSE': np.float64(2.5512), 'MAE': np.float64(1.0656), 'MASE': np.float64(0.5484), 'L2': np.float64(2.5512)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=7 {'MAPE': np.float64(178626029.9621), 'RMSE': np.float64(2.5512), 'MAE': np.float64(1.0656), 'MASE': np.float64(0.5484), 'L2': np.float64(2.5512)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=7 {'MAPE': np.float64(178626029.9621), 'RMSE': np.float64(2.5512), 'MAE': np.float64(1.0656), 'MASE': np.float64(0.5484), 'L2': np.float64(2.5512)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'S', 'Cycle': 'S', 'AR': 'L'} [LSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:CONSTANT_TREND _Signal_ConstantTrend 0.09596
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:ZERO_CYCLE_MODEL_VALUES _Signal_ConstantTrend_residue_zeroCycle[0.0] 0.0 {}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:CROSTON_ALPHA 0.05
+INFO:pyaf.std:CROSTON_METHOD None
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'Signal'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'Signal' 0 {'Transformation': '_Signal', 'DecompositionType': 'T+S+R', 'Model': '_Signal_ConstantTrend_residue_zeroCycle[0.0]_residue_CROSTON(None)', 'Voting': 4.0, 'Complexity': 'LSSSS', 'Forecast_L2_1': 2.337, 'Forecast_L2_2': 2.3885, 'Forecast_L2_3': 2.4466, 'Forecast_L2_4': 2.4945, 'Forecast_L2_5': 2.5251, 'Forecast_L2_6': 2.5422, 'Forecast_L2_7': 2.5512}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'Signal'
+INFO:pyaf.std:SAVING_PLOT ('Trend', 'outputs/fpp2_croston_optimize_None__Signal_Trend_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Cycle', 'outputs/fpp2_croston_optimize_None__Signal_Cycle_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('AR', 'outputs/fpp2_croston_optimize_None__Signal_AR_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('TransformedForecast', 'outputs/fpp2_croston_optimize_None__Signal_TransformedForecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Forecast', 'outputs/fpp2_croston_optimize_None__Signal_Forecast_decomp_output.png')
+INFO:pyaf.std:SAVING_PLOT ('PredictionIntervals', 'outputs/fpp2_croston_optimize_None__Signal_prediction_intervals_output.png')
+INFO:pyaf.std:SAVING_PLOT ('Quantiles', 'outputs/fpp2_croston_optimize_None__Signal_quantiles_output.png')
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['Signal'], 'Horizons': {'Signal': 7}}
+INFO:pyaf.std:FORECASTING_ENGINE_END 0.897
+Index(['Date', 'Signal', 'Signal_scaled', '_Signal', 'row_number',
+       'Date_Normalized', '_Signal_ConstantTrend',
+       '_Signal_ConstantTrend_residue',
+       '_Signal_ConstantTrend_residue_zeroCycle[0.0]',
+       '_Signal_ConstantTrend_residue_zeroCycle[0.0]_residue',
+       '_Signal_ConstantTrend_residue_zeroCycle[0.0]_residue_CROSTON(None)',
+       '_Signal_ConstantTrend_residue_zeroCycle[0.0]_residue_CROSTON(None)_residue',
+       'Signal_Transformed', '_Signal_Trend', '_Signal_Trend_residue',
+       '_Signal_Cycle', '_Signal_Cycle_residue', '_Signal_AR',
+       '_Signal_AR_residue', '_Signal_TransformedForecast',
+       '_Signal_Detrended', '_Signal_Deseasonalized',
+       'Signal_TransformedForecast_inverted', 'Signal_Forecast',
+       '_Signal_TransformedResidue', 'Signal_Residue',
+       'Signal_Forecast_Lower_Bound', 'Signal_Forecast_Upper_Bound',
+       'Signal_Forecast_Quantile_2', 'Signal_Forecast_Quantile_18',
+       'Signal_Forecast_Quantile_34', 'Signal_Forecast_Quantile_50',
+       'Signal_Forecast_Quantile_66', 'Signal_Forecast_Quantile_82',
+       'Signal_Forecast_Quantile_98'],
+      dtype='object')
+         Date  Signal   _Signal  _Signal_TransformedForecast  Signal_Forecast
+31 2002-08-31     1.0  0.090909                     0.099532         1.094857
+32 2002-09-30     0.0  0.000000                     0.099532         1.094857
+33 2002-10-31     1.0  0.090909                     0.095402         1.049425
+34 2002-11-30     0.0  0.000000                     0.095402         1.049425
+35 2002-12-31     0.0  0.000000                     0.095402         1.049425
+36 2003-01-30     NaN       NaN                     0.095402         1.049425
+37 2003-03-01     NaN       NaN                     0.095402         1.049425
+38 2003-03-31     NaN       NaN                     0.095402         1.049425
+39 2003-04-30     NaN       NaN                     0.095402         1.049425
+40 2003-05-30     NaN       NaN                     0.095402         1.049425
+41 2003-06-29     NaN       NaN                     0.095402         1.049425
+42 2003-07-29     NaN       NaN                     0.095402         1.049425
+count    36.000000
+mean      1.055556
+std       2.365761
+min       0.000000
+25%       0.000000
+50%       0.000000
+75%       1.000000
+max      11.000000
+Name: Signal, dtype: float64
+count    43.000000
+mean      1.085706
+std       0.194825
+min       0.000000
+25%       1.049425
+50%       1.094857
+75%       1.198818
+max       1.239630
+Name: Signal_Forecast, dtype: float64
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/croston/test_croston_fpp2_counts_example_optimize.py', 'ElapsedTimeSecs':(39.11, 0.48, 6.97), 'MAX_MEM_KB':241184, 'CPU_PRCNT':'19%', 'FILES_IN':8, 'FILES_OUT':1288, 'EXIT_STATUS':0}

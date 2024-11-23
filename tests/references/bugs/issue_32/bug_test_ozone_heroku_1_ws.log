@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Heroku | Application Error</title>
+    <style media="screen">
+      html,body,iframe {
+        margin: 0;
+        padding: 0;
+      }
+      html,body {
+        height: 100%;
+        overflow: hidden;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe src="//www.herokucdn.com/error-pages/no-such-app.html"></iframe>
+  </body>
+</html>
+
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/bugs/issue_32/bug_test_ozone_heroku_1_ws.py', 'ElapsedTimeSecs':(0.46, 0.00, 0.13), 'MAX_MEM_KB':21504, 'CPU_PRCNT':'30%', 'FILES_IN':8, 'FILES_OUT':8, 'EXIT_STATUS':0}

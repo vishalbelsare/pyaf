@@ -8,7 +8,7 @@ import numpy as np
 import pyaf.ForecastEngine as autof
 import pyaf.Bench.TS_datasets as tsds
 
-import tensorflow as tf
+# import tensorflow as tf
 # tf.python.control_flow_ops = tf
 
 import logging
@@ -46,7 +46,7 @@ lEngine.mOptions.set_active_autoregressions(['LSTM']);
 
 lEngine.train(df , b1.mTimeVar , b1.mSignalVar, H);
 lEngine.getModelInfo();
-print(lEngine.mSignalDecomposition.mTrPerfDetails.head());
+
 
 lEngine.mSignalDecomposition.mBestModel.mTimeInfo.mResolution
 

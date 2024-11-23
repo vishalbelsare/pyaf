@@ -1,0 +1,143 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['AirPassengers'], 'Horizons': {'AirPassengers': 7}}
+REQUEST_DETAILS [('CSVFile', 'https://vincentarelbundock.github.io/Rdatasets/csv/datasets/AirPassengers.csv'), ('DateFormat', None), ('Horizon', 7), ('Name', 'model_air_by_tests'), ('Present', ''), ('SignalVar', 'AirPassengers'), ('TimeVar', 'time')]
+None
+DATASET_DETECTED_COLUMNS Index(['rownames', 'time', 'value'], dtype='object')
+DATASET_FINAL_COLUMNS Index(['rownames', 'time', 'value', 'AirPassengers'], dtype='object')
+TRAIN_PARAMS (144, 4) Index(['rownames', 'time', 'value', 'AirPassengers'], dtype='object') time AirPassengers 7
+INFO:pyaf.std:TRAINING_ENGINE_END 2.183
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['AirPassengers'], 'Horizons': {'AirPassengers': 7}}
+INFO:pyaf.std:FORECASTING_ENGINE_END 0.102
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['AirPassengers'], 'Horizons': {'AirPassengers': 7}}
+INFO:pyaf.std:FORECASTING_ENGINE_END 0.102
+Forecast Columns  Index(['time', 'AirPassengers', 'AirPassengers_scaled', '_AirPassengers',
+       'row_number', 'time_Normalized', '_AirPassengers_LinearTrend',
+       '_AirPassengers_LinearTrend_residue', 'cycle_internal',
+       '_AirPassengers_LinearTrend_residue_Cycle_12',
+       '_AirPassengers_LinearTrend_residue_Cycle_12_residue',
+       '_AirPassengers_LinearTrend_residue_Cycle_12_residue_NoAR',
+       '_AirPassengers_LinearTrend_residue_Cycle_12_residue_NoAR_residue',
+       'AirPassengers_Transformed', '_AirPassengers_Trend',
+       '_AirPassengers_Trend_residue', '_AirPassengers_Cycle',
+       '_AirPassengers_Cycle_residue', '_AirPassengers_AR',
+       '_AirPassengers_AR_residue', '_AirPassengers_TransformedForecast',
+       '_AirPassengers_Detrended', '_AirPassengers_Deseasonalized',
+       'AirPassengers_TransformedForecast_inverted', 'AirPassengers_Forecast',
+       '_AirPassengers_TransformedResidue', 'AirPassengers_Residue',
+       'AirPassengers_Forecast_Lower_Bound',
+       'AirPassengers_Forecast_Upper_Bound',
+       'AirPassengers_Forecast_Quantile_10',
+       'AirPassengers_Forecast_Quantile_30',
+       'AirPassengers_Forecast_Quantile_50',
+       'AirPassengers_Forecast_Quantile_70',
+       'AirPassengers_Forecast_Quantile_90'],
+      dtype='object')
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 151 entries, 0 to 150
+Data columns (total 3 columns):
+ #   Column                  Non-Null Count  Dtype  
+---  ------                  --------------  -----  
+ 0   time                    151 non-null    float64
+ 1   AirPassengers           144 non-null    float64
+ 2   AirPassengers_Forecast  151 non-null    float64
+dtypes: float64(3)
+memory usage: 3.7 KB
+None
+Forecasts
+             time  AirPassengers  AirPassengers_Forecast
+144  1961.000000            NaN              434.015430
+145  1961.083333            NaN              434.020573
+146  1961.166667            NaN              468.278287
+147  1961.250000            NaN              461.762858
+148  1961.333333            NaN              466.762858
+149  1961.416667            NaN              485.773144
+150  1961.500000            NaN              505.030859
+
+
+<ModelInfo>
+{
+    "AirPassengers": {
+        "Complexity": {
+            "AR": "S",
+            "Cycle": "S",
+            "Decomposition": "S",
+            "Transformation": "S",
+            "Trend": "S"
+        },
+        "Dataset": {
+            "Signal": "AirPassengers",
+            "Time": {
+                "Horizon": 7,
+                "TimeDelta": "0.08333333333333333",
+                "TimeMax": "1960.91666666667",
+                "TimeMin": "1949.0",
+                "TimeVariable": "time"
+            },
+            "Training_Signal_Length": 144
+        },
+        "Model": {
+            "AR_Model": "NoAR",
+            "Best_Decomposition": "_AirPassengers_LinearTrend_residue_Cycle_12_residue_NoAR",
+            "Cycle": "Cycle_12",
+            "Signal_Decomposition_Type": "T+S+R",
+            "Signal_Transoformation": "NoTransf",
+            "Trend": "LinearTrend"
+        },
+        "Model_Performance": {
+            "1": {
+                "AUC": 0.5204,
+                "DiffSMAPE": 0.0705,
+                "ErrorMean": -13.0659,
+                "ErrorStdDev": 39.2833,
+                "KS": 0.2857,
+                "KendallTau": 0.7533,
+                "Length": 28,
+                "LnQ": 0.2323,
+                "MAE": 30.1856,
+                "MAPE": 0.0682,
+                "MASE": 0.7589,
+                "MannWhitneyU": 408.0,
+                "MedAE": 22.0154,
+                "Pearson": 0.9122,
+                "R2": 0.5845,
+                "RMSE": 41.3992,
+                "RMSSE": 0.877,
+                "SMAPE": 0.0705,
+                "Signal": "AirPassengers_Forecast_1"
+            },
+            "7": {
+                "AUC": 0.5204,
+                "DiffSMAPE": 0.0705,
+                "ErrorMean": -13.0659,
+                "ErrorStdDev": 39.2833,
+                "KS": 0.2857,
+                "KendallTau": 0.7533,
+                "Length": 28,
+                "LnQ": 0.2323,
+                "MAE": 30.1856,
+                "MAPE": 0.0682,
+                "MASE": 0.7589,
+                "MannWhitneyU": 408.0,
+                "MedAE": 22.0154,
+                "Pearson": 0.9122,
+                "R2": 0.5845,
+                "RMSE": 41.3992,
+                "RMSSE": 0.877,
+                "SMAPE": 0.0705,
+                "Signal": "AirPassengers_Forecast_7"
+            }
+        },
+        "Model_Selection_Criterion": "MASE"
+    },
+    "Training_Time": 2.183
+}
+</ModelInfo>
+
+
+
+
+<Forecast>
+{"time":{"137":1960.4166666667,"138":1960.5,"139":1960.5833333333,"140":1960.6666666667,"141":1960.75,"142":1960.8333333333,"143":1960.9166666667,"144":1961.0,"145":1961.0833333333,"146":1961.1666666667,"147":1961.25,"148":1961.3333333333,"149":1961.4166666667,"150":1961.5},"AirPassengers":{"137":535.0,"138":622.0,"139":606.0,"140":508.0,"141":461.0,"142":390.0,"143":432.0,"144":null,"145":null,"146":null,"147":null,"148":null,"149":null,"150":null},"AirPassengers_Forecast":{"137":456.0205726994,"138":475.2782874616,"139":480.0205726997,"140":455.5257158742,"141":429.0205726994,"142":394.2577147623,"143":426.7628579371,"144":434.0154295246,"145":434.0205726996,"146":468.2782874616,"147":461.7628579372,"148":466.762857937,"149":485.7731442868,"150":505.0308590491}}
+</Forecast>
+
+
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/heroku/test_air_passengers_heroku.py', 'ElapsedTimeSecs':(3.95, 0.43, 8.22), 'MAX_MEM_KB':146692, 'CPU_PRCNT':'218%', 'FILES_IN':0, 'FILES_OUT':24, 'EXIT_STATUS':0}

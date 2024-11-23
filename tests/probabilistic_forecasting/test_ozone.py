@@ -23,14 +23,10 @@ lEngine
 H = b1.mHorizon;
 # lEngine.mOptions.enable_slow_mode();
 lEngine.mOptions.mDebugPerformance = True;
-# lEngine.mOptions.mModelSelection_Criterion = "CRPS"
+lEngine.mOptions.mModelSelection_Criterion = "CRPS"
 lEngine.train(df , b1.mTimeVar , b1.mSignalVar, H);
 lEngine.getModelInfo();
 
-print(lEngine.mSignalDecomposition.mTrPerfDetails.columns);
-lColumns = ['Split', 'Transformation', 'Model', 'Category', 'Complexity',
-            'FitCRPS', 'ForecastCRPS', 'TestCRPS']
-print(lEngine.mSignalDecomposition.mTrPerfDetails[lColumns].head(10));
 
 lEngine.mSignalDecomposition.mBestModel.mTimeInfo.mResolution
 

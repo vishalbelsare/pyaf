@@ -1,0 +1,105 @@
+DISPLAY_USED_MEM_START
+function                   12798
+tuple                      5737
+dict                       4880
+wrapper_descriptor         2774
+cell                       2227
+ReferenceType              2226
+getset_descriptor          2067
+method_descriptor          1988
+list                       1719
+builtin_function_or_method 1665
+cython_function_or_method  1361
+property                   1103
+type                       1086
+module                     569
+ModuleSpec                 566
+member_descriptor          536
+fused_cython_function      493
+SourceFileLoader           441
+classmethod                439
+frozenset                  336
+DISPLAY_USED_MEM_END
+DISPLAY_USED_MEM_START
+function                   12961
+tuple                      5633
+dict                       4904
+wrapper_descriptor         2774
+ReferenceType              2240
+cell                       2228
+getset_descriptor          2090
+method_descriptor          1988
+list                       1740
+builtin_function_or_method 1665
+cython_function_or_method  1361
+property                   1103
+type                       1100
+module                     579
+ModuleSpec                 576
+member_descriptor          536
+fused_cython_function      493
+SourceFileLoader           451
+classmethod                439
+frozenset                  336
+DISPLAY_USED_MEM_END
+     Month  Ozone       Time
+0  1955-01    2.7 1955-01-01
+1  1955-02    2.0 1955-02-01
+2  1955-03    3.6 1955-03-01
+3  1955-04    5.0 1955-04-01
+4  1955-05    6.5 1955-05-01
+DISPLAY_USED_MEM_START
+function                   13653
+tuple                      5941
+dict                       5425
+wrapper_descriptor         2815
+ReferenceType              2503
+cell                       2266
+getset_descriptor          2185
+method_descriptor          2073
+list                       1864
+builtin_function_or_method 1754
+property                   1398
+cython_function_or_method  1361
+type                       1226
+module                     609
+ModuleSpec                 606
+member_descriptor          541
+fused_cython_function      493
+SourceFileLoader           478
+classmethod                445
+set                        365
+DISPLAY_USED_MEM_END
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 204 entries, 0 to 203
+Data columns (total 3 columns):
+ #   Column  Non-Null Count  Dtype         
+---  ------  --------------  -----         
+ 0   Month   204 non-null    object        
+ 1   Ozone   204 non-null    float64       
+ 2   Time    204 non-null    datetime64[ns]
+dtypes: datetime64[ns](1), float64(1), object(1)
+memory usage: 4.9+ KB
+DISPLAY_USED_MEM_START
+function                   13653
+tuple                      5941
+dict                       5435
+wrapper_descriptor         2815
+ReferenceType              2530
+cell                       2266
+getset_descriptor          2185
+method_descriptor          2073
+list                       1867
+builtin_function_or_method 1773
+property                   1398
+cython_function_or_method  1361
+type                       1226
+module                     609
+ModuleSpec                 606
+member_descriptor          541
+fused_cython_function      493
+SourceFileLoader           478
+classmethod                445
+set                        366
+DISPLAY_USED_MEM_END
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/bugs/issue_29/test_mem_1.py', 'ElapsedTimeSecs':(3.08, 0.07, 0.68), 'MAX_MEM_KB':78184, 'CPU_PRCNT':'24%', 'FILES_IN':8, 'FILES_OUT':8, 'EXIT_STATUS':0}

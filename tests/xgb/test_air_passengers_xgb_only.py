@@ -30,11 +30,11 @@ lEngine.mOptions.set_active_autoregressions(['XGB']);
 
 lEngine.train(df , b1.mTimeVar , b1.mSignalVar, H);
 lEngine.getModelInfo();
-print(lEngine.mSignalDecomposition.mTrPerfDetails.head());
+
 
 lEngine.mSignalDecomposition.mBestModel.mTimeInfo.mResolution
 
-lEngine.standardPlots(name = "outputs/my_airline_passengers_svr_only")
+lEngine.standardPlots(name = "outputs/my_airline_passengers_xgb_only")
 
 dfapp_in = df.copy();
 dfapp_in.tail()

@@ -1,12 +1,14 @@
 import pandas as pd
 import numpy as np
 
+import matplotlib.pyplot as plt
+plt.rcParams['font.family'] = ['Segoe UI Emoji', 'SimHei']
 
 import pyaf.ForecastEngine as autof
 import pyaf.Bench.TS_datasets as tsds
 
 
-b1 = tsds.load_ozone()
+b1 = tsds.load_ozone() 
 df = b1.mPastData
 
 lTimeVar = u"月"
@@ -21,7 +23,7 @@ lEngine
 H = b1.mHorizon;
 lEngine.train(df , lTimeVar , lSignalVar, H);
 lEngine.getModelInfo();
-print(lEngine.mSignalDecomposition.mTrPerfDetails.head());
+
 
 
 lEngine.standardPlots("outputs/issue_76_unicode__ozone");

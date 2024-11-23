@@ -14,7 +14,7 @@ def create_exog_data(b1):
     # fake exog data based on date variable
     lDate1 = b1.mPastData['Index']
     lDate2 = b1.mFutureData['Index'] # not needed. exogenous data are missing when not available.
-    lDate = lDate1.append(lDate2)
+    lDate = pd.concat((lDate1, lDate2), axis = 0)
     lExogenousDataFrame = pd.DataFrame()
     lExogenousDataFrame['Index'] = lDate
     lExogenousDataFrame['Index_ex1'] = lDate * lDate
@@ -39,7 +39,11 @@ lExogenousData = create_exog_data(b1)
 lEngine.train(df , b1.mTimeVar , b1.mSignalVar, H, b1.mHierarchy, lExogenousData);
 
 lEngine.getModelInfo();
-#lEngine.standardPlots("outputs/AU_infant_");
+lEngine.mSignalHierarchy.plot("outputs/grouped_signals_AllMethods_Exogenous_all_nodes_hierarchy");
+
+print("\n\n<ModelInfo>")
+print(lEngine.to_json());
+print("</ModelInfo>\n\n")
 
 dfapp_in = df.copy();
 dfapp_in.tail()

@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Antoine Carme <Antoine.Carme@Laposte.net>
+# Copyright (C) 2016 Antoine Carme <Antoine.Carme@outlook.com>
 # All rights reserved.
 
 # This file is part of the Python Automatic Forecasting (PyAF) library and is made available under
@@ -13,7 +13,12 @@ from datetime import date
 # from memory_profiler import profile
 
 import os.path
-from . import stocks_symbol_list as symlist
+
+def createDirIfNeeded(dirname):
+    try:
+        os.mkdir(dirname);
+    except:
+        pass
 
 
 class cTimeSeriesDatasetSpec:
@@ -45,6 +50,17 @@ class cTimeSeriesDatasetSpec:
     def getHorizon(self):
         return self.mHorizon;
 
+    def save_dataset(self, iFileNamePrefix):
+        self.mFullDataset.to_csv(iFileNamePrefix + "_training.csv", index = False)
+        if(self.mExogenousDataFrame is not None):
+            self.mExogenousDataFrame.to_csv(iFileNamePrefix + "_exogenous.csv", index= False)
+        
+    def load_dataset_if_possible(self, iFileNamePrefix):
+        self.mFullDataset = pd.read_csv(iFileNamePrefix + "_training.csv")
+        if(os.path.isfile(iFileNamePrefix + "_exogenous.csv")):
+            self.mExogenousDataFrame = pd.read_csv(iFileNamePrefix + "_exogenous.csv", dtype=object)
+            self.mExogenousVariables = [x for x in self.mExogenousDataFrame.columns if x.startswith('exog_')]
+        
     
 # @profile    
 def load_airline_passengers() :
@@ -194,8 +210,10 @@ def add_some_noise(x , p , min_sig, max_sig, e , f):
     if(max_sig > min_sig):
         delta = (x - min_sig) / (max_sig - min_sig);
         if( (delta >= e) and (delta <= f) ):
-            if(np.random.random() < p):
-                return "A";
+            lRand = np.random.random()
+            if(lRand < p):
+                k = int(67 + delta * 12)
+                return "A" + chr(k);
     return "0";
 
 
@@ -230,7 +248,7 @@ def gen_cycle(N , cycle_length):
 def gen_ar(N , ar_order):
     lAR = pd.Series(dtype='float64');
     if(ar_order > 0):
-        lSig = pd.Series(np.arange(0, N) / N);
+        lSig = pd.Series(np.arange(0, N) / N * 10.0);
         lAR = 0;
         a_p = 1;
         for p in range(1 , ar_order+1):
@@ -241,7 +259,7 @@ def gen_ar(N , ar_order):
     return lAR;
 
 def apply_old_transform(signal , transform):
-    transformed = None
+    transformed = signal
     if(transform == "exp"):
         transformed = np.exp(-signal)
     if(transform == "log"):
@@ -262,7 +280,7 @@ def apply_old_transform(signal , transform):
     
 def apply_transform(signal , transform):
     import pyaf.TS.Signal_Transformation as tstransf
-    arg = None
+    arg = signal
     if(transform == "Quantization"):
         arg = 10
     if(transform == "BoxCox"):
@@ -274,13 +292,53 @@ def apply_transform(signal , transform):
     else :
         tr.fit(signal)
         transformed = tr.invert(signal)
+        transformed = transformed["rescaled"]
         # print(signal.head())
         # print(transformed.head())
+    transformed = transformed.astype(np.float64)
     return transformed
 
-def generate_random_TS(N , FREQ, seed, trendtype, cycle_length, transform, sigma = 1.0, exog_count = 20, ar_order = 0) :
+def generate_random_TS_name(N , FREQ, seed, trendtype, cycle_length, transform, sigma = 1.0, exog_count = 20, ar_order = 0) :
+    lName = "Signal_" + str(N) + "_" + str(FREQ) +  "_" + str(seed)  + "_" + str(trendtype) +  "_" + str(cycle_length)   + "_" + str(transform)   + "_" + str(sigma) + "_" + str(exog_count) ;
+    return lName
+
+ARTIFICIAL_DATASETS_URI = "data/ARTIFICIAL_DATA"
+
+def generate_random_TS(N , FREQ, seed, trendtype, cycle_length, transform, sigma = 1.0, exog_count = 20, ar_order = 12) :
     tsspec = cTimeSeriesDatasetSpec();
-    tsspec.mName = "Signal_" + str(N) + "_" + str(FREQ) +  "_" + str(seed)  + "_" + str(trendtype) +  "_" + str(cycle_length)   + "_" + str(transform)   + "_" + str(sigma) + "_" + str(exog_count) ;
+    lName = generate_random_TS_name(N , FREQ, seed, trendtype, cycle_length, transform, sigma, exog_count, ar_order)
+    tsspec.mName = lName
+    lFileName = ARTIFICIAL_DATASETS_URI + "/" + str(N) + "/" + tsspec.mName
+    createDirIfNeeded(ARTIFICIAL_DATASETS_URI)
+    createDirIfNeeded(ARTIFICIAL_DATASETS_URI + "/" + str(N))
+    print("TRYING_TO_LOAD_RANDOM_DATASET" , tsspec.mName, lFileName);
+    if(os.path.isfile(lFileName + "_training.csv")):
+        tsspec.load_dataset_if_possible(lFileName)
+        tsspec.mTimeVar = "Date";
+        tsspec.mSignalVar = "Signal";
+        N = tsspec.mFullDataset.shape[0]
+        lHorizon = min(12, max(1, N // 30));
+        tsspec.mHorizon = {}
+        tsspec.mFullDataset['Date'] = pd.to_datetime(tsspec.mFullDataset['Date'])
+        tsspec.mHorizon[tsspec.mSignalVar] = lHorizon
+        tsspec.mHorizon[tsspec.mName] = lHorizon
+        # tsspec.mFullDataset = df_train;
+        # tsspec.mFullDataset[tsspec.mName] = tsspec.mFullDataset['Signal'];
+        tsspec.mPastData = tsspec.mFullDataset[:-lHorizon];
+        tsspec.mFutureData = tsspec.mFullDataset.tail(lHorizon);
+        if(tsspec.mExogenousDataFrame is not None):
+            tsspec.mExogenousDataFrame['Date'] = pd.to_datetime(tsspec.mExogenousDataFrame['Date'])
+
+        return tsspec
+    print("LAOD_FAILED_TRYING_TO_GENERATE_RANDOM_DATASET" , tsspec.mName);
+    tsspec = generate_random_TS_real(N , FREQ, seed, trendtype, cycle_length, transform, sigma, exog_count, ar_order)
+    tsspec.save_dataset(lFileName)
+    return tsspec
+    
+def generate_random_TS_real(N , FREQ, seed, trendtype, cycle_length, transform, sigma = 1.0, exog_count = 20, ar_order = 12) :
+    tsspec = cTimeSeriesDatasetSpec();
+    lName = generate_random_TS_name(N , FREQ, seed, trendtype, cycle_length, transform, sigma, exog_count, ar_order)
+    tsspec.mName = lName
     print("GENERATING_RANDOM_DATASET" , tsspec.mName);
     tsspec.mDescription = "Random generated dataset";
 
@@ -306,25 +364,27 @@ def generate_random_TS(N , FREQ, seed, trendtype, cycle_length, transform, sigma
     df_train['GeneratedAR'] = gen_ar(N , ar_order);
 
     df_train['Noise'] = np.random.randn(N, 1) * sigma;
-    df_train['Signal'] = 100 * df_train['GeneratedTrend'] +  10 * df_train['GeneratedCycle'] + 1 * df_train['GeneratedAR'] + df_train['Noise']
+    df_train['Signal'] = df_train['GeneratedTrend'] +  df_train['GeneratedCycle'] + 1 * df_train['GeneratedAR'] + df_train['Noise']
 
     min_sig = df_train['Signal'].min();
     max_sig = df_train['Signal'].max();
     # print(df_train.info())
     tsspec.mExogenousVariables = [];
-    tsspec.mExogenousDataFrame = pd.DataFrame();
-    tsspec.mExogenousDataFrame['Date'] = df_train['Date']
+    lExogVars = {}
     for e in range(exog_count):
         label = "exog_" + str(e+1);
-        tsspec.mExogenousDataFrame[label] = df_train['Signal'].apply(
-            lambda x : add_some_noise(x , 0.1 , 
+        lExogVars[label] = df_train['Signal'].apply(
+            lambda x : add_some_noise(x , 0.5, 
                                       min_sig, 
                                       max_sig, 
                                       e/exog_count ,
-                                      (e+3)/exog_count ));
-        tsspec.mExogenousVariables = tsspec.mExogenousVariables + [ label ];
+                                      (e+exog_count / 4)/exog_count ));
 
-    # print(tsspec.mExogenousDataFrame.info())
+    if(exog_count > 0):
+        tsspec.mExogenousVariables = list(lExogVars.keys());
+        lExogVars['Date'] = df_train['Date']
+        tsspec.mExogenousDataFrame = pd.DataFrame(lExogVars, index = df_train.index);
+        # print(tsspec.mExogenousDataFrame.info())
 
     # this is the full dataset . must contain future exogenius data
     pos_signal = df_train['Signal'] - min_sig + 1.0;
@@ -339,10 +399,9 @@ def generate_random_TS(N , FREQ, seed, trendtype, cycle_length, transform, sigma
     tsspec.mHorizon = {}
     tsspec.mHorizon[tsspec.mSignalVar] = lHorizon
     tsspec.mHorizon[tsspec.mName] = lHorizon
-    tsspec.mFullDataset = df_train;
-    tsspec.mFullDataset[tsspec.mName] = tsspec.mFullDataset['Signal'];
-    tsspec.mPastData = df_train[:-lHorizon];
-    tsspec.mFutureData = df_train.tail(lHorizon);
+    tsspec.mFullDataset = df_train.rename(columns = {'Signal' : tsspec.mName});
+    tsspec.mPastData = tsspec.mFullDataset[:-lHorizon];
+    tsspec.mFutureData = tsspec.mFullDataset.tail(lHorizon);
     
     return tsspec
 
@@ -445,7 +504,7 @@ def load_MWH_dataset(name):
     # print(df_train.head())
     # df_train.to_csv("mwh-" + name + ".csv");
     # print(df_train.info())
-    if(df_train[lSignal].dtype == np.object):
+    if(df_train[lSignal].dtype == object):
         df_train[lSignal] = df_train[lSignal].astype(np.float64); ## apply(lambda x : float(str(x).replace(" ", "")));
     
     # df_train[lSignal] = df_train[lSignal].apply(float)
@@ -652,7 +711,7 @@ def load_M4_comp(iType = None) :
         tsspec.mPastData = pd.Series(df_full['PAST'][i].split(",")).apply(float);
         tsspec.mFutureData = pd.Series(df_full['FUTURE'][i].split(",")).apply(float);
         tsspec.mFullDataset = pd.DataFrame();
-        tsspec.mFullDataset[series_name] = tsspec.mPastData.append(tsspec.mFutureData).reindex();
+        tsspec.mFullDataset[series_name] = pd.concat((tsspec.mPastData, tsspec.mFutureData), axis = 0).reindex();
         tsspec.mFullDataset['Date'] = range(0 , tsspec.mFullDataset.shape[0])
         tsspec.mTimeVar = "Date";
         tsspec.mSignalVar = series_name;
@@ -666,60 +725,28 @@ def load_M4_comp(iType = None) :
 
 def get_stock_web_link():
     YAHOO_LINKS_DATA = {}
-    lines = []
-    with open('data/yahoo_list.txt') as data_file:
-        lines = data_file.readlines()
-        lines = [line.rstrip('\n') for line in lines]
-    import re
-    for line in lines:
-        csv = line.replace('.csv', '')
-        csv = re.sub(r"^(.*)yahoo_", "", csv);
-        # print("YAHOO_LINKS_DATA" , csv, line)
-        YAHOO_LINKS_DATA[csv] = line;
+    with open("pyaf/Bench/yahoo_data.json", "r") as read_file:
+        import json
+        YAHOO_LINKS_DATA = json.load(read_file)
+
     print("ACQUIRED_YAHOO_LINKS" , len(YAHOO_LINKS_DATA));
     return YAHOO_LINKS_DATA;
 
-def load_yahoo_stock_price( stock , iLocal = True, YAHOO_LINKS_DATA = None) :
-    filename = YAHOO_LINKS_DATA.get(stock);
+def load_yahoo_stock_price(symbol_list_key, stock , iLocal = True, YAHOO_LINKS_DATA = None) :
+    filename = YAHOO_LINKS_DATA.get(symbol_list_key).get(stock);
     if(filename is None):
-        raise Exception("MISSING " + stock)
+        raise Exception("MISSING " + symbol_list_key + "." + stock)
         
     # print("YAHOO_DATA_LINK" , stock, filename);
 
     tsspec = cTimeSeriesDatasetSpec();
-    tsspec.mName = "Yahoo_Stock_Price_" + stock 
+    tsspec.mName = "Yahoo_Stock_Price_" + symbol_list_key + "." + stock 
     tsspec.mDescription = "Yahoo Stock Price using yahoo-finance package"
     df_train = pd.DataFrame();
-    if(iLocal):
-        filename = "data/yahoo/" + filename
-    else:
-        base_uri = "https://raw.githubusercontent.com/antoinecarme/TimeSeriesData/master/YahooFinance/";
-        filename =  base_uri + filename;
-    print("YAHOO_DATA_LINK_URI" , stock, filename);
-    if(os.path.isfile(filename)):
-        # print("already downloaded " + stock , "reloading " , filename);
-        df_train = pd.read_csv(filename);
-    else:
-        # return None;
-        from yahoo_finance import Share
-        stock_obj = Share(stock)
-        today = date.today()
-        today
-        before = date(today.year - 5, today.month, today.day)
-        # print(today, before)
-        lst = stock_obj.get_historical(before.isoformat(), today.isoformat())
-        # print(stock , len(lst));
-        if(len(lst) > 0):
-            for k in lst[0].keys():
-                for i in range(0, len(lst)):
-                    lst_k = [];
-                    for line1 in lst:
-                        lst_k = lst_k + [line1[k]];
-                df_train[k] = lst_k;
-            # df_train.to_csv(filename);
-        else:
-            # df_train.to_csv(filename);
-            return None            
+    assert(iLocal)
+    # print("YAHOO_DATA_LINK_URI" , symbol_list_key, stock, filename);
+    assert(os.path.isfile(filename))
+    df_train = pd.read_csv(filename);
 
     tsspec.mFullDataset = pd.DataFrame();
     tsspec.mFullDataset[stock] = df_train['Close'].apply(float);
@@ -744,16 +771,19 @@ def load_yahoo_stock_price( stock , iLocal = True, YAHOO_LINKS_DATA = None) :
 
 
 # @profile    
-def load_yahoo_stock_prices(symbol_list_key) :
+def load_yahoo_stock_prices(symbol_list_key, stock = None) :
     tsspecs = {}
 
     YAHOO_LINKS_DATA = get_stock_web_link();
 
-    stocks = symlist.SYMBOL_LIST[symbol_list_key]
+    stocks = YAHOO_LINKS_DATA[symbol_list_key]
+    if(stock is not None):
+        assert(stock in stocks)
+        stocks = [stock]
     for stock in sorted(stocks):
         tsspec1 = None
         try:
-            tsspec1 = load_yahoo_stock_price(stock , True, YAHOO_LINKS_DATA)
+            tsspec1 = load_yahoo_stock_price(symbol_list_key, stock , True, YAHOO_LINKS_DATA)
         except:
             # raise
             pass
@@ -767,76 +797,47 @@ def load_yahoo_stock_prices(symbol_list_key) :
 
 
 
-class cYahoo_download_Arg_Arg:
-    def __init__(self , stocks):
-        self.mList = stocks;
-
-def download_Yahoo_list(arg):
-    YAHOO_LINKS_DATA = get_stock_web_link();
-    for k in arg.mList:
-        try:
-            load_yahoo_stock_price(k, False, YAHOO_LINKS_DATA)
-        except:
-            pass
-
-def download_yahoo_stock_prices() :
-    import multiprocessing as mp
-    pool = mp.Pool()
-    args = []
-    for k in symlist.SYMBOL_LIST.keys():
-        lst = symlist.SYMBOL_LIST[k]
-        n = 0;
-        N = len(lst);
-        while(n <= N):
-            end1 = n + 50
-            if(end1 > N):
-                end1 = N;
-            lst1 = lst[n : end1]
-            arg = cYahoo_download_Arg_Arg(lst1)
-            args = args + [arg];
-            n = n + 50;
-                
-    asyncResult = pool.map_async(download_Yahoo_list, args);
-
-    resultList = asyncResult.get()
-
-
-def get_yahoo_symbol_lists():
-    return symlist.SYMBOL_LIST;
-
-
-
 
 # @profile    
-def generate_datasets(ds_type = "S"):
+def generate_datasets(ds_type = "S", iName=None):
     datasets = {};
-    lRange_N = range(20, 101, 20)
+    lRange_N = [20, 50, 100]
     if(ds_type == "M"):
-        lRange_N = range(150, 501, 50)
+        lRange_N = [250, 500]
     if(ds_type == "L"):
-        lRange_N = range(600, 2001, 100)
+        lRange_N = [1000, 2000]
     if(ds_type == "XL"):
-        lRange_N = range(2500, 8000, 500)
+        lRange_N = [4000]
+
+    lNames = {}
     
     for N in lRange_N:
-        for trend in ["constant" , "linear" , "poly"]:
-            for cycle_length in range(0, N // 4 ,  max(N // 16 , 1)):
+        for trend in ["ConstantTrend" , "LinearTrend" , "PolyTrend"]:
+            for cycle_length in [0, 7, 24]:
                 for transf in ["" , "exp"]:            
-                    for sigma in range(0, 5, 2):
-                        for exogc in range(0, 51, 20):
+                    for sigma in [1.0]:
+                        for exogc in [0, 10]:
                             for seed in range(0, 1):
-                                ds = generate_random_TS(N , 'D', seed, trend,
-                                                        cycle_length, transf,
-                                                        sigma, exog_count = exogc);
-                                ds.mCategory = "ARTIFICIAL_" + ds_type;
-                                datasets[ds.mName] = ds
+                                for freq in ['D' , 'H']:
+                                    lName = generate_random_TS_name(N , freq, seed, trend,
+                                                                    cycle_length, transf,
+                                                                    sigma, exog_count = exogc);
+                                    print(lName)
+                                    if((iName is None) or (lName == iName)):
+                                        lNames[lName] = (N , freq, seed, trend,
+                                                         cycle_length, transf,
+                                                         sigma, exogc)
+    for (lName, args) in lNames.items():
+        ds = generate_random_TS(*args)
+        ds.mCategory = "ARTIFICIAL_" + ds_type;
+        datasets[ds.mName] = ds
     return datasets;
 
 
 # @profile    
-def load_artificial_datsets(ds_type = "S") :
-
-    tsspecs = generate_datasets(ds_type);
+def load_artificial_datsets(ds_type = "S", iName= None) :
+        
+    tsspecs = generate_datasets(ds_type, iName);
     print("ARTIFICIAL_DATASETS_TESTED" , len(tsspecs))
 
     return tsspecs
@@ -955,7 +956,7 @@ def load_fpp2_dataset(name):
     df_train = df_train[[df_train.columns[0] , df_train.columns[1]]].dropna();
     # rename the first two columns (as date and signal)
     df_train.columns = [lTime , lSignal];
-    if(df_train[lSignal].dtype == np.object):
+    if(df_train[lSignal].dtype == object):
         df_train[lSignal] = df_train[lSignal].astype(np.float64); 
 
     print(df_train.head(5));

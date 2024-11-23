@@ -7,7 +7,9 @@ import pyaf.Bench.TS_datasets as tsds
 #get_ipython().magic('matplotlib inline')
 
 b1 = tsds.generate_random_TS(N = 320 , FREQ = 'D', seed = 0, trendtype = "constant", cycle_length = 0, transform = "None", sigma = 0.1, ar_order = 12);
-df = b1.mPastData
+df = b1.mPastData.copy()
+
+df['Signal'] = df[b1.mName]
 
 #df.tail(10)
 #df[:-10].tail()
@@ -25,7 +27,7 @@ lEngine.mOptions.set_active_autoregressions(['AR' , 'ARX']);
 H = b1.mHorizon[b1.mSignalVar];
 lEngine.train(df , b1.mTimeVar , b1.mSignalVar, H);
 lEngine.getModelInfo();
-print(lEngine.mSignalDecomposition.mTrPerfDetails.head());
+
 
 lEngine.mSignalDecomposition.mBestModel.mTimeInfo.mResolution
 

@@ -1,0 +1,79 @@
+INFO:pyaf.std:TRAINING_ENGINE_START {'Signals': ['number'], 'Horizons': {'number': 7}}
+         date     number
+0  1890-01-01      328.0
+1  1900-01-01     6043.0
+2  1914-01-01    40362.0
+3  1921-01-01    51327.0
+4  1921-01-01    53211.0
+5  1929-01-01   112151.0
+6  1938-01-01   147844.0
+7  1948-01-01   185397.0
+8  1950-01-01   285793.0
+9  1976-01-01   536814.0
+10 1978-01-01   531147.0
+11 1979-01-01   554711.0
+12 2010-01-01  1089170.0
+13 2012-01-01  1113000.0
+INFO:pyaf.std:TRAINING_ENGINE_END 7.858
+INFO:pyaf.std:TIME_DETAIL TimeVariable='date' TimeMin=1890-01-01T00:00:00.000000 TimeMax=2012-01-01T00:00:00.000000 TimeDelta=<DateOffset: months=9> Horizon=7
+INFO:pyaf.std:SIGNAL_DETAIL_ORIG SignalVariable='number' Length=14  Min=328.0 Max=1113000.0  Mean=336235.571429 StdDev=366246.104341
+INFO:pyaf.std:SIGNAL_DETAIL_TRANSFORMED TransformedSignalVariable='_number' Min=0.0 Max=1.0  Mean=0.301893 StdDev=0.329159
+INFO:pyaf.std:DECOMPOSITION_TYPE 'T+S+R'
+INFO:pyaf.std:BEST_TRANSOFORMATION_TYPE '_'
+INFO:pyaf.std:BEST_DECOMPOSITION  '_number_PolyTrend_residue_Cycle_None_residue_NoAR' [PolyTrend + Cycle_None + NoAR]
+INFO:pyaf.std:TREND_DETAIL '_number_PolyTrend' [PolyTrend]
+INFO:pyaf.std:CYCLE_DETAIL '_number_PolyTrend_residue_Cycle_None' [Cycle_None]
+INFO:pyaf.std:AUTOREG_DETAIL '_number_PolyTrend_residue_Cycle_None_residue_NoAR' [NoAR]
+INFO:pyaf.std:MODEL_PERFS Fit STEP=1 {'MAPE': np.float64(0.2789), 'RMSE': np.float64(18123.4624), 'MAE': np.float64(12774.4817), 'MASE': np.float64(0.1477)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=1 {'MAPE': np.float64(0.2789), 'RMSE': np.float64(18123.4624), 'MAE': np.float64(12774.4817), 'MASE': np.float64(0.1477)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=1 {'MAPE': np.float64(0.2789), 'RMSE': np.float64(18123.4624), 'MAE': np.float64(12774.4817), 'MASE': np.float64(0.1477)}
+INFO:pyaf.std:MODEL_PERFS Fit STEP=7 {'MAPE': np.float64(0.2789), 'RMSE': np.float64(18123.4624), 'MAE': np.float64(12774.4817), 'MASE': np.float64(0.1477)}
+INFO:pyaf.std:MODEL_PERFS Forecast STEP=7 {'MAPE': np.float64(0.2789), 'RMSE': np.float64(18123.4624), 'MAE': np.float64(12774.4817), 'MASE': np.float64(0.1477)}
+INFO:pyaf.std:MODEL_PERFS Test STEP=7 {'MAPE': np.float64(0.2789), 'RMSE': np.float64(18123.4624), 'MAE': np.float64(12774.4817), 'MASE': np.float64(0.1477)}
+INFO:pyaf.std:MODEL_COMPLEXITY {'Decomposition': 'S', 'Transformation': 'S', 'Trend': 'M', 'Cycle': 'S', 'AR': 'S'} [MSSSS]
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_START
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_MODEL_VALUES NoTransf None
+INFO:pyaf.std:SIGNAL_TRANSFORMATION_DETAIL_END
+INFO:pyaf.std:TREND_DETAIL_START
+INFO:pyaf.std:POLYNOMIAL_RIDGE_TREND PolyTrend (np.float64(-0.000835), array([0.005815, 0.776725, 0.224603]))
+INFO:pyaf.std:TREND_DETAIL_END
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_START
+INFO:pyaf.std:BEST_CYCLE_LENGTH_VALUES _number_PolyTrend_residue_Cycle_None None -0.001314 {}
+INFO:pyaf.std:CYCLE_MODEL_DETAIL_END
+INFO:pyaf.std:AR_MODEL_DETAIL_START
+INFO:pyaf.std:AR_MODEL_DETAIL_END
+INFO:pyaf.std:COMPETITION_DETAIL_START 'number'
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'number' 0 {'Transformation': '_number', 'DecompositionType': 'T+S+R', 'Model': '_number_PolyTrend_residue_Cycle_None_residue_NoAR', 'Voting': 251.7143, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.1477, 'Forecast_MASE_2': 0.1477, 'Forecast_MASE_3': 0.1477, 'Forecast_MASE_4': 0.1477, 'Forecast_MASE_5': 0.1477, 'Forecast_MASE_6': 0.1477, 'Forecast_MASE_7': 0.1477}
+INFO:pyaf.std:COMPETITION_DETAIL_SHORT_LIST 'number' 1 {'Transformation': '_number', 'DecompositionType': 'T+S+R', 'Model': '_number_PolyTrend_residue_zeroCycle[0.0]_residue_NoAR', 'Voting': 251.7143, 'Complexity': 'MSSSS', 'Forecast_MASE_1': 0.1477, 'Forecast_MASE_2': 0.1477, 'Forecast_MASE_3': 0.1477, 'Forecast_MASE_4': 0.1477, 'Forecast_MASE_5': 0.1477, 'Forecast_MASE_6': 0.1477, 'Forecast_MASE_7': 0.1477}
+INFO:pyaf.std:COMPETITION_DETAIL_END 'number'
+INFO:pyaf.std:FORECASTING_ENGINE_START {'Signals': ['number'], 'Horizons': {'number': 7}}
+INFO:pyaf.std:FORECASTING_ENGINE_END 0.439
+None
+Index(['date', 'number', 'number_scaled', '_number', 'row_number',
+       'date_Normalized', 'date_Normalized_^2', 'date_Normalized_^3',
+       '_number_PolyTrend', '_number_PolyTrend_residue',
+       '_number_PolyTrend_residue_Cycle_None',
+       '_number_PolyTrend_residue_Cycle_None_residue',
+       '_number_PolyTrend_residue_Cycle_None_residue_NoAR',
+       '_number_PolyTrend_residue_Cycle_None_residue_NoAR_residue',
+       'number_Transformed', '_number_Trend', '_number_Trend_residue',
+       '_number_Cycle', '_number_Cycle_residue', '_number_AR',
+       '_number_AR_residue', '_number_TransformedForecast',
+       '_number_Detrended', '_number_Deseasonalized',
+       'number_TransformedForecast_inverted', 'number_Forecast',
+       '_number_TransformedResidue', 'number_Residue',
+       'number_Forecast_Lower_Bound', 'number_Forecast_Upper_Bound',
+       'number_Forecast_Quantile_17', 'number_Forecast_Quantile_50',
+       'number_Forecast_Quantile_83'],
+      dtype='object')
+         date  ...  number_Forecast_Upper_Bound
+14 2012-10-01  ...                 1.170880e+06
+15 2013-07-01  ...                 1.186286e+06
+16 2014-04-01  ...                 1.201870e+06
+17 2015-01-01  ...                 1.217635e+06
+18 2015-10-01  ...                 1.233409e+06
+19 2016-07-01  ...                 1.249364e+06
+20 2017-04-01  ...                 1.265443e+06
+
+[7 rows x 4 columns]
+EXECUTION_TIME_DETAIL = {'CMD':'timeout 480 python tests/bugs/issue_19/issue_19_no_interpolation.py', 'ElapsedTimeSecs':(13.01, 0.37, 6.24), 'MAX_MEM_KB':156724, 'CPU_PRCNT':'50%', 'FILES_IN':16, 'FILES_OUT':24, 'EXIT_STATUS':0}

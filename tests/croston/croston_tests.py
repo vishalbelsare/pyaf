@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 
 def create_intermittent_signal(N):
+    np.random.seed(seed=1960)
     sig = np.zeros(N)
     for i in range(0, N // 30):
         if(np.random.random() < 0.5):
@@ -12,6 +13,7 @@ def create_intermittent_signal(N):
 
 # create an intemittent signal with a linear trend
 def create_intermittent_signal_linear_trend(N):
+    np.random.seed(seed=1960)
     sig = [k/ N for k in range(N)]
     for i in range(0, N // 30):
         if(np.random.random() < 0.5):
@@ -35,7 +37,7 @@ def create_model(N = 365 , croston_type=None, iTrend = False):
     lEngine = autof.cForecastEngine()
 
     lEngine.mOptions.set_active_trends(['ConstantTrend', 'LinearTrend'])
-    lEngine.mOptions.set_active_periodics(['None'])
+    lEngine.mOptions.set_active_periodics(['NoCycle'])
     lEngine.mOptions.set_active_transformations(['None'])
     lEngine.mOptions.set_active_autoregressions(['CROSTON'])
     lEngine.mOptions.mModelSelection_Criterion = "L2";
